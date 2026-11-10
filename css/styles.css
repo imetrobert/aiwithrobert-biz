@@ -568,7 +568,7 @@ nav a.brand-lockup:focus { outline: 3px solid #1b4469; outline-offset: 2px; }
 
 .service-icon { display: block; margin-bottom: 1.5rem; line-height: 1; color: #1b4469; }
 .service-icon .icon { width: 3rem; height: 3rem; }
-.service-card h3 { font-size: 1.5rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; }
+.service-card h3 { font-size: 1.5rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; line-height: 1.3; }
 .service-card p  { color: #4b5563; margin-bottom: 1.5rem; line-height: 1.7; }
 .service-card ul { list-style: none; padding: 0; }
 .service-card li {
@@ -1128,5 +1128,8 @@ footer p {
 @media (max-width: 700px) {
   #process .services-grid { grid-template-columns: 1fr; }
   #opportunity { padding: 4rem 1.25rem; }
+  .service-card { padding: 1.75rem 1.5rem; }
+  .service-card h3 { font-size: 1.3rem; }
+  .service-card p { margin-bottom: 1.1rem; }
   .value-callout { padding: 1.75rem 1.25rem; }
 }

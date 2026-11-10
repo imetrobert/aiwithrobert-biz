@@ -46,7 +46,7 @@
 
 .service-icon { display: block; margin-bottom: 1.5rem; line-height: 1; color: #1b4469; }
 .service-icon .icon { width: 3rem; height: 3rem; }
-.service-card h3 { font-size: 1.5rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; }
+.service-card h3 { font-size: 1.5rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; line-height: 1.3; }
 .service-card p  { color: #4b5563; margin-bottom: 1.5rem; line-height: 1.7; }
 .service-card ul { list-style: none; padding: 0; }
 .service-card li {
