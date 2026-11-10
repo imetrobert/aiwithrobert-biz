@@ -1,0 +1,1101 @@
+/* =============================================================================
+   base.css — Reset, body, typography, shared layout utilities
+   ============================================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  font-size: 18px;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 170px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Skip-to-content link (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 1rem;
+  background: #1b4469;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 10px 10px;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* Shared section wrapper */
+section {
+  padding: 8rem 2rem;
+  position: relative;
+}
+
+/* Shared section header block */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* Primary CTA button (used in hero and elsewhere) */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #d9b43a 0%, #c9a227 100%);
+  color: #11304c;
+  padding: 1.2rem 3rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(201, 162, 39, 0.35);
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(201, 162, 39, 0.45);
+}
+.cta-button:focus {
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
+}
+.cta-button:disabled {
+  background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+.cta-button:disabled:hover {
+  transform: none;
+}
+
+/* GEO / entity asides */
+#entity-aside {
+  background: linear-gradient(135deg, #fbf6e6 0%, #f3e7bd 100%);
+  border-left: 5px solid #1b4469;
+  border-radius: 0 12px 12px 0;
+  padding: 1.4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  color: #11304c;
+  line-height: 1.7;
+}
+#entity-aside strong { color: #11304c; }
+#entity-aside a      { color: #11304c; font-weight: 700; }
+
+#geo-summary {
+  background: linear-gradient(135deg, #fdf9ec 0%, #f7eecf 100%);
+  border-left: 5px solid #c9a227;
+  border-radius: 0 16px 16px 0;
+  padding: 2.5rem 3rem;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  font-size: 1.05rem;
+  color: #11304c;
+  line-height: 1.8;
+}
+#geo-summary strong { color: #11304c; }
+
+#about-summary {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.8;
+}
+
+
+/* ── Inline SVG icons ───────────────────────────────────────────────────────
+   These replaced the emoji that used to sit in the stats row, service cards,
+   experience grid and contact links. Emoji render in each platform's own
+   colour font, which reads as informal and looks different on every device;
+   these are monochrome line icons that inherit their context.
+
+   All use stroke="currentColor", so an icon is brand blue in the light
+   sections, white in the dark footer, and green in the success panel without
+   any per-icon colour rules. They ship inline in the HTML — no icon font, no
+   sprite sheet, no extra request.
+
+   Sizing: .icon is 1em so inline icons track the text they sit beside.
+   .icon-inline adds its own right margin, for normal (non-flex) text runs.
+   .icon-flex omits that margin, for parents that already supply a flex gap —
+   using the wrong one is the easy mistake here, so check the parent first. */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  flex: none;                 /* never let a flex parent squash the icon */
+}
+.icon-inline { width: 1.05em; height: 1.05em; vertical-align: -0.15em; margin-right: 0.45em; }
+.icon-flex   { width: 1.15em; height: 1.15em; }
+.icon-lg     { width: 1em;    height: 1em; }
+.icon-xl     { width: 4rem;   height: 4rem; }
+/* =============================================================================
+   nav.css — Fixed top navigation bar and language selector
+   ============================================================================= */
+
+nav {
+  background: #ffffff;
+  padding: 0.8rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Top row: logo | phone | language */
+.nav-top {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+.nav-logo    { grid-column: 1; }
+.nav-phone   { grid-column: 2; justify-self: center; }
+.language-selector { grid-column: 3; justify-self: end; position: relative; }
+
+.nav-logo img {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+/* Brand lockup — picture-only mark + live-text name and tagline. The mark
+   is the same across the AI with Robert family; only its accent colour
+   (sky blue for Seniors) and the tagline change per site. */
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+.brand-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #11304c;
+  white-space: nowrap;
+}
+.brand-tag {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #8a6d0b;   /* darker shade of the sky-blue accent: AA contrast on white */
+}
+
+/* Phone link */
+.nav-phone a {
+  color: #1b4469;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+/* Language selector */
+.language-selector select {
+  background: white;
+  border: 2px solid #e2e8f0;
+  padding: 0.6rem 2.5rem 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+.language-selector select:hover  { border-color: #1b4469; }
+.language-selector select:focus  {
+  outline: none;
+  border-color: #1b4469;
+  box-shadow: 0 0 0 3px rgba(27, 68, 105, 0.15);
+}
+.language-selector::after {
+  content: '▼';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #64748b;
+  font-size: 0.7rem;
+}
+
+/* Nav link list */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  /* Slightly larger than the WCAG 2.2 AA minimum (24x24px) — this is a
+     senior-focused site, and a bigger tap target reduces mis-taps for
+     anyone with less precise fine motor control. */
+  padding: 0.75rem 0.85rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border: 2px solid #e2e8f0;
+  display: inline-block;
+  white-space: nowrap;
+}
+nav a:hover  {
+  color: #1b4469;
+  background: #fbf6e6;
+  border-color: #1b4469;
+  transform: translateY(-2px);
+}
+nav a:focus  { outline: 3px solid #1b4469; outline-offset: 2px; }
+nav a:active { transform: translateY(0); }
+nav a.active {
+  background: #1b4469 !important;
+  color: white !important;
+  border-color: #1b4469 !important;
+}
+
+/* Brand lockup is a logo, not a nav pill: no box, never "active" blue. */
+nav a.brand-lockup,
+nav a.brand-lockup.active,
+nav a.brand-lockup:hover {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: inherit !important;
+  transform: none;
+  padding: 0.15rem 0.25rem;
+}
+nav a.brand-lockup:focus { outline: 3px solid #1b4469; outline-offset: 2px; }
+
+/* ── Scrollable-nav affordance ──
+   .has-overflow is only added by JS when the list actually overflows
+   its container (narrower screens), so this stays invisible on desktop.
+   scrolled-start / scrolled-end hide whichever fade no longer applies. */
+.nav-scroll-wrap {
+  position: relative;
+  width: 100%;
+}
+.nav-scroll-wrap::before,
+.nav-scroll-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 5px; /* matches nav ul's padding-bottom that hides the scrollbar */
+  width: 28px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 1;
+}
+.nav-scroll-wrap::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff 75%);
+}
+.nav-scroll-wrap::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 75%);
+}
+.nav-scroll-wrap.has-overflow:not(.scrolled-end)::after {
+  opacity: 1;
+}
+.nav-scroll-wrap.has-overflow:not(.scrolled-start)::before {
+  opacity: 1;
+}
+/* =============================================================================
+   hero.css — Hero section and stats row
+   ============================================================================= */
+
+.hero {
+  background: linear-gradient(135deg, #fdf9ec 0%, #f7eecf 50%, #f3e7bd 100%);
+  padding: 7rem 2rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px; /* clears fixed nav */
+}
+
+/* Decorative radial blobs */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(27, 68, 105, 0.15) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.12) 0%, transparent 70%);
+  bottom: -150px;
+  left: -100px;
+  border-radius: 50%;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero logo — larger brand mark above the headline, separate from the
+   small fixed-nav logo. Fades and scales in on load for a subtle,
+   polished entrance. */
+.hero-logo {
+  height: 100px;
+  width: auto;
+  margin: 0 auto 1.25rem;
+  display: block;
+  opacity: 0;
+  animation: heroLogoFadeIn 0.8s ease-out 0.15s forwards;
+}
+
+@keyframes heroLogoFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.hero .tagline {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #475569;
+  font-weight: 400;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.hero .area-note {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+}
+
+/* Hero image */
+.hero-image-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  position: relative;
+}
+.hero-image {
+  width: 100%;
+  /* The source file is square (1024x1024), but this slot was always meant to
+     be a banner — the markup used to claim 1000x600. Left unconstrained it
+     rendered as a 1000px square on desktop and a 342px square on phones,
+     which is what made the page feel image-heavy. Fixing the ratio here
+     rather than re-cropping the file keeps one image working at every width.
+     object-position sits below centre: the top of the photo is ceiling and
+     window, the people are in the lower half. */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center 62%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+.hero-image:hover { transform: translateY(-5px); }
+
+/* Stats row */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  padding: 0 2rem;
+}
+.stat-item     { text-align: center; }
+.stat-icon     { display: block; margin-bottom: 1rem; line-height: 1; color: #1b4469; }
+.stat-icon .icon { width: 2.5rem; height: 2.5rem; }
+.stat-number   { font-size: 2rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 0.3rem; }
+.stat-label    { color: #4b5563; font-size: 0.95rem; font-weight: 500; }
+/* =============================================================================
+   sections.css — Services, Pricing, About, Contact, FAQ
+   ============================================================================= */
+
+
+/* ── SERVICES ──────────────────────────────────────────────────────────────── */
+
+.services-container { max-width: 1400px; margin: 0 auto; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Four service cards sit in a 2×2 grid (the three-step "How It Works" stays 3-up) */
+#services .services-grid { grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin-left: auto; margin-right: auto; }
+
+.service-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1b4469, #c9a227);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-color: #1b4469;
+}
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon { display: block; margin-bottom: 1.5rem; line-height: 1; color: #1b4469; }
+.service-icon .icon { width: 3rem; height: 3rem; }
+.service-card h3 { font-size: 1.5rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; }
+.service-card p  { color: #4b5563; margin-bottom: 1.5rem; line-height: 1.7; }
+.service-card ul { list-style: none; padding: 0; }
+.service-card li {
+  padding: 0.6rem 0 0.6rem 2rem;
+  position: relative;
+  color: #475569;
+  font-size: 0.95rem;
+}
+.service-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #c9a227;
+  font-weight: 700;
+}
+
+
+/* ── TESTIMONIALS ──────────────────────────────────────────────────────────── */
+
+.testimonials-container { max-width: 900px; margin: 0 auto; }
+
+.testimonial-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1b4469, #c9a227);
+}
+.testimonial-quote-mark {
+  display: block;
+  font-size: 4rem;
+  line-height: 1;
+  color: #1b4469;
+  opacity: 0.25;
+  font-family: Georgia, serif;
+  margin-bottom: -1rem;
+}
+.testimonial-quote {
+  margin: 0 0 2rem;
+  color: #334155;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+.testimonial-name    { font-weight: 700; color: #0f172a; font-size: 1.05rem; font-style: normal; }
+.testimonial-role     { color: #4b5563; font-size: 0.95rem; }
+.testimonial-org       { color: #4b5563; font-size: 0.95rem; }
+.testimonial-context { color: #1b4469; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 600; }
+
+.testimonial-gbp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.testimonial-gbp-link:hover {
+  border-color: #1b4469;
+  background: #fbf6e6;
+  color: #1b4469;
+}
+.testimonial-gbp-link svg { flex-shrink: 0; }
+
+
+/* ── PRICING ───────────────────────────────────────────────────────────────── */
+
+#pricing { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
+
+.pricing-container { max-width: 1400px; margin: 0 auto; }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.pricing-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+  position: relative;
+}
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-color: #1b4469;
+}
+.pricing-card.featured {
+  background: linear-gradient(135deg, #1b4469 0%, #11304c 100%);
+  border: none;
+  color: white;
+  transform: scale(1.05);
+}
+.pricing-card.featured h3,
+.pricing-card.featured .price,
+.pricing-card.featured p { color: white; }
+.pricing-card.featured:hover { transform: scale(1.05) translateY(-8px); }
+
+.badge {
+  background: #c9a227;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.pricing-card.featured .badge { background: white; color: #1b4469; }
+
+.pricing-card h3    { font-size: 1.3rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; }
+.price              { font-size: 3rem; font-weight: 800; color: #0f172a; margin: 1rem 0; line-height: 1; }
+.price-details      { color: #4b5563; font-size: 0.9rem; margin-bottom: 1.5rem; }
+.pricing-card.featured .price-details { color: rgba(255, 255, 255, 0.9); }
+.pricing-features   { margin: 2rem 0; }
+.pricing-features p { margin: 0.8rem 0; font-size: 0.95rem; }
+
+
+/* ── ABOUT ─────────────────────────────────────────────────────────────────── */
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-photo { position: relative; }
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+}
+.about-photo::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1b4469, #c9a227);
+  border-radius: 24px;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.about-text h3  { font-size: 2.5rem; color: #0f172a; margin-bottom: 1.5rem; font-weight: 800; }
+.about-text p   { color: #475569; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.experience-item {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+.experience-item-icon { display: block; margin-bottom: 0.5rem; line-height: 1; color: #1b4469; }
+.experience-item-icon .icon { width: 2rem; height: 2rem; }
+.experience-item-text { font-weight: 600; color: #0f172a; font-size: 0.95rem; }
+
+
+/* ── CONTACT ───────────────────────────────────────────────────────────────── */
+
+#contact { background: linear-gradient(135deg, #fdf9ec 0%, #f7eecf 100%); }
+
+.contact-container  { max-width: 800px; margin: 0 auto; }
+.contact-info       { text-align: center; margin-bottom: 3rem; }
+.contact-info h3    { font-size: 1.5rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; }
+.contact-info a     { color: #1b4469; text-decoration: none; font-weight: 600; font-size: 1.15rem; }
+
+.contact-form {
+  background: white;
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.form-group       { margin-bottom: 1.8rem; }
+label             { display: block; font-weight: 600; margin-bottom: 0.6rem; color: #0f172a; font-size: 1.05rem; }
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: inherit;
+  transition: all 0.2s;
+  background: #f8fafc;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1b4469;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(27, 68, 105, 0.1);
+}
+input.error,
+select.error,
+textarea.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.error-message {
+  /* WCAG AA fix: #ef4444 measured 3.76:1 against white, below the 4.5:1
+     minimum for this text size/weight. #b91c1c gives 6.47:1 while still
+     reading clearly as a red "something's wrong" color. */
+  color: #b91c1c;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  display: none;
+  font-weight: 600;
+}
+.error-message.show { display: block; }
+
+textarea { resize: vertical; min-height: 140px; }
+
+#form-hint {
+  color: #92400e;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: none;
+}
+
+
+/* ── FAQ ───────────────────────────────────────────────────────────────────── */
+
+.faq-list { max-width: 900px; margin: 0 auto; }
+
+.faq-qa {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.faq-qa:hover { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); }
+
+.faq-question {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 1.8rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: inherit;
+  transition: background 0.2s;
+  min-height: 54px;
+}
+.faq-question:hover               { background: #fbf6e6; color: #1b4469; }
+.faq-question[aria-expanded="true"] { background: #fbf6e6; color: #1b4469; }
+.faq-question:focus               { outline: 3px solid #1b4469; outline-offset: -3px; }
+
+.faq-chevron {
+  font-size: 1rem;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  color: #1b4469;
+  line-height: 1;
+}
+/* The chevron is an inline SVG rather than the old "▼" character: a solid
+   triangle glyph renders at a different weight in every font, and sat
+   visually heavier than the rest of the type. The rotate-on-open below is
+   unchanged — it still keys off aria-expanded, which the JS toggles. */
+.faq-chevron .icon { width: 1.15rem; height: 1.15rem; display: block; }
+.faq-question[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
+
+.faq-answer {
+  display: none;
+  padding: 0 2rem 1.5rem;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.8;
+  background: white;
+}
+.faq-answer.open { display: block; }
+/* =============================================================================
+   footer.css — Site footer
+   ============================================================================= */
+
+footer {
+  background: #0f172a;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  opacity: 0.8;
+}
+/* =============================================================================
+   responsive.css — All breakpoints
+   Edit this file to adjust layout at different screen sizes.
+   Breakpoints: 1200px (tablet-landscape), 1024px (tablet), 768px (mobile)
+   ============================================================================= */
+
+/* ── 1201px+ — compact single-row nav for real desktop screens ──
+   Below this, the nav stacks two rows (logo/phone/language, then the
+   link list) because a wide desktop screen is the only place there's
+   enough width to fit everything in one row without cramming. On
+   desktop this was eating a lot of vertical space for no reason, so
+   collapse it to one row and shrink the logo. Everything below 1200px
+   (including the mobile scrollable-nav behavior) is untouched. */
+@media (min-width: 1201px) {
+  nav { padding: 0.5rem 1.5rem; }
+
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-top {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    width: auto;
+  }
+
+  .nav-logo img { height: 48px; width: 48px; }
+  .brand-name   { font-size: 1.15rem; }
+  .brand-tag    { font-size: 0.9rem; }
+
+  .nav-scroll-wrap { width: auto; }
+  nav ul            { width: auto; }
+
+  /* Hero and scroll-offset previously assumed a tall, two-row nav.
+     Shrinking the nav means less has to be cleared. */
+  .hero { margin-top: 40px; }
+  html  { scroll-padding-top: 100px; }
+}
+
+/* ── 1200px — slightly smaller nav logo and links ── */
+@media (max-width: 1200px) {
+  .nav-logo img { height: 56px; width: 56px; }
+  nav a         { font-size: 0.82rem; padding: 0.4rem 0.6rem; }
+  .nav-phone a  { font-size: 1rem; }
+
+  /* FIX: below 1200px, nav had no overflow fallback — items could silently
+     clip off-screen with no scrollbar (page-level overflow-x is hidden).
+     Extending the phone-style scrollable nav up to the full tablet range
+     guarantees every nav item stays reachable, regardless of item count. */
+  nav ul {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    padding-left: 0.25rem;
+  }
+  nav ul::-webkit-scrollbar { display: none; }
+}
+
+
+/* ── 1024px — single-column grid layouts ── */
+@media (max-width: 1024px) {
+  .services-grid,
+  #services .services-grid { grid-template-columns: 1fr; }
+  .pricing-grid   { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-photo::before { display: none; }
+
+  /* Once the about section stacks, the photo no longer shares the row with
+     the text and would stretch to the full column — 720x900 on a tablet.
+     Cap it and centre it so it reads as a portrait, not a hero image. */
+  .about-photo img {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* ── 768px — mobile ── */
+@media (max-width: 768px) {
+  html { scroll-padding-top: 145px; }
+
+  /* Nav */
+  nav { padding: 0.8rem; }
+  .nav-container { flex-direction: column; gap: 0.8rem; }
+  .nav-top       { justify-content: space-between; }
+  .nav-logo img  { height: 44px; width: 44px; }
+  .brand-lockup  { gap: 0.5rem; padding: 0; }
+  .brand-name    { font-size: 1.02rem; }
+  .brand-tag     { font-size: 0.82rem; }
+  .nav-phone a   { font-size: 0.95rem; }
+
+  /* Hero logo — kept small on mobile so it doesn't push the headline
+     or hero image down noticeably. */
+  .hero-logo { height: 64px; margin-bottom: 0.75rem; }
+
+  nav ul {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    padding-left: 0.25rem;
+  }
+  nav ul::-webkit-scrollbar { display: none; }
+
+  nav a {
+    font-size: 0.82rem;
+    padding: 0.5rem 0.55rem;
+    min-width: 46px;
+    min-height: 44px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav a .nav-text { font-size: 0.82rem; white-space: nowrap; }
+
+  /* Hero */
+  .hero           { padding: 6rem 1.5rem 4rem; margin-top: 140px; }
+  .hero h1        { font-size: 2.5rem; }
+  .hero .tagline  { font-size: 1.2rem; }
+
+  /* General */
+  h2      { font-size: 2.2rem; }
+  section { padding: 5rem 1.5rem; }
+
+  /* Pricing
+     FIX: at 2 columns, each card's intrinsic content (the large price
+     text, "BEST VALUE" badge, padding) is wider than a phone screen
+     can fit in half its width. Grid items default to min-width: auto,
+     so the track refused to shrink below that content width — which
+     pushed the whole grid wider than the viewport and forced the
+     horizontal scroll. Stacking to one full-width column removes the
+     squeeze entirely: every card fits, nothing gets cut off. */
+  .pricing-grid              { grid-template-columns: 1fr; }
+  .pricing-card.featured     { transform: scale(1); }
+
+  /* Stats */
+  .stats            { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+  /* About */
+  .experience-grid  { grid-template-columns: 1fr; }
+
+  /* GEO asides — kept visible on mobile: this is the quick-facts text
+     AI crawlers and mobile-first Google indexing read, and text costs
+     negligible page weight, so hiding it here only cost visibility. */
+  #geo-summary    { padding: 1.5rem; }
+  #entity-aside   { padding: 1.2rem 1.5rem; }
+}
+
+
+/* ── 480px — small phones: keep logo + name + phone + language on one row ── */
+@media (max-width: 480px) {
+  .nav-top { gap: 0.4rem; }
+  .nav-logo img { height: 38px; width: 38px; }
+  .nav-top .brand-lockup { gap: 0.4rem; min-width: 0; }
+  .brand-name { font-size: 0.92rem; letter-spacing: -0.4px; }
+  .brand-tag  { font-size: 0.74rem; }
+  .nav-top .nav-phone a { font-size: 0.8rem; padding: 0.4rem 0.4rem; min-width: 0; gap: 0.2rem; }
+  .nav-top .nav-phone a svg { width: 14px; height: 14px; }
+  .language-selector select { padding: 0.5rem 1.6rem 0.5rem 0.5rem; font-size: 0.8rem; min-width: 3.6rem; }
+  .language-selector::after { right: 0.5rem; }
+}
+
+/* ── 380px — narrowest phones ── */
+@media (max-width: 380px) {
+  .nav-logo img { height: 34px; width: 34px; }
+  .brand-name { font-size: 0.85rem; }
+  .brand-tag  { font-size: 0.7rem; }
+  .nav-top .nav-phone a { font-size: 0.74rem; padding: 0.4rem 0.3rem; }
+  .language-selector select { min-width: 0; padding-right: 1.4rem; }
+}
