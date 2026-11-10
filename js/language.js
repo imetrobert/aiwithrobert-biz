@@ -85,17 +85,17 @@ function setLanguage(lang) {
     // Must stay byte-identical to FR_TITLE/FR_DESC in scripts/build_fr_page.py,
     // which bakes them into /fr/. Title <= 60 chars, description <= 155, or
     // search engines truncate them and Bing flags an SEO error.
-    document.title = 'AI with Robert pour entreprises — IA pratique, Montréal';
+    document.title = 'AI with Robert pour entreprises — IA pour PME, Montréal';
     document.querySelector('meta[name="description"]').setAttribute('content',
-      'Stratégie et formation IA pratiques pour les PME de Montréal. Un vrai rendement, en toute sécurité. Appel découverte gratuit. 514-250-8491.');
+      'Vous payez déjà ChatGPT, Gemini, Copilot ou Claude? J’aide les PME de Montréal à en faire des processus qui font gagner du temps. Appel découverte gratuit.');
     document.documentElement.lang = 'fr';
   } else {
     // Must stay byte-identical to the <title>/<meta name="description"> in
     // index.html's <head>. JS overwrites them on load, so any drift means
     // crawlers that render JS see different metadata than those that don't.
-    document.title = 'AI with Robert for Business — Practical AI, Montréal';
+    document.title = 'AI with Robert for Business — Small Business AI, Montréal';
     document.querySelector('meta[name="description"]').setAttribute('content',
-      'Practical AI strategy and team training for small and mid-sized businesses in Montréal. Real ROI, used safely. Free discovery call. 514-250-8491.');
+      'Already paying for ChatGPT, Gemini, Copilot or Claude? I help Montréal small businesses turn them into workflows that save time. Free discovery call.');
     document.documentElement.lang = 'en';
   }
 

@@ -56,12 +56,40 @@ ENTRY_RE = re.compile(
 # lived only in js/language.js, where no crawler ever saw them because /fr/ was
 # a redirect stub. Making /fr/ a real page exposed them. check_metadata_agrees()
 # keeps these byte-identical to the copies in js/language.js.
-FR_TITLE = "AI with Robert pour entreprises — IA pratique, Montréal"
-FR_DESC = ("Stratégie et formation IA pratiques pour les PME de Montréal. Un vrai "
-           "rendement, en toute sécurité. Appel découverte gratuit. 514-250-8491.")
-FR_KEYWORDS = ("consultant IA Montréal, IA pour PME Montréal, formation IA entreprise Montréal, audit rendement IA, automatisation flux de travail PME, politique IA Loi 25, conférencier IA réseau d'affaires Montréal, formation IA entreprises Québec")
-FR_OG_TITLE = ("AI with Robert pour entreprises — Stratégie IA pratique et formation d’équipe à Montréal")
-FR_OG_DESC = ("Tirez un vrai rendement de l’IA. Stratégie pratique, ateliers d’équipe, automatisation et politiques d’utilisation sûre pour les PME de Montréal. Appel découverte gratuit.")
+FR_TITLE = "AI with Robert pour entreprises — IA pour PME, Montréal"
+FR_DESC = ("Vous payez déjà ChatGPT, Gemini, Copilot ou Claude? J’aide les PME de Montréal à en faire des processus qui font gagner du temps. Appel découverte gratuit.")
+FR_KEYWORDS = ("consultant en intelligence artificielle pour PME, automatisation IA petites entreprises Montréal, intelligence artificielle PME, automatisation des processus d'affaires, formation IA entreprises, optimisation ChatGPT Gemini Copilot Claude, Loi 25 IA")
+FR_OG_TITLE = ("AI with Robert pour entreprises — Tirez plus de l’IA que vous payez déjà")
+FR_OG_DESC = ("Consultation en IA et automatisation des flux de travail pour les petites entreprises de Montréal. Transformez ChatGPT, Gemini, Copilot ou Claude en processus répétables qui font gagner du temps et de l’argent. Appel découverte gratuit.")
+
+# Strings that live outside data-i18n elements (alt text, aria-labels, skip link,
+# JSON-LD). Each (english_as_it_appears_in_index.html, french) pair must match
+# exactly once or more — the build fails loudly if index.html drifts.
+FR_SUBS = [
+    ('<a href="#home" class="skip-link">Skip to main content</a>', '<a href="#home" class="skip-link">Passer au contenu principal</a>'),
+    ('aria-label="AI with Robert for Business — back to top"', 'aria-label="AI with Robert pour entreprises — retour en haut de la page"'),
+    ('aria-label="Language"', 'aria-label="Langue"'),
+    ('alt="AI with Robert for Business logo"', 'alt="Logo d’AI with Robert pour entreprises"'),
+    ('aria-label="Quick facts — AI with Robert for Business"', 'aria-label="En bref — AI with Robert pour entreprises"'),
+    ('aria-label="About AI with Robert for Business — full summary"', 'aria-label="À propos d’AI with Robert pour entreprises — résumé complet"'),
+    ('aria-label="Robert Simon quick facts"', 'aria-label="Robert Simon en bref"'),
+    ('alt="Robert Simon — AI consultant and trainer for businesses in Montréal"', 'alt="Robert Simon — consultant et formateur en IA pour les entreprises de Montréal"'),
+    ('>AI with Robert for Business — Robert Simon</p>', '>AI with Robert pour entreprises — Robert Simon</p>'),
+    # JSON-LD
+    ('"description": "AI with Robert for Business is an independent AI consulting and automation practice for small businesses in Montréal. It helps owners get far more value from the AI subscriptions they already pay for through opportunity assessments, workflow automation, AI agents and practical training. Bilingual English/French, in person or online."',
+     '"description": "AI with Robert pour entreprises est un cabinet indépendant de consultation et d’automatisation en IA pour les petites entreprises de Montréal. Il aide les dirigeants à tirer beaucoup plus de valeur des abonnements d’IA qu’ils paient déjà grâce à l’évaluation des occasions, à l’automatisation des flux de travail, aux agents IA et à la formation pratique. Bilingue français/anglais, en personne ou en ligne."'),
+    ('"disambiguatingDescription": "The business-services branch of AI with Robert, founded by Robert Simon in Côte Saint-Luc, Quebec. Separate from AI with Robert for Seniors. Unaffiliated with any similarly named AI newsletter or online community."',
+     '"disambiguatingDescription": "La branche de services aux entreprises d’AI with Robert, fondée par Robert Simon à Côte Saint-Luc (Québec). Distincte d’AI with Robert pour aînés. Sans lien avec une infolettre ou une communauté en ligne portant un nom semblable."'),
+    ('"name": "AI with Robert for Business — AI Consulting and Automation for Small Businesses in Montréal"', '"name": "AI with Robert pour entreprises — Consultation et automatisation en IA pour petites entreprises à Montréal"'),
+    ('"description": "AI consulting and workflow automation for small businesses in Montréal: get far more from the AI subscriptions you already pay for. Free discovery call. 514-250-8491."',
+     '"description": "Consultation en IA et automatisation des flux de travail pour les petites entreprises de Montréal : tirez beaucoup plus des abonnements d’IA que vous payez déjà. Appel découverte gratuit. 514-250-8491."'),
+    ('"name": "AI Opportunity Assessment"', '"name": "Évaluation des occasions d’IA"'),
+    ('"name": "AI Workflow Automation"', '"name": "Automatisation des flux de travail par l’IA"'),
+    ('"name": "AI Agents & Advanced Automation"', '"name": "Agents IA et automatisation avancée"'),
+    ('"name": "Practical AI Training & Enablement"', '"name": "Formation pratique et accompagnement en IA"'),
+    ('"name": "Speaking for Business Groups"', '"name": "Conférences pour groupes d’affaires"'),
+    ('"jobTitle": "Founder, AI with Robert; AI and digital transformation consultant"', '"jobTitle": "Fondateur, AI with Robert; consultant en IA et en transformation numérique"'),
+]
 
 
 # ── HTML scanning helpers (stdlib only — no bs4/lxml dependency) ────────────
@@ -155,7 +183,8 @@ def apply_translations(doc: str, fr: dict) -> tuple:
             continue
         start = open_tag_start(doc, m.start())
         end = tag_end(doc, start)
-        ph = re.search(r'placeholder="([^"]*)"', doc[start:end])
+        # (?<![\w-]) so we match the real placeholder= attribute, not the tail of data-i18n-placeholder=
+        ph = re.search(r'(?<![\w-])placeholder="([^"]*)"', doc[start:end])
         if ph:
             edits.append((start + ph.start(1), start + ph.end(1),
                           html.escape(fr[key], quote=True)))
@@ -209,9 +238,14 @@ def rewrite_head(doc: str) -> str:
     doc = sub1(r'<meta property="twitter:url" content="[^"]*">',
                '<meta property="twitter:url" content="https://biz.aiwithrobert.com/fr/">',
                doc, "twitter:url")
-    doc = sub1(r'(<img src="hero-business\.svg" alt=")[^"]*(")',
-               '<img src="hero-business.svg" alt="Propriétaires de petites entreprises qui confient leurs tâches répétitives à l’IA : courriels, factures, calendriers et chiffriers passent par un assistant IA et ressortent terminés"',
+    doc = sub1(r'(<img src="hero-business\.jpg"[^>]*? alt=")[^"]*(")',
+               r'\1Propriétaire d’une petite entreprise souriant devant un portable, avec des icônes de temps gagné, d’automatisation, de rapports, de listes de tâches et d’équipe reliées par l’IA\2',
                doc, "hero alt")
+    # alt text, aria-labels, skip link and JSON-LD that live outside data-i18n elements
+    for en_s, fr_s in FR_SUBS:
+        if en_s not in doc:
+            raise ValueError(f"FR_SUBS entry not found in index.html (update FR_SUBS or index.html): {en_s[:80]!r}")
+        doc = doc.replace(en_s, fr_s)
     doc = sub1(r'<meta property="og:site_name" content="[^"]*">',
                '<meta property="og:site_name" content="AI with Robert pour entreprises">',
                doc, "og:site_name")
@@ -242,7 +276,7 @@ def rewrite_head(doc: str) -> str:
 def rewrite_paths(doc: str) -> str:
     """The French page lives one directory down, so document-relative asset
     references would resolve to /fr/... and 404. Make them root-absolute."""
-    assets = ["css/styles.css", "js/bundle.js", "logo.PNG", "hero-business.svg", "profile.jpg", "profile.webp", "favicon.ico",
+    assets = ["css/styles.css", "js/bundle.js", "logo.PNG", "hero-business.jpg", "hero-business.webp", "hero-business-800.jpg", "hero-business-800.webp", "profile.jpg", "profile.webp", "favicon.ico",
               "favicon-32x32.png", "favicon-16x16.png", "apple-touch-icon.png",
               "icon-192.png", "icon-512.png", "manifest.json"]
     for a in assets:
@@ -251,6 +285,17 @@ def rewrite_paths(doc: str) -> str:
         # here costs the WebP optimisation without any visible breakage.
         doc = re.sub(r'((?:href|src|srcset)=")' + re.escape(a) + r'(")',
                      r"\1/" + a + r"\2", doc)
+
+    # srcset values with width descriptors ("a.webp 800w, b.webp 1600w"): root-absolute each URL
+    def _srcset(m):
+        parts = []
+        for item in m.group(2).split(","):
+            item = item.strip()
+            if item and not item.startswith(("/", "http")):
+                item = "/" + item
+            parts.append(item)
+        return m.group(1) + ", ".join(parts) + '"'
+    doc = re.sub(r'(srcset=")([^"]*)"', _srcset, doc)
 
     leftover = set(re.findall(r'(?:href|src|srcset)="((?!https?:|/|#|tel:|mailto:|data:)[^"]+)"', doc))
     if leftover:

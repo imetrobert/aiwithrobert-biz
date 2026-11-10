@@ -8,7 +8,7 @@ locally: `python3 scripts/build_fr_page.py`).
 **Golden rule:** any element with `data-i18n="key"` must have the same English text in `index.html`
 and in `js/i18n.js` (`en`), plus a `fr` entry. Check with `python3 scripts/check_content_sync.py`.
 
-Key prefixes: `nav-`, `hero-`, `stat-`, `entity-aside`/`geo-summary`, `service1-4-`, `process-`/`step1-3-`,
+Key prefixes: `nav-`, `hero-`, `stat-`, `opp-` (the "already paying for AI" section), `entity-aside`/`geo-summary`, `service1-4-`, `process-`/`step1-3-`,
 `speaking-`, `about-`/`exp-`, `contact-`/`form-`/`free-call-`/`success-`, `faq-q-`/`faq-a-`, `footer-`.
 
 Facts repeated for SEO (update all): phone 514-250-8491, email biz@aiwithrobert.com — in `index.html`

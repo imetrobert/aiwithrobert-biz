@@ -13,7 +13,10 @@
   gap: 2rem;
 }
 
-/* Four service cards sit in a 2×2 grid (the three-step "How It Works" stays 3-up) */
+/* Four service cards sit in a 2×2 grid; the four-step "How It Works" runs 4-up on desktop */
+#process .services-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+#process .service-card { padding: 2rem; }
+.services-grid.two-col { grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin-left: auto; margin-right: auto; }
 #services .services-grid { grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin-left: auto; margin-right: auto; }
 
 .service-card {
@@ -375,3 +378,17 @@ textarea { resize: vertical; min-height: 140px; }
   background: white;
 }
 .faq-answer.open { display: block; }
+
+
+/* ── "ALREADY PAYING FOR AI?" opportunity section ──────────────────────────── */
+#opportunity { padding: 6rem 2rem; background: #f8fafc; }
+.platform-label { text-align: center; color: #475569; font-weight: 600; margin: 0 auto 1rem; max-width: 800px; }
+.platform-row { list-style: none; padding: 0; margin: 0 auto 2.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+.platform-pill { padding: 0.55rem 1.2rem; border-radius: 999px; background: #fbf6e6; border: 2px solid #c9a227; color: #11304c; font-weight: 700; }
+.opp-today { background: #f1f5f9; }
+.opp-today h3, .opp-next h3 { margin-bottom: 0.5rem; }
+.opp-next { border: 2px solid #c9a227; }
+.value-callout { max-width: 1000px; margin: 2rem auto 0; background: #11304c; color: #fff; border-radius: 20px; padding: 2.25rem 2.5rem; text-align: center; border-bottom: 5px solid #c9a227; }
+.value-callout h3 { color: #c9a227; font-size: 1.6rem; margin-bottom: 0.75rem; line-height: 1.3; }
+.value-callout p { color: #e2e8f0; line-height: 1.7; font-size: 1.1rem; }
+.value-callout .value-caveat { margin-top: 1rem; font-size: 0.98rem; color: #cbd5e1; }
