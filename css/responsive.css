@@ -63,9 +63,15 @@
 }
 
 
+/* ── 1200px and below — four-step process goes 2×2 ── */
+@media (max-width: 1200px) {
+  #process .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ── 1024px — single-column grid layouts ── */
 @media (max-width: 1024px) {
   .services-grid,
+  .services-grid.two-col,
   #services .services-grid { grid-template-columns: 1fr; }
   .pricing-grid   { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
@@ -183,4 +189,12 @@
   .brand-tag  { font-size: 0.7rem; }
   .nav-top .nav-phone a { font-size: 0.74rem; padding: 0.4rem 0.3rem; }
   .language-selector select { min-width: 0; padding-right: 1.4rem; }
+}
+
+
+/* ── 700px — process steps stack ── */
+@media (max-width: 700px) {
+  #process .services-grid { grid-template-columns: 1fr; }
+  #opportunity { padding: 4rem 1.25rem; }
+  .value-callout { padding: 1.75rem 1.25rem; }
 }

@@ -5,7 +5,8 @@
 ## Business
 Name: AI with Robert for Business (business branch of AI with Robert)
 Owner: Robert Simon
-Type: AI strategy, team training and workflow automation for small and mid-sized businesses
+Type: Independent AI consulting and automation for small businesses (about 5–20 employees); platform-neutral
+Core idea: help small businesses get far more value from the AI subscriptions they already pay for (ChatGPT, Google Gemini, Microsoft Copilot, Claude, and other affordable tools) by moving beyond basic chat towards repeatable workflows, automation and, where it pays off, AI agents with human oversight
 Location: Côte Saint-Luc, Quebec, Canada (H4W) — serves Greater Montréal, in person or online
 Languages: English and French
 Phone: 514-250-8491
@@ -17,12 +18,16 @@ English (canonical): https://biz.aiwithrobert.com/
 French / Français:   https://biz.aiwithrobert.com/fr/
 Both pages are static HTML; no JavaScript is required to read any content.
 
+## How it works
+Discover (find repetitive, time-consuming work) → Design (practical solutions using existing subscriptions and affordable tools) → Implement (workflows, automations and agents, with human approval where appropriate) → Enable (train the owner and staff to run and maintain them). Success is measured in time saved, manual work removed and business value.
+
 ## Services
-- SMB AI ROI Audit & Roadmap: workflow review, tool recommendations, prioritized 90-day plan.
-- Team AI Upskilling & Hands-On Workshops: interactive half-day workshops, prompt libraries, cheat sheets.
-- Practical Workflow Automation: simple AI workflows for drafting, reporting, inquiries and content.
-- AI Safe-Use Policy & Governance: 2-page acceptable-use policy, Law 25 privacy checklist, staff guidelines (practical guidance, not legal advice).
+- AI Opportunity Assessment: review existing AI subscriptions and processes, identify and prioritize repetitive tasks, estimate time savings and ROI, practical roadmap.
+- AI Workflow Automation: incoming documents, extracting information from forms and emails, quotes and proposals, customer inquiry sorting, recurring reports, follow-ups.
+- AI Agents & Advanced Automation: agents that perform defined tasks, multi-step workflows connecting apps, research, AI-assisted customer support, human approval; complexity and cost depend on the tools and integrations required.
+- Practical AI Training & Enablement: get more from existing subscriptions, reusable workflows, responsible use (including Quebec Law 25 awareness; practical guidance, not legal advice).
 - Speaking for business groups and networking organizations (e.g., BNI chapters, chambers).
+Capabilities vary by plan, tool and integration; extra services or paid APIs are explained up front.
 Pricing: scoped per project after a free discovery call. No public price list.
 
 ## Related site
