@@ -93,7 +93,7 @@ const translations = {
     'form-company': 'Company (Optional)',
     'form-interest': 'I’m Interested In',
     'form-option-choose': 'Choose an option...',
-    'form-option-audit': 'AI ROI Audit &amp; Roadmap',
+    'form-option-audit': 'AI ROI Audit & Roadmap',
     'form-option-workshop': 'Team Workshop',
     'form-option-automation': 'Workflow Automation',
     'form-option-policy': 'AI Safe-Use Policy',
@@ -443,6 +443,42 @@ window.addEventListener('load', () => {
     const fr = /^\/fr(\/|$)/i.test(window.location.pathname);
     next.value = window.location.origin + (fr ? '/fr/' : '/') + '?submitted=true#contact';
   }
+})();
+
+// Submit in the background (formsubmit.co AJAX endpoint) so visitors never leave the
+// page or see formsubmit.co's own thank-you page. If JavaScript is unavailable the
+// plain form POST + _next redirect above still works.
+(function () {
+  const form = document.querySelector('.contact-form form');
+  if (!form) return;
+  form.addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    if (!checkFormValidity()) return;
+    const fr = getCurrentLanguage() === 'fr';
+    submitBtn.disabled = true;
+    submitBtn.dataset.label = submitBtn.textContent;
+    submitBtn.textContent = fr ? 'Envoi…' : 'Sending…';
+    try {
+      const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json();
+      if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'send failed');
+      const msg = document.getElementById('success-message');
+      document.querySelector('.contact-form').style.display = 'none';
+      msg.style.display = 'block';
+      msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (err) {
+      submitBtn.textContent = submitBtn.dataset.label;
+      submitBtn.disabled = false;
+      formHint.style.display = 'block';
+      formHint.textContent = fr
+        ? 'Désolé, l’envoi a échoué. Écrivez-moi à biz@aiwithrobert.com ou appelez le 514-250-8491.'
+        : 'Sorry, that didn’t send. Please email biz@aiwithrobert.com or call 514-250-8491.';
+    }
+  });
 })();
 
 // Show success panel after formsubmit.co redirect
