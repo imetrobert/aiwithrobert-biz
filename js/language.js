@@ -87,7 +87,7 @@ function setLanguage(lang) {
     // search engines truncate them and Bing flags an SEO error.
     document.title = 'AI with Robert pour entreprises — IA pour PME, Montréal';
     document.querySelector('meta[name="description"]').setAttribute('content',
-      'Vous payez déjà ChatGPT, Gemini, Copilot ou Claude? J’aide les PME de Montréal à en faire des processus qui font gagner du temps. Appel découverte gratuit.');
+      'L’IA concrète pour petites entreprises et cabinets de Montréal : des flux de travail documentés, bâtis autour de votre travail. Appel découverte gratuit.');
     document.documentElement.lang = 'fr';
   } else {
     // Must stay byte-identical to the <title>/<meta name="description"> in
@@ -95,7 +95,7 @@ function setLanguage(lang) {
     // crawlers that render JS see different metadata than those that don't.
     document.title = 'AI with Robert for Business — Small Business AI, Montréal';
     document.querySelector('meta[name="description"]').setAttribute('content',
-      'Already paying for ChatGPT, Gemini, Copilot or Claude? I help Montréal small businesses turn them into workflows that save time. Free discovery call.');
+      'Practical AI for small businesses and professional practices in Montréal: documented workflows built around your work. Free discovery call.');
     document.documentElement.lang = 'en';
   }
 

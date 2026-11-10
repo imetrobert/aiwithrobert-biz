@@ -196,6 +196,7 @@
 @media (max-width: 700px) {
   #process .services-grid { grid-template-columns: 1fr; }
   #opportunity { padding: 4rem 1.25rem; }
+  #keep { padding: 4rem 1.25rem; }
   .service-card { padding: 1.75rem 1.5rem; }
   .service-card h3 { font-size: 1.3rem; }
   .service-card p { margin-bottom: 1.1rem; }
