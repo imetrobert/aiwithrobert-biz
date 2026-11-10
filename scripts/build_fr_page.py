@@ -209,6 +209,9 @@ def rewrite_head(doc: str) -> str:
     doc = sub1(r'<meta property="twitter:url" content="[^"]*">',
                '<meta property="twitter:url" content="https://biz.aiwithrobert.com/fr/">',
                doc, "twitter:url")
+    doc = sub1(r'(<img src="hero-business\.svg" alt=")[^"]*(")',
+               '<img src="hero-business.svg" alt="Propriétaires de petites entreprises qui confient leurs tâches répétitives à l’IA : courriels, factures, calendriers et chiffriers passent par un assistant IA et ressortent terminés"',
+               doc, "hero alt")
     doc = sub1(r'<meta property="og:site_name" content="[^"]*">',
                '<meta property="og:site_name" content="AI with Robert pour entreprises">',
                doc, "og:site_name")
@@ -239,7 +242,7 @@ def rewrite_head(doc: str) -> str:
 def rewrite_paths(doc: str) -> str:
     """The French page lives one directory down, so document-relative asset
     references would resolve to /fr/... and 404. Make them root-absolute."""
-    assets = ["css/styles.css", "js/bundle.js", "logo.PNG", "profile.jpg", "profile.webp", "favicon.ico",
+    assets = ["css/styles.css", "js/bundle.js", "logo.PNG", "hero-business.svg", "profile.jpg", "profile.webp", "favicon.ico",
               "favicon-32x32.png", "favicon-16x16.png", "apple-touch-icon.png",
               "icon-192.png", "icon-512.png", "manifest.json"]
     for a in assets:
