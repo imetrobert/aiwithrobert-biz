@@ -57,10 +57,10 @@ ENTRY_RE = re.compile(
 # a redirect stub. Making /fr/ a real page exposed them. check_metadata_agrees()
 # keeps these byte-identical to the copies in js/language.js.
 FR_TITLE = "AI with Robert pour entreprises — IA pour PME, Montréal"
-FR_DESC = ("Vous payez déjà ChatGPT, Gemini, Copilot ou Claude? J’aide les PME de Montréal à en faire des processus qui font gagner du temps. Appel découverte gratuit.")
+FR_DESC = ("L’IA concrète pour petites entreprises et cabinets de Montréal : des flux de travail documentés, bâtis autour de votre travail. Appel découverte gratuit.")
 FR_KEYWORDS = ("consultant en intelligence artificielle pour PME, automatisation IA petites entreprises Montréal, intelligence artificielle PME, automatisation des processus d'affaires, formation IA entreprises, optimisation ChatGPT Gemini Copilot Claude, Loi 25 IA")
-FR_OG_TITLE = ("AI with Robert pour entreprises — Tirez plus de l’IA que vous payez déjà")
-FR_OG_DESC = ("Consultation en IA et automatisation des flux de travail pour les petites entreprises de Montréal. Transformez ChatGPT, Gemini, Copilot ou Claude en processus répétables qui font gagner du temps et de l’argent. Appel découverte gratuit.")
+FR_OG_TITLE = ("AI with Robert pour entreprises — Rentabilisez l’IA")
+FR_OG_DESC = ("Consultation en IA et automatisation des flux de travail pour les petites entreprises et les cabinets professionnels de Montréal. Des flux de travail documentés, bâtis autour de votre travail. Appel découverte gratuit.")
 
 # Strings that live outside data-i18n elements (alt text, aria-labels, skip link,
 # JSON-LD). Each (english_as_it_appears_in_index.html, french) pair must match
@@ -76,13 +76,13 @@ FR_SUBS = [
     ('alt="Robert Simon — AI consultant and trainer for businesses in Montréal"', 'alt="Robert Simon — consultant et formateur en IA pour les entreprises de Montréal"'),
     ('>AI with Robert for Business — Robert Simon</p>', '>AI with Robert pour entreprises — Robert Simon</p>'),
     # JSON-LD
-    ('"description": "AI with Robert for Business is an independent AI consulting and automation practice for small businesses in Montréal. It helps owners get far more value from the AI subscriptions they already pay for through opportunity assessments, workflow automation, AI agents and practical training. Bilingual English/French, in person or online."',
-     '"description": "AI with Robert pour entreprises est un cabinet indépendant de consultation et d’automatisation en IA pour les petites entreprises de Montréal. Il aide les dirigeants à tirer beaucoup plus de valeur des abonnements d’IA qu’ils paient déjà grâce à l’évaluation des occasions, à l’automatisation des flux de travail, aux agents IA et à la formation pratique. Bilingue français/anglais, en personne ou en ligne."'),
+    ('"description": "AI with Robert for Business is an independent AI consulting and automation practice for small businesses and professional practices in Montréal. It helps beginners choose AI tools that fit their needs and budget, and helps owners who already pay for AI subscriptions get more value from them, through opportunity assessments, workflow automation, AI agents and practical training. Bilingual English/French, in person or online."',
+     '"description": "AI with Robert pour entreprises est un cabinet indépendant de consultation et d’automatisation en IA pour les petites entreprises et les cabinets professionnels de Montréal. Il aide les débutants à choisir des outils d’IA adaptés à leurs besoins et à leur budget, et aide les dirigeants qui paient déjà des abonnements d’IA à en tirer plus de valeur, grâce à l’évaluation des occasions, à l’automatisation des flux de travail, aux agents IA et à la formation pratique. Bilingue français/anglais, en personne ou en ligne."'),
     ('"disambiguatingDescription": "The business-services branch of AI with Robert, founded by Robert Simon in Côte Saint-Luc, Quebec. Separate from AI with Robert for Seniors. Unaffiliated with any similarly named AI newsletter or online community."',
      '"disambiguatingDescription": "La branche de services aux entreprises d’AI with Robert, fondée par Robert Simon à Côte Saint-Luc (Québec). Distincte d’AI with Robert pour aînés. Sans lien avec une infolettre ou une communauté en ligne portant un nom semblable."'),
     ('"name": "AI with Robert for Business — AI Consulting and Automation for Small Businesses in Montréal"', '"name": "AI with Robert pour entreprises — Consultation et automatisation en IA pour petites entreprises à Montréal"'),
-    ('"description": "AI consulting and workflow automation for small businesses in Montréal: get far more from the AI subscriptions you already pay for. Free discovery call. 514-250-8491."',
-     '"description": "Consultation en IA et automatisation des flux de travail pour les petites entreprises de Montréal : tirez beaucoup plus des abonnements d’IA que vous payez déjà. Appel découverte gratuit. 514-250-8491."'),
+    ('"description": "AI consulting and workflow automation for small businesses and professional practices in Montréal: documented workflows built around your work. Free discovery call. 514-250-8491."',
+     '"description": "Consultation en IA et automatisation des flux de travail pour les petites entreprises et les cabinets professionnels de Montréal : des flux de travail documentés, bâtis autour de votre travail. Appel découverte gratuit. 514-250-8491."'),
     ('"name": "AI Opportunity Assessment"', '"name": "Évaluation des occasions d’IA"'),
     ('"name": "AI Workflow Automation"', '"name": "Automatisation des flux de travail par l’IA"'),
     ('"name": "AI Agents & Advanced Automation"', '"name": "Agents IA et automatisation avancée"'),
