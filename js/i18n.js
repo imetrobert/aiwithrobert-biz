@@ -93,7 +93,7 @@ const translations = {
     'form-company': 'Company (Optional)',
     'form-interest': 'I’m Interested In',
     'form-option-choose': 'Choose an option...',
-    'form-option-audit': 'AI ROI Audit &amp; Roadmap',
+    'form-option-audit': 'AI ROI Audit & Roadmap',
     'form-option-workshop': 'Team Workshop',
     'form-option-automation': 'Workflow Automation',
     'form-option-policy': 'AI Safe-Use Policy',
