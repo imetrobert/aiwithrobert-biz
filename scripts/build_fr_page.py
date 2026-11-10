@@ -205,7 +205,11 @@ def apply_translations(doc: str, fr: dict) -> tuple:
 
 def rewrite_head(doc: str) -> str:
     def sub1(pattern, repl, s, what):
-        s2, n = re.subn(pattern, lambda _: repl, s, count=1)
+        # repl is literal text unless it is a callable taking the match. Never put
+        # \\1-style backreferences in a string repl: it is inserted verbatim (that
+        # is how a literal "\\1" once ended up in the French hero image).
+        s2, n = re.subn(pattern, (lambda m: repl(m)) if callable(repl) else (lambda _: repl),
+                        s, count=1)
         if n != 1:
             raise ValueError(f"head rewrite failed ({n} matches): {what}")
         return s2
@@ -238,8 +242,9 @@ def rewrite_head(doc: str) -> str:
     doc = sub1(r'<meta property="twitter:url" content="[^"]*">',
                '<meta property="twitter:url" content="https://biz.aiwithrobert.com/fr/">',
                doc, "twitter:url")
+    HERO_ALT_FR = "Propriétaire d’une petite entreprise souriant devant un portable, avec des icônes de temps gagné, d’automatisation, de rapports, de listes de tâches et d’équipe reliées par l’IA"
     doc = sub1(r'(<img src="hero-business\.jpg"[^>]*? alt=")[^"]*(")',
-               r'\1Propriétaire d’une petite entreprise souriant devant un portable, avec des icônes de temps gagné, d’automatisation, de rapports, de listes de tâches et d’équipe reliées par l’IA\2',
+               lambda m: m.group(1) + HERO_ALT_FR + m.group(2),
                doc, "hero alt")
     # alt text, aria-labels, skip link and JSON-LD that live outside data-i18n elements
     for en_s, fr_s in FR_SUBS:
@@ -440,6 +445,19 @@ def main() -> int:
 
     if missing:
         print("ERROR — no French translation for: " + ", ".join(missing))
+        return 1
+
+    # Guard against replacement artifacts: a stray regex backreference (\\1, \\2 ...)
+    # in visible markup, or an <img> that was swallowed by a bad substitution.
+    visible = re.sub(r"<script\b.*?</script>", "", doc, flags=re.S)
+    artifacts = re.findall(r".{0,30}\\[0-9].{0,30}", visible)
+    if artifacts:
+        print("ERROR — regex backreference artifacts in output: " + repr(artifacts[:3]))
+        return 1
+    src_imgs = len(re.findall(r"<img\b", INDEX_HTML.read_text(encoding="utf-8")))
+    out_imgs = len(re.findall(r"<img\b", doc))
+    if src_imgs != out_imgs:
+        print(f"ERROR — <img> count differs (index.html {src_imgs}, fr {out_imgs})")
         return 1
 
     OUT_HTML.parent.mkdir(exist_ok=True)
