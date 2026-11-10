@@ -1,0 +1,74 @@
+name: Build Assets
+
+# Runs on every push to main.
+# Concatenates source JS and CSS files into the single files the HTML loads.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'js/**'
+      - 'css/**'
+      # fr/index.html is generated from index.html + js/i18n.js, so an
+      # English-only content edit still has to rebuild the French page.
+      - 'index.html'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # needed to push the built files back
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # ── Bundle JS ──────────────────────────────────────────────────────────
+      # Order matters: translations must load before language.js uses them,
+      # and main.js must be last (it calls functions from all other modules).
+      - name: Concatenate JS source files → js/bundle.js
+        run: |
+          cat \
+            js/i18n.js \
+            js/language.js \
+            js/form.js \
+            js/ui.js \
+            js/main.js \
+            > js/bundle.js
+
+      # ── Bundle CSS ─────────────────────────────────────────────────────────
+      # Order: base first (reset/variables), then components, responsive last.
+      - name: Concatenate CSS source files → css/styles.css
+        run: |
+          cat \
+            css/base.css \
+            css/nav.css \
+            css/hero.css \
+            css/sections.css \
+            css/footer.css \
+            css/responsive.css \
+            > css/styles.css
+
+      # ── Verify English/French text agree before building anything ─────────
+      # Runs first so a missing or mismatched translation fails the build
+      # loudly instead of silently shipping a half-English French page.
+      - name: Check index.html and js/i18n.js are in sync
+        run: python3 scripts/check_content_sync.py
+
+      # ── Generate the static French page ───────────────────────────────────
+      # /fr/ is a real, pre-rendered, no-JS-required French page built from the
+      # `fr` strings in js/i18n.js. It must be regenerated whenever either the
+      # English markup or the translations change, or the two will diverge.
+      - name: Generate fr/index.html
+        run: python3 scripts/build_fr_page.py
+
+      # ── Commit built files back to repo ───────────────────────────────────
+      - name: Commit and push generated files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add js/bundle.js css/styles.css fr/index.html
+          git diff --staged --quiet || git commit -m "chore: rebuild bundle.js, styles.css and fr/index.html [skip ci]"
+          git push

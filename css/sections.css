@@ -1,0 +1,377 @@
+/* =============================================================================
+   sections.css — Services, Pricing, About, Contact, FAQ
+   ============================================================================= */
+
+
+/* ── SERVICES ──────────────────────────────────────────────────────────────── */
+
+.services-container { max-width: 1400px; margin: 0 auto; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Four service cards sit in a 2×2 grid (the three-step "How It Works" stays 3-up) */
+#services .services-grid { grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin-left: auto; margin-right: auto; }
+
+.service-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1b4469, #c9a227);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-color: #1b4469;
+}
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon { display: block; margin-bottom: 1.5rem; line-height: 1; color: #1b4469; }
+.service-icon .icon { width: 3rem; height: 3rem; }
+.service-card h3 { font-size: 1.5rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; }
+.service-card p  { color: #4b5563; margin-bottom: 1.5rem; line-height: 1.7; }
+.service-card ul { list-style: none; padding: 0; }
+.service-card li {
+  padding: 0.6rem 0 0.6rem 2rem;
+  position: relative;
+  color: #475569;
+  font-size: 0.95rem;
+}
+.service-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #c9a227;
+  font-weight: 700;
+}
+
+
+/* ── TESTIMONIALS ──────────────────────────────────────────────────────────── */
+
+.testimonials-container { max-width: 900px; margin: 0 auto; }
+
+.testimonial-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1b4469, #c9a227);
+}
+.testimonial-quote-mark {
+  display: block;
+  font-size: 4rem;
+  line-height: 1;
+  color: #1b4469;
+  opacity: 0.25;
+  font-family: Georgia, serif;
+  margin-bottom: -1rem;
+}
+.testimonial-quote {
+  margin: 0 0 2rem;
+  color: #334155;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+.testimonial-name    { font-weight: 700; color: #0f172a; font-size: 1.05rem; font-style: normal; }
+.testimonial-role     { color: #4b5563; font-size: 0.95rem; }
+.testimonial-org       { color: #4b5563; font-size: 0.95rem; }
+.testimonial-context { color: #1b4469; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 600; }
+
+.testimonial-gbp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.testimonial-gbp-link:hover {
+  border-color: #1b4469;
+  background: #fbf6e6;
+  color: #1b4469;
+}
+.testimonial-gbp-link svg { flex-shrink: 0; }
+
+
+/* ── PRICING ───────────────────────────────────────────────────────────────── */
+
+#pricing { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
+
+.pricing-container { max-width: 1400px; margin: 0 auto; }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.pricing-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+  position: relative;
+}
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-color: #1b4469;
+}
+.pricing-card.featured {
+  background: linear-gradient(135deg, #1b4469 0%, #11304c 100%);
+  border: none;
+  color: white;
+  transform: scale(1.05);
+}
+.pricing-card.featured h3,
+.pricing-card.featured .price,
+.pricing-card.featured p { color: white; }
+.pricing-card.featured:hover { transform: scale(1.05) translateY(-8px); }
+
+.badge {
+  background: #c9a227;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.pricing-card.featured .badge { background: white; color: #1b4469; }
+
+.pricing-card h3    { font-size: 1.3rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; }
+.price              { font-size: 3rem; font-weight: 800; color: #0f172a; margin: 1rem 0; line-height: 1; }
+.price-details      { color: #4b5563; font-size: 0.9rem; margin-bottom: 1.5rem; }
+.pricing-card.featured .price-details { color: rgba(255, 255, 255, 0.9); }
+.pricing-features   { margin: 2rem 0; }
+.pricing-features p { margin: 0.8rem 0; font-size: 0.95rem; }
+
+
+/* ── ABOUT ─────────────────────────────────────────────────────────────────── */
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-photo { position: relative; }
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+}
+.about-photo::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1b4469, #c9a227);
+  border-radius: 24px;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.about-text h3  { font-size: 2.5rem; color: #0f172a; margin-bottom: 1.5rem; font-weight: 800; }
+.about-text p   { color: #475569; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.experience-item {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+.experience-item-icon { display: block; margin-bottom: 0.5rem; line-height: 1; color: #1b4469; }
+.experience-item-icon .icon { width: 2rem; height: 2rem; }
+.experience-item-text { font-weight: 600; color: #0f172a; font-size: 0.95rem; }
+
+
+/* ── CONTACT ───────────────────────────────────────────────────────────────── */
+
+#contact { background: linear-gradient(135deg, #fdf9ec 0%, #f7eecf 100%); }
+
+.contact-container  { max-width: 800px; margin: 0 auto; }
+.contact-info       { text-align: center; margin-bottom: 3rem; }
+.contact-info h3    { font-size: 1.5rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700; }
+.contact-info a     { color: #1b4469; text-decoration: none; font-weight: 600; font-size: 1.15rem; }
+
+.contact-form {
+  background: white;
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.form-group       { margin-bottom: 1.8rem; }
+label             { display: block; font-weight: 600; margin-bottom: 0.6rem; color: #0f172a; font-size: 1.05rem; }
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: inherit;
+  transition: all 0.2s;
+  background: #f8fafc;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1b4469;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(27, 68, 105, 0.1);
+}
+input.error,
+select.error,
+textarea.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.error-message {
+  /* WCAG AA fix: #ef4444 measured 3.76:1 against white, below the 4.5:1
+     minimum for this text size/weight. #b91c1c gives 6.47:1 while still
+     reading clearly as a red "something's wrong" color. */
+  color: #b91c1c;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  display: none;
+  font-weight: 600;
+}
+.error-message.show { display: block; }
+
+textarea { resize: vertical; min-height: 140px; }
+
+#form-hint {
+  color: #92400e;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: none;
+}
+
+
+/* ── FAQ ───────────────────────────────────────────────────────────────────── */
+
+.faq-list { max-width: 900px; margin: 0 auto; }
+
+.faq-qa {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.faq-qa:hover { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); }
+
+.faq-question {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 1.8rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: inherit;
+  transition: background 0.2s;
+  min-height: 54px;
+}
+.faq-question:hover               { background: #fbf6e6; color: #1b4469; }
+.faq-question[aria-expanded="true"] { background: #fbf6e6; color: #1b4469; }
+.faq-question:focus               { outline: 3px solid #1b4469; outline-offset: -3px; }
+
+.faq-chevron {
+  font-size: 1rem;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  color: #1b4469;
+  line-height: 1;
+}
+/* The chevron is an inline SVG rather than the old "▼" character: a solid
+   triangle glyph renders at a different weight in every font, and sat
+   visually heavier than the rest of the type. The rotate-on-open below is
+   unchanged — it still keys off aria-expanded, which the JS toggles. */
+.faq-chevron .icon { width: 1.15rem; height: 1.15rem; display: block; }
+.faq-question[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
+
+.faq-answer {
+  display: none;
+  padding: 0 2rem 1.5rem;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.8;
+  background: white;
+}
+.faq-answer.open { display: block; }
