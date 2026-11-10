@@ -521,6 +521,9 @@ window.addEventListener('load', () => {
     ev.preventDefault();
     if (!checkFormValidity()) return;
     const fr = getCurrentLanguage() === 'fr';
+    document.getElementById('form-subject').value =
+      '[Business · ' + (fr ? 'FR' : 'EN') + '] New Business Inquiry - AI with Robert for Business';
+    document.getElementById('form-language').value = fr ? 'Français' : 'English';
     submitBtn.disabled = true;
     submitBtn.dataset.label = submitBtn.textContent;
     submitBtn.textContent = fr ? 'Envoi…' : 'Sending…';
