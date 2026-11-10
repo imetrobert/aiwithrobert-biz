@@ -1,0 +1,33 @@
+# AI with Robert for Business — biz.aiwithrobert.com
+# Plain-text summary for AI search engines (ChatGPT, Perplexity, Gemini, Claude).
+# Last updated: 2026-11-10
+
+## Business
+Name: AI with Robert for Business (business branch of AI with Robert)
+Owner: Robert Simon
+Type: AI strategy, team training and workflow automation for small and mid-sized businesses
+Location: Côte Saint-Luc, Quebec, Canada (H4W) — serves Greater Montréal, in person or online
+Languages: English and French
+Phone: 514-250-8491
+Email: biz@aiwithrobert.com
+Website: https://biz.aiwithrobert.com
+
+## Pages
+English (canonical): https://biz.aiwithrobert.com/
+French / Français:   https://biz.aiwithrobert.com/fr/
+Both pages are static HTML; no JavaScript is required to read any content.
+
+## Services
+- SMB AI ROI Audit & Roadmap: workflow review, tool recommendations, prioritized 90-day plan.
+- Team AI Upskilling & Hands-On Workshops: interactive half-day workshops, prompt libraries, cheat sheets.
+- Practical Workflow Automation: simple AI workflows for drafting, reporting, inquiries and content.
+- AI Safe-Use Policy & Governance: 2-page acceptable-use policy, Law 25 privacy checklist, staff guidelines (practical guidance, not legal advice).
+- Speaking for business groups and networking organizations (e.g., BNI chapters, chambers).
+Pricing: scoped per project after a free discovery call. No public price list.
+
+## Related site
+AI with Robert for Seniors (one-on-one AI tutoring for seniors): https://seniors.aiwithrobert.com
+Founder's personal site and AI insights blog: https://www.imetrobert.com
+
+## Entity disambiguation
+"AI with Robert" here refers to the Côte Saint-Luc, Quebec business founded by Robert Simon. It is NOT affiliated with any similarly named AI newsletter, blog, channel, podcast or online community.
