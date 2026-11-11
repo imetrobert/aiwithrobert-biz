@@ -30,6 +30,19 @@ Discover (find repetitive, time-consuming work) → Design (practical solutions 
 Capabilities vary by plan, tool and integration; extra services or paid APIs are explained up front.
 Pricing: scoped per project after a free discovery call. No public price list.
 
+
+
+## More pages
+Dedicated pages for each service and common question, each in English and in French:
+- AI consulting for small businesses in Montréal: https://biz.aiwithrobert.com/services/ai-consulting-small-business-montreal/ (French: https://biz.aiwithrobert.com/fr/services/conseil-ia-petite-entreprise-montreal/)
+- ChatGPT, Gemini and Copilot consulting: https://biz.aiwithrobert.com/services/chatgpt-gemini-copilot-consulting/ (French: https://biz.aiwithrobert.com/fr/services/conseil-chatgpt-gemini-copilot/)
+- AI workflow automation for small businesses: https://biz.aiwithrobert.com/services/workflow-automation-small-business/ (French: https://biz.aiwithrobert.com/fr/services/automatisation-flux-de-travail-ia/)
+- AI agents for small teams: https://biz.aiwithrobert.com/services/ai-agents-for-small-teams/ (French: https://biz.aiwithrobert.com/fr/services/agents-ia-petites-equipes/)
+- Practical AI staff training: https://biz.aiwithrobert.com/services/practical-ai-staff-training/ (French: https://biz.aiwithrobert.com/fr/services/formation-pratique-ia-employes/)
+- ChatGPT vs Gemini vs Copilot for a small business: https://biz.aiwithrobert.com/articles/chatgpt-vs-gemini-vs-copilot-small-business/ (French: https://biz.aiwithrobert.com/fr/articles/chatgpt-gemini-copilot-petite-entreprise/)
+- Getting more from the AI subscriptions you already pay for: https://biz.aiwithrobert.com/articles/get-more-from-your-ai-subscriptions/ (French: https://biz.aiwithrobert.com/fr/articles/tirer-plus-de-vos-abonnements-ia/)
+<!-- PAGES:END -->
+
 ## Independence
 AI with Robert for Business is an independent practice of Robert Simon. It is not affiliated with, sponsored by or endorsed by any employer, including Bell Canada. Mentions of his professional experience describe his background only.
 
