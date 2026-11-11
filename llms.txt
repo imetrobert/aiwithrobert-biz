@@ -1,6 +1,6 @@
 # AI with Robert for Business — biz.aiwithrobert.com
 # Plain-text summary for AI search engines (ChatGPT, Perplexity, Gemini, Claude).
-# Last updated: 2026-11-10
+# Last updated: 2026-11-11
 
 ## Business
 Name: AI with Robert for Business (business branch of AI with Robert)
@@ -29,6 +29,9 @@ Discover (find repetitive, time-consuming work) → Design (practical solutions 
 - Speaking for business groups and networking organizations (e.g., BNI chapters, chambers).
 Capabilities vary by plan, tool and integration; extra services or paid APIs are explained up front.
 Pricing: scoped per project after a free discovery call. No public price list.
+
+## Independence
+AI with Robert for Business is an independent practice of Robert Simon. It is not affiliated with, sponsored by or endorsed by any employer, including Bell. Mentions of his professional experience describe his background only.
 
 ## Related site
 AI with Robert for Seniors (one-on-one AI tutoring for seniors): https://seniors.aiwithrobert.com
