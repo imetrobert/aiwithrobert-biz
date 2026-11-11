@@ -1,10 +1,5 @@
 # robots.txt — biz.aiwithrobert.com
 #
-# TEMPORARY (soft launch): pages carry <meta name="robots" content="noindex, follow">
-# and the sitemap is not advertised. Crawling stays allowed on purpose — a
-# noindex tag is only seen if the page can be fetched. At launch: set
-# NOINDEX=False in the generator, and re-add the Sitemap line below.
-#
 # Policy: everything on this site is public and we WANT it crawled, indexed,
 # and quoted — by traditional search engines and by AI answer engines alike.
 #
@@ -105,3 +100,5 @@ Allow: /
 # ── Everyone else ─────────────────────────────────────────────────────────
 User-agent: *
 Allow: /
+
+Sitemap: https://biz.aiwithrobert.com/sitemap.xml
