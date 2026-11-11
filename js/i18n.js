@@ -173,6 +173,7 @@ const translations = {
     'footer-serving': 'Serving Côte Saint-Luc, Montréal &amp; Greater Montréal — in English and French',
     'footer-seniors-link': 'Looking for AI help for seniors? Visit AI with Robert for Seniors',
     'footer-rights': 'All rights reserved.',
+    'footer-hub-link': 'AI with Robert main site',
   },
 
   fr: {
@@ -337,6 +338,7 @@ const translations = {
     'footer-serving': 'Au service de Côte Saint-Luc, de Montréal et du Grand Montréal — en français et en anglais',
     'footer-seniors-link': 'Vous cherchez de l’aide en IA pour aînés? Visitez AI with Robert pour aînés',
     'footer-rights': 'Tous droits réservés.',
+    'footer-hub-link': 'Site principal AI with Robert',
   }
 
 }; // end translations
