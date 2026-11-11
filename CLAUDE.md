@@ -19,3 +19,5 @@ No public prices (discovery-call model). Brand: navy #11304c, gold #c9a227, gold
 Logo: `logo.svg` is the source; `logo.PNG` a 512×512 transparent export; icons from `scripts/build_favicons.py`
 (note: its 16px bulb-only step was written for the blue/teal seniors bubble — re-check the 16px icon if you re-run it
 with the gold logo).
+
+**Indexing (live since launch):** pages are indexable (no `noindex`), `sitemap.xml` lists `/` and `/fr/` with hreflang (bump `lastmod` on content changes), `robots.txt` advertises it, and `.github/workflows/indexnow.yml` pings IndexNow on every content push (key file `<key>.txt` at the repo root must stay published).
