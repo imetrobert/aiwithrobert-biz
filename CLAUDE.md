@@ -54,3 +54,12 @@ call-to-action boxes become a short notice, and the contact section shows the no
 rows read in the toolkit's Waitlist screen). Notice wording EN/FR lives inside `capacity.js` (CONFIG/COMMON). New inbound CTA
 or phone link on the page? Add the right `data-cap` attribute. The phone stays in JSON-LD/NAP on purpose. Tables and
 functions: `migration/site_capacity.sql` in the toolkit repo.
+
+## Contact form: saved copy (Inquiries)
+
+`saveInquiryCopy()` in `js/form.js` sends every contact-form submission to the Supabase RPC `submit_inquiry` as a
+fire-and-forget copy (formsubmit.co still emails it and stays the primary path; a Supabase failure never affects the form).
+Core fields (name, email, phone, company, message) become columns; every other named form field lands in `extra`.
+Renaming or adding form fields? Names flow through automatically, but the toolkit's Inquiries screen reads `interest`,
+`session-type`, `referral`, `team_size`, `tool_*`, `need_*`, `personal_info` by name. Table/function: `migration/site_inquiries.sql`
+in the toolkit repo.
