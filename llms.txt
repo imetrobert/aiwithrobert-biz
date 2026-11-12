@@ -24,11 +24,12 @@ Discover (find repetitive, time-consuming work) → Design (practical solutions 
 ## Services
 - AI Opportunity Assessment: review existing AI subscriptions and processes, identify and prioritize repetitive tasks, estimate time savings and ROI, practical roadmap.
 - AI Workflow Automation: incoming documents, extracting information from forms and emails, quotes and proposals, customer inquiry sorting, recurring reports, follow-ups.
-- AI Agents & Advanced Automation: agents that perform defined tasks, multi-step workflows connecting apps, research, AI-assisted customer support, human approval; complexity and cost depend on the tools and integrations required.
+- AI Agents & Advanced Automation: AI assistants that perform defined tasks inside the client's own AI plan, research, AI-assisted customer support, human approval; limited to what the plan supports.
 - Practical AI Training & Enablement (for larger teams needing more than a working session): employee training on the AI tools and workflows in use, reusable workflows, responsible use (including Quebec Law 25 awareness; practical guidance, not legal advice).
 - Speaking for business groups and networking organizations (e.g., BNI chapters, chambers).
 Capabilities vary by plan, tool and integration; extra services or paid APIs are explained up front.
 Pricing: scoped per project after a free discovery call. No public price list.
+
 
 
 

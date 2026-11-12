@@ -126,11 +126,11 @@ PAGES = [
 </ul>
 <p>These are illustrations, not limits. We start from your processes.</p>
 <h2>How it is done</h2>
-<p>I design solutions around your existing subscriptions, affordable integrations and the right automation tools, then set up the workflows with human approval wherever it matters.</p>
+<p>I design solutions around your existing subscriptions and what your plan can do, then set up the workflows with human approval wherever it matters.</p>
 <h2>What you keep</h2>
 <p>Every workflow comes with documentation and a walkthrough, so you and your team can keep using it, adjust it and rely on it without me.</p>
 <h2>Honest about fit</h2>
-<p>Not every task is worth automating. I tell you plainly when a simple prompt or a checklist is enough, and what extra tools or paid connections a workflow would need before you commit.</p>
+<p>Not every task is worth automating. I tell you plainly when a simple prompt or a checklist is enough, and what your plan can and cannot do before you commit.</p>
 <h2>Start with a discovery call</h2>
 <p>We look at the tasks that eat your time and decide together whether automation fits. Scope is agreed up front, with no public price list.</p>
 """,
@@ -153,11 +153,11 @@ PAGES = [
 </ul>
 <p>Ces exemples illustrent des cas possibles, ils n’en marquent pas la limite. Nous partons de vos processus.</p>
 <h2>Comment procéder</h2>
-<p>Je conçois des solutions à partir de vos abonnements existants, d’intégrations abordables et des bons outils d’automatisation, puis je mets en place les flux avec une approbation humaine là où c’est important.</p>
+<p>Je conçois des solutions à partir de vos abonnements existants et de ce que votre forfait permet, puis je mets en place les flux avec une approbation humaine là où c’est important.</p>
 <h2>Ce que vous conservez</h2>
 <p>Chaque flux est accompagné de documentation et d’une démonstration, pour que vous et votre équipe puissiez continuer à l’utiliser, l’ajuster et vous y fier sans moi.</p>
 <h2>Honnête sur la pertinence</h2>
-<p>Toutes les tâches ne valent pas la peine d’être automatisées. Je vous dis franchement quand une simple requête ou une liste de vérification suffit, et quels outils ou connexions payantes un flux exigerait avant que vous vous engagiez.</p>
+<p>Toutes les tâches ne valent pas la peine d’être automatisées. Je vous dis franchement quand une simple requête ou une liste de vérification suffit, et ce que votre forfait permet ou non avant que vous vous engagiez.</p>
 <h2>Commencer par un appel découverte</h2>
 <p>Nous examinons les tâches qui vous font perdre du temps et décidons ensemble si l’automatisation convient. L’ampleur est convenue à l’avance, sans liste de prix publique.</p>
 """,
@@ -170,14 +170,14 @@ PAGES = [
   "en": dict(
     slug="ai-agents-for-small-teams",
     title="AI Agents for Small Teams: Practical and Under Your Control",
-    desc="AI agents that carry out defined tasks across your tools, with human approval built in. Only recommended when it pays off. Small teams in Montréal.",
+    desc="AI agents that carry out defined tasks inside your AI plan, with human approval built in. Only offered when your plan supports it. Small teams in Montréal.",
     h1="AI agents for small teams",
-    intro="An AI agent is an assistant set up to carry out a defined job across your tools, such as research or first-line customer replies. It is for businesses ready to go further, and not every business needs one.",
+    intro="An AI agent is an assistant set up inside your AI plan to carry out a defined job, such as research or first-line customer replies. It is only offered where your plan supports it, and not every business needs one.",
     body="""
 <h2>What an agent can do</h2>
 <ul>
 <li>Handle a defined job, such as research or first-line customer replies</li>
-<li>Run multi-step workflows that connect your apps and business information</li>
+<li>Run multi-step workflows using the connections your plan includes</li>
 <li>Pause for human approval wherever a decision matters</li>
 </ul>
 <h2>When it makes sense</h2>
@@ -189,20 +189,20 @@ PAGES = [
 <h2>Where to begin</h2>
 <p>A free discovery call. We check whether an agent fits your situation or whether something simpler serves you better.</p>
 """,
-    faq=[("What is an AI agent for a small business?", "An AI agent is an assistant set up to carry out a defined job across your tools, such as research or first-line customer replies, with human approval built in where it matters."),
+    faq=[("What is an AI agent for a small business?", "An AI agent is an assistant set up inside your AI plan to carry out a defined job, such as research or first-line customer replies, with human approval built in where it matters."),
          ("Does my small business need AI agents?", "Not necessarily. Agents suit frequent, well-defined, tedious tasks. Many businesses are better served by good prompts or simple workflows, and I only recommend an agent when it pays off.")],
   ),
   "fr": dict(
     slug="agents-ia-petites-equipes",
     title="Agents IA pour petites équipes : pratiques et sous votre contrôle",
-    desc="Des agents IA qui accomplissent des tâches précises dans vos outils, avec approbation humaine. Recommandés seulement quand c’est rentable. Montréal.",
+    desc="Des agents IA qui accomplissent des tâches précises dans votre forfait d’IA, avec approbation humaine. Offerts seulement si votre forfait le permet. Montréal.",
     h1="Agents IA pour petites équipes",
-    intro="Un agent IA est un assistant configuré pour accomplir une tâche précise dans vos outils, comme la recherche ou les premières réponses aux clients. Il s’adresse aux entreprises prêtes à aller plus loin; toutes n’en ont pas besoin.",
+    intro="Un agent IA est un assistant configuré dans votre forfait d’IA pour accomplir une tâche précise, comme la recherche ou les premières réponses aux clients. Il n’est offert que si votre forfait le permet; toutes les entreprises n’en ont pas besoin.",
     body="""
 <h2>Ce qu’un agent peut faire</h2>
 <ul>
 <li>Accomplir une tâche précise, comme la recherche ou les premières réponses aux clients</li>
-<li>Exécuter des flux en plusieurs étapes qui relient vos applications et vos données d’affaires</li>
+<li>Exécuter des flux en plusieurs étapes qui utilisent les connexions incluses dans votre forfait</li>
 <li>S’arrêter pour obtenir une approbation humaine chaque fois qu’une décision est importante</li>
 </ul>
 <h2>Quand cela a du sens</h2>
@@ -214,7 +214,7 @@ PAGES = [
 <h2>Par où commencer</h2>
 <p>Par un appel découverte gratuit. Nous vérifions si un agent convient à votre situation ou si quelque chose de plus simple vous servirait mieux.</p>
 """,
-    faq=[("Qu’est-ce qu’un agent IA pour une petite entreprise?", "Un agent IA est un assistant configuré pour accomplir une tâche précise dans vos outils, comme la recherche ou les premières réponses aux clients, avec une approbation humaine là où c’est important."),
+    faq=[("Qu’est-ce qu’un agent IA pour une petite entreprise?", "Un agent IA est un assistant configuré dans votre forfait d’IA pour accomplir une tâche précise, comme la recherche ou les premières réponses aux clients, avec une approbation humaine là où c’est important."),
          ("Ma petite entreprise a-t-elle besoin d’agents IA?", "Pas nécessairement. Les agents conviennent aux tâches fréquentes, bien définies et fastidieuses. Beaucoup d’entreprises sont mieux servies par de bonnes requêtes ou des flux simples, et je ne recommande un agent que lorsque c’est rentable.")],
   ),
  },
