@@ -15,7 +15,7 @@ Facts repeated for SEO (update all): phone 514-250-8491, email biz@aiwithrobert.
 (meta, JSON-LD, aside blocks, contact, footer NAP), `js/i18n.js` (en + fr), `js/language.js` (title/description
 strings, must match `<head>` and `scripts/build_fr_page.py`), `llms.txt`.
 
-No public prices (discovery-call model). Brand: navy #11304c, gold #c9a227, gold text #8a6d0b.
+Prices: the home-page Pricing section (`pricing-*`, `price1-4-*` keys) is the one place with prices; also in `llms.txt`. Change a price in index.html + js/i18n.js (en+fr) + llms.txt together. The toolkit's Proposal builder has its own copy (FX_PRICE in imetrobert/aiwithrobert-toolkit index.html): keep them equal. Discovery-call model otherwise. Brand: navy #11304c, gold #c9a227, gold text #8a6d0b.
 Logo: `logo.svg` is the source; `logo.PNG` a 512×512 transparent export; icons from `scripts/build_favicons.py`
 (note: its 16px bulb-only step was written for the blue/teal seniors bubble — re-check the 16px icon if you re-run it
 with the gold logo).
@@ -28,7 +28,7 @@ Pages at `services/<slug>/` and `articles/<slug>/` (EN) and `fr/services/…`, `
 `python3 scripts/build_pages.py` from `scripts/pages_data.py`. Edit wording in the data file, never the generated HTML.
 The script also refreshes the `PAGES:START/END` block in `sitemap.xml` and the `## More pages` section of `llms.txt`;
 the IndexNow workflow submits every sitemap URL. The footer link row is `footer-pages` (i18n, EN/FR). Keep the same rules
-as the home page: no prices, no invented clients or results, independence note naming Bell Canada.
+as the home page: no prices beyond the home-page starting prices, no invented clients or results, independence note naming Bell Canada.
 
 ## Contact form: optional "Help me prepare" fields
 
@@ -39,3 +39,7 @@ formsubmit.co email as: `team_size` (1 / 2-5 / 6-20 / 21+), `tool_chatgpt|claude
 `need_writing`=write, `need_documents`=files, `need_reuse`=reuse, `need_own_data`=own, `need_schedule`=sched,
 `need_automatic`=auto, `need_images`=img, `need_office_files`=office, `need_research`=web.
 (Privacy `personal_info` = priv; team_size = team and the number of users.) Keep these names stable; the labels are i18n keys `form-need-*`, `form-tool-*`, `form-team-*`, `form-privacy-*`.
+
+## JSON-LD wording changes
+
+The French page builder (`scripts/build_fr_page.py`, `FR_SUBS`) matches exact English JSON-LD strings in `index.html`. If you reword a JSON-LD string, update the matching entry in `FR_SUBS` too, or the Build Assets workflow fails. Run `python3 scripts/build_fr_page.py` locally before pushing.

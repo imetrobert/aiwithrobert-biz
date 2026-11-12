@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Content for the business service pages and articles. Edit wording HERE, then run
-`python3 scripts/build_pages.py`. Rules: independent and platform-neutral, no prices,
+`python3 scripts/build_pages.py`. Rules: independent and platform-neutral, starting prices only as on the home page,
 no invented statistics, clients, results or savings figures. Quebec French."""
 
 PAGES = [
@@ -26,7 +26,7 @@ PAGES = [
 <h2>Who it is for</h2>
 <p>Professional services, trades, retail, health and wellness practices and other small teams in Greater Montréal. Beginners with no AI subscription yet are welcome too.</p>
 <h2>How we start</h2>
-<p>With a free discovery call. We look at the tools you use and the tasks that eat your time, and you decide whether to go further. Each engagement is scoped up front, and there is no public price list.</p>
+<p>With a free discovery call. We look at the tools you use and the tasks that eat your time, and you decide whether to go further. Starting prices are on the home page, and each engagement is scoped up front.</p>
 """,
     faq=[("What does an AI consultant do for a small business?", "An AI consultant reviews the tools and processes a business already has, finds the repetitive tasks where AI can save time, and sets up practical, documented ways to use it. AI with Robert for Business does this for small businesses in Greater Montréal."),
          ("Do I need an AI subscription before I start?", "No. Businesses with no AI subscription are welcome, and so are those already paying for tools like ChatGPT, Gemini, Copilot or Claude.")],
@@ -51,7 +51,7 @@ PAGES = [
 <h2>À qui s’adresse ce service</h2>
 <p>Services professionnels, métiers spécialisés, commerce de détail, cabinets de santé et de bien-être et autres petites équipes du Grand Montréal. Les débutants qui n’ont pas encore d’abonnement d’IA sont aussi les bienvenus.</p>
 <h2>Comment commencer</h2>
-<p>Par un appel découverte gratuit. Nous examinons les outils que vous utilisez et les tâches qui vous font perdre du temps, puis vous décidez si vous voulez aller plus loin. Chaque mandat est défini à l’avance, et il n’y a pas de liste de prix publique.</p>
+<p>Par un appel découverte gratuit. Nous examinons les outils que vous utilisez et les tâches qui vous font perdre du temps, puis vous décidez si vous voulez aller plus loin. Les prix de départ sont sur la page d’accueil, et chaque mandat est défini à l’avance.</p>
 """,
     faq=[("Que fait un consultant en IA pour une petite entreprise?", "Un consultant en IA passe en revue les outils et les processus d’une entreprise, repère les tâches répétitives où l’IA peut faire gagner du temps et met en place des façons pratiques et documentées de l’utiliser. AI with Robert pour entreprises offre ce service aux petites entreprises du Grand Montréal."),
          ("Ai-je besoin d’un abonnement d’IA pour commencer?", "Non. Les entreprises sans abonnement d’IA sont les bienvenues, tout comme celles qui paient déjà pour des outils comme ChatGPT, Gemini, Copilot ou Claude.")],
@@ -78,7 +78,7 @@ PAGES = [
 <li>Configured workflows around your recurring tasks, with a walkthrough</li>
 </ul>
 <h2>Start with a conversation</h2>
-<p>A free discovery call is the first step. There is no obligation and no public price list; each engagement is scoped after we talk.</p>
+<p>A free discovery call is the first step. There is no obligation. Starting prices are on the home page, and each engagement is scoped after we talk.</p>
 """,
     faq=[("Which is best for a small business: ChatGPT, Gemini or Copilot?", "It depends on the tools your team already uses and the tasks you want help with. There is no single best choice, so it is worth comparing them against your real work before paying for more subscriptions."),
          ("Can you help us use the AI subscription we already have?", "Yes. Many teams use only a small part of their subscription. I review how it is used and set up tailored prompts and workflows for recurring tasks.")],
@@ -102,7 +102,7 @@ PAGES = [
 <li>Des flux de travail configurés autour de vos tâches récurrentes, avec une démonstration</li>
 </ul>
 <h2>Commencer par une conversation</h2>
-<p>Un appel découverte gratuit est la première étape. Aucun engagement et aucune liste de prix publique; chaque mandat est défini après notre discussion.</p>
+<p>Un appel découverte gratuit est la première étape. Aucun engagement. Les prix de départ sont sur la page d’accueil, et chaque mandat est défini après notre discussion.</p>
 """,
     faq=[("Quel outil est le meilleur pour une petite entreprise : ChatGPT, Gemini ou Copilot?", "Cela dépend des outils que votre équipe utilise déjà et des tâches pour lesquelles vous voulez de l’aide. Il n’y a pas de meilleur choix unique : mieux vaut les comparer à votre travail réel avant de payer d’autres abonnements."),
          ("Pouvez-vous nous aider à utiliser l’abonnement d’IA que nous avons déjà?", "Oui. Beaucoup d’équipes n’utilisent qu’une petite partie de leur abonnement. Je vérifie comment il est utilisé et je mets en place des requêtes et des flux adaptés aux tâches récurrentes.")],
@@ -132,7 +132,7 @@ PAGES = [
 <h2>Honest about fit</h2>
 <p>Not every task is worth automating. I tell you plainly when a simple prompt or a checklist is enough, and what your plan can and cannot do before you commit.</p>
 <h2>Start with a discovery call</h2>
-<p>We look at the tasks that eat your time and decide together whether automation fits. Scope is agreed up front, with no public price list.</p>
+<p>We look at the tasks that eat your time and decide together whether automation fits. Scope and final price are agreed up front; starting prices are on the home page.</p>
 """,
     faq=[("What business tasks can AI automate?", "Common examples are processing incoming documents and emails, preparing quotes from templates, sorting customer inquiries with follow-ups, and building recurring reports. The right candidates depend on your own processes."),
          ("Will I keep control of an automated workflow?", "Yes. Human approval is built in wherever it matters, and every workflow comes with documentation and a walkthrough so your team can use and adjust it.")],
@@ -159,7 +159,7 @@ PAGES = [
 <h2>Honnête sur la pertinence</h2>
 <p>Toutes les tâches ne valent pas la peine d’être automatisées. Je vous dis franchement quand une simple requête ou une liste de vérification suffit, et ce que votre forfait permet ou non avant que vous vous engagiez.</p>
 <h2>Commencer par un appel découverte</h2>
-<p>Nous examinons les tâches qui vous font perdre du temps et décidons ensemble si l’automatisation convient. L’ampleur est convenue à l’avance, sans liste de prix publique.</p>
+<p>Nous examinons les tâches qui vous font perdre du temps et décidons ensemble si l’automatisation convient. L’ampleur et le prix final sont convenus à l’avance; les prix de départ sont sur la page d’accueil.</p>
 """,
     faq=[("Quelles tâches d’entreprise l’IA peut-elle automatiser?", "Parmi les exemples courants : le traitement des documents et courriels entrants, la préparation de soumissions à partir de modèles, le tri des demandes de clients avec suivis, et les rapports récurrents. Les bonnes candidates dépendent de vos propres processus."),
          ("Garderai-je le contrôle d’un flux automatisé?", "Oui. Une approbation humaine est intégrée là où c’est important, et chaque flux est accompagné de documentation et d’une démonstration pour que votre équipe puisse l’utiliser et l’ajuster.")],
@@ -185,7 +185,7 @@ PAGES = [
 <h2>You stay in control</h2>
 <p>Human approval is built in where it matters, so nothing important happens without you. Limits and access to your data are decided up front.</p>
 <h2>Scope and cost, explained first</h2>
-<p>Scope and cost depend on the tools and connections involved, such as extra services or paid APIs. These are explained before you commit, and there is no public price list.</p>
+<p>Scope and cost depend on the tools and connections involved, such as extra services or paid APIs. These are explained before you commit; starting prices are on the home page.</p>
 <h2>Where to begin</h2>
 <p>A free discovery call. We check whether an agent fits your situation or whether something simpler serves you better.</p>
 """,
@@ -210,7 +210,7 @@ PAGES = [
 <h2>Vous gardez le contrôle</h2>
 <p>Une approbation humaine est intégrée là où c’est important : rien d’important ne se produit sans vous. Les limites et l’accès à vos données sont décidés dès le départ.</p>
 <h2>Ampleur et coût, expliqués d’abord</h2>
-<p>L’ampleur et le coût dépendent des outils et des connexions requis, comme des services additionnels ou des API payantes. Tout cela est expliqué avant que vous vous engagiez, et il n’y a pas de liste de prix publique.</p>
+<p>L’ampleur et le coût dépendent des outils et des connexions requis, comme des services additionnels ou des API payantes. Tout cela est expliqué avant que vous vous engagiez; les prix de départ sont sur la page d’accueil.</p>
 <h2>Par où commencer</h2>
 <p>Par un appel découverte gratuit. Nous vérifions si un agent convient à votre situation ou si quelque chose de plus simple vous servirait mieux.</p>
 """,
@@ -243,7 +243,7 @@ PAGES = [
 <h2>Where it fits</h2>
 <p>For a small team, the core offer is a scoped working session that produces documentation and configured workflows. Employee training is a separate, optional service for teams that want to go further.</p>
 <h2>Start with a discovery call</h2>
-<p>We talk about your team and your tools, and I suggest a format that fits. No obligation and no public price list.</p>
+<p>We talk about your team and your tools, and I suggest a format that fits. No obligation. Starting prices are on the home page.</p>
 """,
     faq=[("Do you train employees to use AI at work?", "Yes. Practical training covers getting more from existing subscriptions, building reusable prompts and workflows, spotting where automation fits and using AI responsibly with privacy in mind. It can be given in English, French or both."),
          ("Is the AI training legal advice about Law 25?", "No. Privacy points are practical guidance for everyday use of AI tools, not legal advice.")],
@@ -271,7 +271,7 @@ PAGES = [
 <h2>Où elle s’inscrit</h2>
 <p>Pour une petite équipe, l’offre de base est une séance de travail définie qui produit de la documentation et des flux configurés. La formation des employés est un service distinct et facultatif, pour les équipes qui veulent aller plus loin.</p>
 <h2>Commencer par un appel découverte</h2>
-<p>Nous parlons de votre équipe et de vos outils, et je propose un format qui convient. Aucun engagement et aucune liste de prix publique.</p>
+<p>Nous parlons de votre équipe et de vos outils, et je propose un format qui convient. Aucun engagement. Les prix de départ sont sur la page d’accueil.</p>
 """,
     faq=[("Formez-vous les employés à utiliser l’IA au travail?", "Oui. La formation pratique couvre l’optimisation des abonnements existants, la création de requêtes et de flux réutilisables, le repérage des occasions d’automatisation et une utilisation responsable de l’IA en tenant compte de la vie privée. Elle peut être donnée en français, en anglais ou dans les deux langues."),
          ("La formation donne-t-elle des conseils juridiques sur la Loi 25?", "Non. Les points sur la vie privée sont des repères pratiques pour l’usage courant des outils d’IA, et non des conseils juridiques.")],
