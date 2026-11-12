@@ -43,3 +43,14 @@ formsubmit.co email as: `team_size` (1 / 2-5 / 6-20 / 21+), `tool_chatgpt|claude
 ## JSON-LD wording changes
 
 The French page builder (`scripts/build_fr_page.py`, `FR_SUBS`) matches exact English JSON-LD strings in `index.html`. If you reword a JSON-LD string, update the matching entry in `FR_SUBS` too, or the Build Assets workflow fails. Run `python3 scripts/build_fr_page.py` locally before pushing.
+
+## At-capacity mode (waitlist instead of inbound requests)
+
+`js/capacity.js` is a standalone script (NOT in `js/bundle.js`) loaded on every page, including the generated service and
+guide pages (`scripts/build_pages.py`). It calls the public Supabase RPC `site_capacity('business')`; the owner switches the
+mode on/off and schedules it in the toolkit ("Site availability"). When on: `data-cap="hide"` elements are hidden (phone
+link, booking button, contact form, discovery box), `data-cap="wait"` buttons become "Join the waitlist", `data-cap="swap"`
+call-to-action boxes become a short notice, and the contact section shows the notice + waitlist form (RPC `join_waitlist`,
+rows read in the toolkit's Waitlist screen). Notice wording EN/FR lives inside `capacity.js` (CONFIG/COMMON). New inbound CTA
+or phone link on the page? Add the right `data-cap` attribute. The phone stays in JSON-LD/NAP on purpose. Tables and
+functions: `migration/site_capacity.sql` in the toolkit repo.
