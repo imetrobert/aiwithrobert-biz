@@ -115,7 +115,7 @@ def render(lang, p):
 <nav class="rel" aria-label="{u['related']}"><h2>{u['related']}</h2><ul>{rel}</ul></nav>
 <p><a href="{u['home']}">{u['back']}</a></p>
 </main>
-<footer><p>{u['indep']}</p><p><a href="mailto:{EMAIL}">{EMAIL}</a></p></footer>
+<footer><p>{u['indep']}</p><p data-cap="hide"><a href="mailto:{EMAIL}">{EMAIL}</a></p></footer>
 <script defer src="/js/capacity.js?v=20261112"></script>
 </body>
 </html>

@@ -14,6 +14,7 @@
     key: "sb_publishable_oPa7fZdSTeXKuCwpOF338Q_PcXS57go",
     bg: "#fbf6e3", border: "#eadfae", ink: "#11304c",
     mount: "#contact .contact-container",
+    phone: "514-250-8491", scrub: ".faq-qa, aside",
     en: {
       title: "I'm fully booked right now",
       body: "Thank you for your interest in AI with Robert for Business. I'm at full capacity and am not taking new requests at the moment. Leave your details below and I'll contact you personally as soon as I have availability.",
@@ -115,6 +116,8 @@
       if (hdr && hdr.nextSibling) m.insertBefore(box, hdr.nextSibling); else m.appendChild(box);
     }
   }
+  /* Any FAQ answer or summary blurb that prints the phone number is hidden too while at capacity. */
+  if (CONFIG.scrub) [].slice.call(doc.querySelectorAll(CONFIG.scrub)).forEach(function (n) { if (n.textContent.indexOf(CONFIG.phone) !== -1) n.setAttribute("data-cap", "hide"); });
   var cached = null; try { cached = JSON.parse(localStorage.getItem(CK) || "null"); } catch (e) {}
   if (cached && cached.on) apply(true, cached.reopen);
   fetch(CONFIG.url + "/rest/v1/rpc/site_capacity", { method: "POST", headers: { apikey: CONFIG.key, "Content-Type": "application/json" }, body: JSON.stringify({ p_site: CONFIG.site }) })
