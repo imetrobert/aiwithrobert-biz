@@ -29,3 +29,13 @@ Pages at `services/<slug>/` and `articles/<slug>/` (EN) and `fr/services/…`, `
 The script also refreshes the `PAGES:START/END` block in `sitemap.xml` and the `## More pages` section of `llms.txt`;
 the IndexNow workflow submits every sitemap URL. The footer link row is `footer-pages` (i18n, EN/FR). Keep the same rules
 as the home page: no prices, no invented clients or results, independence note naming Bell Canada.
+
+## Contact form: optional "Help me prepare" fields
+
+The `<details class="prep">` block in the contact form (all optional, never in `reqFields` in `js/form.js`) collects what
+the toolkit's Feasibility check needs, so Robert can enter an inquiry there before the call. Field names arrive in the
+formsubmit.co email as: `team_size` (1 / 2-5 / 6-20 / 21+), `tool_chatgpt|claude|gemini|copilot|none|unsure`,
+`personal_info` (yes / no / not-sure), and `need_*` checkboxes that map to Feasibility needs:
+`need_writing`=write, `need_documents`=files, `need_reuse`=reuse, `need_own_data`=own, `need_schedule`=sched,
+`need_automatic`=auto, `need_images`=img, `need_office_files`=office, `need_research`=web.
+(Privacy `personal_info` = priv; team_size = team and the number of users.) Keep these names stable; the labels are i18n keys `form-need-*`, `form-tool-*`, `form-team-*`, `form-privacy-*`.

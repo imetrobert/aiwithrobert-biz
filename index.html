@@ -667,6 +667,50 @@
                         </select>
                         <div class="error-message" id="session-type-error" data-i18n="form-error-choice">Please choose an option</div>
                     </div>
+                    <details class="prep">
+                        <summary data-i18n="form-prep-summary">Help me prepare for our call (optional, about 1 minute)</summary>
+                        <p class="prep-note" data-i18n="form-prep-note">Nothing here is required. These answers help me prepare so our call is more useful and I can tell you up front what is realistic.</p>
+                        <div class="form-group">
+                            <label for="team-size" data-i18n="form-team">How many people would use AI?</label>
+                            <select id="team-size" name="team_size">
+                                <option value="" data-i18n="form-option-choose">Choose an option...</option>
+                                <option value="1" data-i18n="form-team-1">Just me</option>
+                                <option value="2-5" data-i18n="form-team-2">2 to 5 people</option>
+                                <option value="6-20" data-i18n="form-team-3">6 to 20 people</option>
+                                <option value="21+" data-i18n="form-team-4">More than 20 people</option>
+                            </select>
+                        </div>
+                        <fieldset class="form-group check-group">
+                            <legend data-i18n="form-tools-label">AI tools you already pay for</legend>
+                            <label class="check"><input type="checkbox" name="tool_chatgpt" value="Yes"> <span>ChatGPT</span></label>
+                            <label class="check"><input type="checkbox" name="tool_claude" value="Yes"> <span>Claude</span></label>
+                            <label class="check"><input type="checkbox" name="tool_gemini" value="Yes"> <span>Gemini</span></label>
+                            <label class="check"><input type="checkbox" name="tool_copilot" value="Yes"> <span>Microsoft Copilot</span></label>
+                            <label class="check"><input type="checkbox" name="tool_none" value="Yes"> <span data-i18n="form-tool-none">None yet</span></label>
+                            <label class="check"><input type="checkbox" name="tool_unsure" value="Yes"> <span data-i18n="form-tool-unsure">Not sure</span></label>
+                        </fieldset>
+                        <fieldset class="form-group check-group">
+                            <legend data-i18n="form-needs-label">What would you like AI to help with? (tick all that apply)</legend>
+                            <label class="check"><input type="checkbox" name="need_writing" value="Yes"> <span data-i18n="form-need-writing">Writing: emails, quotes, reports</span></label>
+                            <label class="check"><input type="checkbox" name="need_documents" value="Yes"> <span data-i18n="form-need-documents">Summarizing documents, PDFs or spreadsheets</span></label>
+                            <label class="check"><input type="checkbox" name="need_reuse" value="Yes"> <span data-i18n="form-need-reuse">Saved prompts my whole team can reuse</span></label>
+                            <label class="check"><input type="checkbox" name="need_own_data" value="Yes"> <span data-i18n="form-need-own-data">Working with my own email, calendar or files</span></label>
+                            <label class="check"><input type="checkbox" name="need_schedule" value="Yes"> <span data-i18n="form-need-schedule">A task that runs on a schedule</span></label>
+                            <label class="check"><input type="checkbox" name="need_automatic" value="Yes"> <span data-i18n="form-need-automatic">Something that runs by itself when an email, form or invoice arrives</span></label>
+                            <label class="check"><input type="checkbox" name="need_images" value="Yes"> <span data-i18n="form-need-images">Creating images or marketing visuals</span></label>
+                            <label class="check"><input type="checkbox" name="need_office_files" value="Yes"> <span data-i18n="form-need-office-files">Ready-made Word, Excel or PowerPoint files</span></label>
+                            <label class="check"><input type="checkbox" name="need_research" value="Yes"> <span data-i18n="form-need-research">Researching competitors, suppliers or markets</span></label>
+                        </fieldset>
+                        <div class="form-group">
+                            <label for="privacy" data-i18n="form-privacy-label">Will this involve your customers’ or clients’ personal information?</label>
+                            <select id="privacy" name="personal_info">
+                                <option value="" data-i18n="form-option-choose">Choose an option...</option>
+                                <option value="yes" data-i18n="form-privacy-yes">Yes</option>
+                                <option value="no" data-i18n="form-privacy-no">No</option>
+                                <option value="not-sure" data-i18n="form-privacy-unsure">Not sure</option>
+                            </select>
+                        </div>
+                    </details>
                     <div class="form-group">
                         <label for="message"><span data-i18n="form-goals">What Takes Up Most of Your Time? (Optional)</span></label>
                         <textarea id="message" name="message" data-i18n-placeholder="form-goals-placeholder" placeholder="Which AI tools do you use today, and which tasks eat up your week?"></textarea>
