@@ -925,6 +925,15 @@ textarea { resize: vertical; min-height: 140px; }
 
 /* About: independence / non-affiliation note */
 .about-text p.about-disclaimer { font-size: 0.85rem; line-height: 1.5; color: #5b6b7b; margin: 0 0 1.5rem; }
+
+/* Optional "help me prepare" block on the contact form */
+.prep { margin: 0 0 1.8rem; border: 2px solid #e2e8f0; border-radius: 12px; padding: 0.4rem 1rem; background: #fbf6e6; }
+.prep > summary { cursor: pointer; font-weight: 700; color: #11304c; padding: 0.8rem 0; font-size: 1.05rem; }
+.prep .prep-note { color: #4b5563; font-size: 0.95rem; margin: 0 0 1.2rem; }
+.check-group { border: 0; padding: 0; margin-left: 0; margin-right: 0; }
+.check-group legend { font-weight: 600; color: #0f172a; font-size: 1.05rem; margin-bottom: 0.4rem; padding: 0; }
+.check { display: flex; align-items: flex-start; gap: 0.7rem; font-weight: 400; margin: 0; padding: 0.55rem 0; font-size: 1rem; cursor: pointer; }
+.check input[type="checkbox"] { width: 1.5rem; height: 1.5rem; flex: none; padding: 0; margin-top: 0.1rem; accent-color: #11304c; }
 /* =============================================================================
    footer.css — Site footer
    ============================================================================= */
