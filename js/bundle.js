@@ -624,6 +624,15 @@ window.addEventListener('load', () => {
   }
 })();
 
+// Ask Google to show its booking page in French for visitors on the French page
+(function () {
+  const fr = /^\/fr(\/|$)/i.test(window.location.pathname);
+  if (!fr) return;
+  document.querySelectorAll('a[data-booking]').forEach(a => {
+    a.href += (a.href.indexOf('?') === -1 ? '?' : '&') + 'hl=fr';
+  });
+})();
+
 // Submit in the background (formsubmit.co AJAX endpoint) so visitors never leave the
 // page or see formsubmit.co's own thank-you page. If JavaScript is unavailable the
 // plain form POST + _next redirect above still works.
