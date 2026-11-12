@@ -192,7 +192,7 @@ const translations = {
     'form-need-office-files': 'Ready-made Word, Excel or PowerPoint files',
     'form-need-research': 'Researching competitors, suppliers or markets',
     'form-privacy-label': 'Will this involve your customers’ or clients’ personal information?',
-    'form-notice': 'I use what you send only to reply and prepare for our call. I do not sell or share it. This form is processed by formsubmit.co, which forwards it to me by email. To ask for access or deletion, email biz@aiwithrobert.com.',
+    'form-notice': 'I use what you send only to reply and prepare for our call. I do not sell or share it. This form is processed by formsubmit.co, which forwards it to me by email, and a copy is kept in my private contact list. To ask for access or deletion, email biz@aiwithrobert.com.',
     'form-privacy-yes': 'Yes',
     'form-privacy-no': 'No',
     'form-privacy-unsure': 'Not sure',
@@ -422,7 +422,7 @@ const translations = {
     'form-need-office-files': 'Des fichiers Word, Excel ou PowerPoint prêts à utiliser',
     'form-need-research': 'Faire de la recherche sur des concurrents, des fournisseurs ou des marchés',
     'form-privacy-label': 'Est-ce que cela touchera des renseignements personnels de vos clients?',
-    'form-notice': 'J’utilise ce que vous m’envoyez uniquement pour vous répondre et préparer notre appel. Je ne le vends ni ne le partage. Ce formulaire est traité par formsubmit.co, qui me le transmet par courriel. Pour demander l’accès ou la suppression de vos renseignements, écrivez à biz@aiwithrobert.com.',
+    'form-notice': 'J’utilise ce que vous m’envoyez uniquement pour vous répondre et préparer notre appel. Je ne le vends ni ne le partage. Ce formulaire est traité par formsubmit.co, qui me le transmet par courriel, et une copie est conservée dans ma liste de contacts privée. Pour demander l’accès ou la suppression de vos renseignements, écrivez à biz@aiwithrobert.com.',
     'form-privacy-yes': 'Oui',
     'form-privacy-no': 'Non',
     'form-privacy-unsure': 'Je ne suis pas certain',
@@ -613,6 +613,28 @@ window.getPageLanguage = getPageLanguage;
 // Anchored regex: exactly XXX-XXX-XXXX, no extra digits
 const PHONE_RE = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
 
+// Saved copy of each submission in the owner's own database (shown in the toolkit's Inquiries screen).
+// The formsubmit.co email stays the primary path; this is fire-and-forget and never blocks or fails the form.
+// Table + function: migration/site_inquiries.sql in the toolkit repo.
+function saveInquiryCopy(form, site) {
+  try {
+    const fd = new FormData(form), extra = {}, core = {};
+    fd.forEach(function (v, k) {
+      if (k.charAt(0) === '_' || k === 'brand' || k === 'language' || typeof v !== 'string') return;
+      if (k === 'name' || k === 'email' || k === 'phone' || k === 'company' || k === 'message') { core[k] = v; return; }
+      if (v.trim() !== '') extra[k] = v.trim().slice(0, 200);
+    });
+    fetch('https://ipnajvgwtjrlecbqfwrh.supabase.co/rest/v1/rpc/submit_inquiry', {
+      method: 'POST', keepalive: true,
+      headers: { apikey: 'sb_publishable_oPa7fZdSTeXKuCwpOF338Q_PcXS57go', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        p_site: site, p_name: core.name || '', p_organization: core.company || '', p_email: core.email || '', p_phone: core.phone || '',
+        p_message: core.message || '', p_extra: extra, p_language: /^\/fr(\/|$)/.test(location.pathname) ? 'fr' : 'en'
+      })
+    }).catch(function () {});
+  } catch (e) {}
+}
+
 const submitBtn = document.getElementById('submit-btn');
 const formHint  = document.getElementById('form-hint');
 
@@ -714,6 +736,7 @@ window.addEventListener('load', () => {
     document.getElementById('form-subject').value =
       '[Business · ' + (fr ? 'FR' : 'EN') + '] New Business Inquiry - AI with Robert for Business';
     document.getElementById('form-language').value = fr ? 'Français' : 'English';
+    saveInquiryCopy(form, 'business');
     submitBtn.disabled = true;
     submitBtn.dataset.label = submitBtn.textContent;
     submitBtn.textContent = fr ? 'Envoi…' : 'Sending…';
