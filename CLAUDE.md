@@ -63,3 +63,15 @@ Core fields (name, email, phone, company, message) become columns; every other n
 Renaming or adding form fields? Names flow through automatically, but the toolkit's Inquiries screen reads `interest`,
 `session-type`, `referral`, `team_size`, `tool_*`, `need_*`, `personal_info` by name. Table/function: `migration/site_inquiries.sql`
 in the toolkit repo.
+
+## Free feasibility check (main call to action)
+
+`js/feascheck.js` is a standalone script (NOT in `js/bundle.js`), loaded on the home page only. It renders the form and the instant
+result into `<div id="feas-check">` in the contact section, in both open and at-capacity modes. Wording EN/FR, the booking link and
+the 3-need limit live inside that file (T / CONFIG); only the heading and intro are i18n keys (`feas-title`, `feas-intro`).
+Verdicts come from the capability table: public RPC `public_caps` (published from the toolkit), with the `SNAPSHOT` in the file as
+fallback. The result shows verdicts only, on purpose: no how-to, conditions, plan comparison or prices. Each check is saved with
+`submit_inquiry` (`extra.kind = "feasibility"`; same `team_size`, `tool_*`, `need_*`, `personal_info` names as the contact form) and
+becomes a lead in the toolkit by itself; at capacity it also calls `join_waitlist`. The old contact form sits below it in a
+`<details class="other-form">` for speaking and other questions. Short links: `/feasibility/`, `/feasability/`, `/faisabilite/`
+(noindex redirects, also on aiwithrobert.com). Table/function: `migration/feasibility_public.sql` in the toolkit repo.

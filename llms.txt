@@ -20,6 +20,7 @@ Both pages are static HTML; no JavaScript is required to read any content.
 
 ## How it works
 Discover (find repetitive, time-consuming work) → Design (practical solutions using existing subscriptions and affordable tools) → Implement (workflows, automations and agents, with human approval where appropriate) → Enable (the client learns to run and maintain what was set up, and keeps the documentation and prompts). Success is measured in time saved, manual work removed and business value.
+First step for new clients: a free feasibility check on the home page (about two minutes). The visitor names the AI plan they pay for and up to three things they want it to do, and sees a preliminary Yes, Partly or No for each. A free 15-minute call to scope the work follows.
 
 ## Services
 - AI Opportunity Assessment: review existing AI subscriptions and processes, identify and prioritize repetitive tasks, estimate time savings and ROI, practical roadmap.
@@ -29,6 +30,7 @@ Discover (find repetitive, time-consuming work) → Design (practical solutions 
 - Speaking for business groups and networking organizations (e.g., BNI chapters, chambers).
 Capabilities vary by plan, tool and integration; extra services or paid APIs are explained up front.
 Pricing (CAD, before GST and QST; final scope and price confirmed in writing): AI Opportunity Assessment from $900 (up to 5 people; $1,800 for 6 to 20); AI Workflow Setup from $2,000 per workflow; Team Training Session $1,500 for up to 10 people (+$100 per extra person); Starter Bundle $3,950. Talks from $500; monthly support $300; extra help $150/hour. The client buys their own AI subscription directly from the vendor.
+
 
 
 

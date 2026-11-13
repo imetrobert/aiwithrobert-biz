@@ -23,13 +23,13 @@ E = html.escape
 UI = {
  "en": dict(lang="en", home="/", tag="for Business", back="← Back to the main page", related="Related reading",
             switch="Français", sitename="AI with Robert for Business", contact="/#contact",
-            cta="Want to see where AI could save your team time? Book a free discovery call.", book="Book a free discovery call", write="Write",
+            cta="Want to know whether your current AI plan can do this? Start with a free feasibility check.", book="Get a free feasibility check", write="Write",
             indep="AI with Robert for Business is an independent practice of Robert Simon. It is not affiliated with, sponsored by or endorsed by any employer, including Bell Canada.",
             byline="By Robert Simon · Greater Montréal", home_label="AI with Robert for Business — home", bc_home="Home",
             area="Greater Montréal", audience="Small businesses and professional practices of about 5 to 20 people", kinds={"service": "Service", "article": "Article"}),
  "fr": dict(lang="fr", home="/fr/", tag="pour entreprises", back="← Retour à la page principale", related="À lire aussi",
             switch="English", sitename="AI with Robert pour entreprises", contact="/fr/#contact",
-            cta="Envie de voir où l’IA pourrait faire gagner du temps à votre équipe? Réservez un appel découverte gratuit.", book="Réserver un appel découverte gratuit", write="Écrire",
+            cta="Envie de savoir si votre forfait d’IA actuel peut le faire? Commencez par une vérification de faisabilité gratuite.", book="Obtenir une vérification de faisabilité gratuite", write="Écrire",
             indep="AI with Robert pour entreprises est une pratique indépendante de Robert Simon. Elle n’est affiliée à aucun employeur, ni commanditée ou approuvée par aucun d’eux, y compris Bell Canada.",
             byline="Par Robert Simon · Grand Montréal", home_label="AI with Robert pour entreprises — accueil", bc_home="Accueil",
             area="Grand Montréal", audience="Petites entreprises et pratiques professionnelles d’environ 5 à 20 personnes", kinds={"service": "Service", "article": "Article"}),
@@ -116,7 +116,7 @@ def render(lang, p):
 <p><a href="{u['home']}">{u['back']}</a></p>
 </main>
 <footer><p>{u['indep']}</p><p data-cap="hide"><a href="mailto:{EMAIL}">{EMAIL}</a></p></footer>
-<script defer src="/js/capacity.js?v=20261112e"></script>
+<script defer src="/js/capacity.js?v=20261112g"></script>
 </body>
 </html>
 """
