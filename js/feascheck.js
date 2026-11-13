@@ -89,6 +89,7 @@
     ".feas-box .fx-num{flex:none;width:2rem;height:2rem;border-radius:50%;background:#fff;border:2px solid #cbd5e1;color:#475569;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}" +
     ".feas-box .fx-flow li.fx-done .fx-num{background:#11304c;border-color:#11304c;color:#fff}.feas-box .fx-flow li.fx-now .fx-num{background:#c9a227;border-color:#c9a227;color:#11304c}.feas-box .fx-flow li strong{display:block}.feas-box .fx-flow li span.fx-d{color:#4b5563;font-size:.95rem}" +
     ".feas-box .fx-tag{display:inline-block;font-size:.75rem;font-weight:700;border-radius:999px;padding:.1rem .55rem;margin-left:.45rem;vertical-align:middle;background:#e2e8f0;color:#334155}.feas-box .fx-now .fx-tag{background:#fbf6e3;color:#8a6d0b;border:1px solid #eadfae}" +
+    ".feas-box.fx-result>h3,.feas-box.fx-result>p{display:none}" +
     ".feas-box .fx-again{background:none;border:0;color:#1b4469;font-weight:600;text-decoration:underline;cursor:pointer;padding:.6rem 0;font-size:1rem;margin-top:.6rem}";
   doc.head.appendChild(st);
 
@@ -228,10 +229,11 @@
       next = h("div", { "class": "fx-next" }, [h("h4", { text: C.nextT }), h("p", { text: C.next }), h("a", { href: CONFIG.booking, "class": "cta-button", target: "_blank", rel: "noopener", text: C.book })]);
     }
     var again = h("button", { type: "button", "class": "fx-again", text: C.again });
-    again.addEventListener("click", function () { body.replaceChildren(buildForm()); try { mount.scrollIntoView({ block: "start", behavior: "smooth" }); } catch (e) {} });
+    again.addEventListener("click", function () { mount.classList.remove("fx-result"); body.replaceChildren(buildForm()); try { mount.scrollIntoView({ block: "start", behavior: "smooth" }); } catch (e) {} });
     var out = h("div", { role: "status", "aria-live": "polite" }, [h("h3", { text: C.rTitle }), h("p", { text: tool ? C.rFor + planName : C.rAny })].concat(list).concat([
       h("p", { "class": "fx-note", text: C.note + fmtDate(caps.verified) + C.note2 }), next, flow(state.on, 1), again]));
     onCap = null;
+    mount.classList.add("fx-result"); /* hides the "Free Feasibility Check" heading and intro while the result is shown */
     body.replaceChildren(out);
     try { mount.scrollIntoView({ block: "start", behavior: "smooth" }); } catch (e) {}
   }
