@@ -72,7 +72,7 @@ the 3-need limit live inside that file (T / CONFIG); only the heading and intro 
 Verdicts come from the capability table: public RPC `public_caps` (published from the toolkit), with the `SNAPSHOT` in the file as
 fallback. The result shows verdicts only, on purpose: no how-to, conditions, plan comparison or prices. Each check is saved with
 `submit_inquiry` (`extra.kind = "feasibility"`; same `team_size`, `tool_*`, `need_*`, `personal_info` names as the contact form) and
-becomes a lead in the toolkit by itself; at capacity it also calls `join_waitlist`. It is the ONLY form on the site (2026-11-12): the old
+becomes a lead in the toolkit by itself; at capacity it also calls `join_waitlist`. A visitor arriving with `utm_source`/`utm_campaign` in the URL (the imetrobert.com blog links do this) has them saved as `extra.source`, shown on the lead's note. It is the ONLY form on the site (2026-11-12): the old
 contact form, its "Help me prepare" block and the at-capacity waitlist form were removed, `js/form.js` is now two no-op functions,
 and other questions go by email (`contact-other` line, Speaking button = mailto). The two contact-form sections above describe
 the removed form and are kept only as history for the field names. Short links: `/feasibility/`, `/feasability/`, `/faisabilite/`

@@ -200,6 +200,8 @@
     var extra = { kind: "feasibility", interest: "feasibility-check", team_size: a.team, personal_info: a.priv, plan: a.plan, capacity: state.on ? "yes" : "no", table: caps.verified,
       result: rows.map(function (r) { return r.id + ":" + r.v; }).join(",") };
     if (tool) extra["tool_" + tool] = "Yes"; else extra["tool_" + a.plan] = "Yes";
+    /* Where the visitor came from (for example a blog issue link with utm_campaign=issue-2026-12), so the lead can be traced to it. */
+    try { var q = new URLSearchParams(location.search), src = [q.get("utm_source"), q.get("utm_campaign")].filter(Boolean).join("/").replace(/[^A-Za-z0-9_\/-]/g, "").slice(0, 80); if (src) extra.source = src; } catch (e) {}
     a.picked.forEach(function (p) { extra[p.field] = "Yes"; });
     var summary = rows.map(function (r) { return T.en.need[r.id] + ": " + T.en.v[r.v]; }).join("; ");
     try {
