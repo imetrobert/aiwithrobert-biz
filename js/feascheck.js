@@ -41,7 +41,10 @@
       note: "This is a preliminary result based on public plan information, last verified on ", note2: ". Plans change often, and how to set each item up for your business is not covered here.",
       nextT: "Next step", next: "Book a free 15-minute call and we will scope what this means for your business. Questions by email are answered within 1 to 2 business days.", book: "Book a 15-minute call",
       capT: "You are on the waitlist", cap: "I am fully booked right now, so I am not taking calls at the moment. Your result is saved and you have been added to the waitlist. I will contact you as soon as a spot opens.", reopen: "I expect to have availability around ",
-      again: "Check something else", saved: "Your check is saved."
+      again: "Check something else", saved: "Your check is saved.",
+      flowT: "What happens next", flowDone: "Done", flowNow: "You are here",
+      flowOpen: [["Free feasibility check", "Two minutes. Your result appears on screen right away."], ["Free 15-minute call", "You pick a time. We look at what the result means for your business."], ["Proposal", "A clear scope and price, so you know the cost before anything starts."], ["Setup and training", "I set it up with you, and your team learns to run it."]],
+      flowCap: [["Free feasibility check", "Two minutes. Your result appears on screen right away."], ["Waitlist", "I am fully booked right now. You are added automatically and I contact you when a spot opens."], ["Free 15-minute call", "When a spot opens, you pick a time and we look at what the result means for your business."], ["Proposal", "A clear scope and price, so you know the cost before anything starts."], ["Setup and training", "I set it up with you, and your team learns to run it."]]
     },
     fr: {
       plan: "Quel forfait d’IA payant utilisez-vous le plus?", none: "Aucun pour l’instant", unsure: "Je ne suis pas certain", choose: "Choisissez une option...",
@@ -61,7 +64,10 @@
       note: "Ceci est un résultat préliminaire fondé sur l’information publique des forfaits, vérifiée la dernière fois le ", note2: ". Les forfaits changent souvent, et la façon de mettre chaque élément en place dans votre entreprise n’est pas couverte ici.",
       nextT: "Prochaine étape", next: "Réservez un appel gratuit de 15 minutes et nous verrons ce que cela représente pour votre entreprise. Je réponds aux questions par courriel dans un délai de 1 à 2 jours ouvrables.", book: "Réserver un appel de 15 minutes",
       capT: "Vous êtes sur la liste d’attente", cap: "Mon horaire est complet pour le moment; je ne prends donc pas d’appels actuellement. Votre résultat est enregistré et vous avez été ajouté à la liste d’attente. Je vous contacterai dès qu’une place se libère.", reopen: "Je prévois avoir de la disponibilité vers le ",
-      again: "Vérifier autre chose", saved: "Votre vérification est enregistrée."
+      again: "Vérifier autre chose", saved: "Votre vérification est enregistrée.",
+      flowT: "Ce qui se passe ensuite", flowDone: "Fait", flowNow: "Vous êtes ici",
+      flowOpen: [["Vérification de faisabilité gratuite", "Deux minutes. Votre résultat s’affiche tout de suite à l’écran."], ["Appel gratuit de 15 minutes", "Vous choisissez un moment. Nous regardons ce que le résultat représente pour votre entreprise."], ["Proposition", "Une portée et un prix clairs : vous connaissez le coût avant que quoi que ce soit commence."], ["Mise en place et formation", "Je le mets en place avec vous, et votre équipe apprend à s’en servir."]],
+      flowCap: [["Vérification de faisabilité gratuite", "Deux minutes. Votre résultat s’affiche tout de suite à l’écran."], ["Liste d’attente", "Mon horaire est complet pour le moment. Vous êtes ajouté automatiquement et je vous contacte dès qu’une place se libère."], ["Appel gratuit de 15 minutes", "Quand une place se libère, vous choisissez un moment et nous regardons ce que le résultat représente pour votre entreprise."], ["Proposition", "Une portée et un prix clairs : vous connaissez le coût avant que quoi que ce soit commence."], ["Mise en place et formation", "Je le mets en place avec vous, et votre équipe apprend à s’en servir."]]
     }
   };
   var doc = document, mount = doc.getElementById("feas-check");
@@ -78,6 +84,11 @@
     ".feas-box .fx-yes{background:#dcfce7;color:#14532d}.feas-box .fx-partial{background:#ffedd5;color:#9a3412}.feas-box .fx-no{background:#fee2e2;color:#991b1b}.feas-box .fx-unknown{background:#e5e7eb;color:#374151}" +
     ".feas-box .fx-row strong{display:block;margin-bottom:.15rem}.feas-box .fx-row span.fx-s{color:#4b5563}.feas-box .fx-note{font-size:.88rem;color:#6b7280;margin:1rem 0}" +
     ".feas-box .fx-next{background:#fbf6e3;border:1px solid #eadfae;border-radius:12px;padding:1.1rem 1.2rem;margin-top:1rem}.feas-box .fx-next h4{margin:0 0 .4rem;font-size:1.15rem}.feas-box .fx-next p{margin:.3rem 0 .8rem}" +
+    ".feas-box .fx-flow{margin:1.2rem 0;padding:1rem 1.1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px}.feas-box .fx-flow h4{margin:0 0 .7rem;font-size:1.1rem}.feas-box .fx-flow ol{list-style:none;margin:0;padding:0}" +
+    ".feas-box .fx-flow li{display:flex;gap:.8rem;align-items:flex-start;padding:0 0 .9rem;position:relative}.feas-box .fx-flow li:last-child{padding-bottom:0}.feas-box .fx-flow li:not(:last-child)::before{content:'';position:absolute;left:.95rem;top:2rem;bottom:0;width:2px;background:#cbd5e1}" +
+    ".feas-box .fx-num{flex:none;width:2rem;height:2rem;border-radius:50%;background:#fff;border:2px solid #cbd5e1;color:#475569;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}" +
+    ".feas-box .fx-flow li.fx-done .fx-num{background:#11304c;border-color:#11304c;color:#fff}.feas-box .fx-flow li.fx-now .fx-num{background:#c9a227;border-color:#c9a227;color:#11304c}.feas-box .fx-flow li strong{display:block}.feas-box .fx-flow li span.fx-d{color:#4b5563;font-size:.95rem}" +
+    ".feas-box .fx-tag{display:inline-block;font-size:.75rem;font-weight:700;border-radius:999px;padding:.1rem .55rem;margin-left:.45rem;vertical-align:middle;background:#e2e8f0;color:#334155}.feas-box .fx-now .fx-tag{background:#fbf6e3;color:#8a6d0b;border:1px solid #eadfae}" +
     ".feas-box .fx-again{background:none;border:0;color:#1b4469;font-weight:600;text-decoration:underline;cursor:pointer;padding:.6rem 0;font-size:1rem;margin-top:.6rem}";
   doc.head.appendChild(st);
 
@@ -116,6 +127,16 @@
   }
   function fmtDate(iso) { var p = iso.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString(FR ? "fr-CA" : "en-CA", { year: "numeric", month: "long", day: "numeric" }); }
 
+  /* "What happens next": numbered steps, different when at capacity. done = number of finished steps; the next one is "You are here". */
+  function flow(cap, done) {
+    var steps = cap ? C.flowCap : C.flowOpen;
+    return h("div", { "class": "fx-flow" }, [h("h4", { text: C.flowT }), h("ol", {}, steps.map(function (sp, i) {
+      var cls = i < done ? "fx-done" : i === done ? "fx-now" : "";
+      return h("li", { "class": cls }, [h("span", { "class": "fx-num", "aria-hidden": "true", text: i < done ? "✓" : String(i + 1) }),
+        h("div", {}, [h("strong", {}, [doc.createTextNode(sp[0]), cls ? h("span", { "class": "fx-tag", text: i < done ? C.flowDone : C.flowNow }) : null]), h("span", { "class": "fx-d", text: sp[1] })])]);
+    }))]);
+  }
+  function capNow() { try { var c = JSON.parse(localStorage.getItem("awr_cap_" + CONFIG.site) || "null"); return !!(c && c.on); } catch (e) { return false; } }
   function buildForm() {
     var plan = select("fx-plan", C.plan, TOOLS.concat([["none", C.none], ["unsure", C.unsure]]));
     var team = select("fx-team", C.team, [["1", C.team1], ["2-5", C.team2], ["6-20", C.team3], ["21+", C.team4]]);
@@ -136,7 +157,9 @@
     var consent = h("input", { type: "checkbox", id: "fx-consent", name: "fx-consent" }), consentLabel = h("label", { "class": "fx-check" }, [consent, h("span", { text: C.consent + " *" })]);
     var hp = h("input", { type: "text", name: "fx-hp-field", tabindex: "-1", autocomplete: "off", "data-lpignore": "true", "data-form-type": "other" });
     var msg = h("p", { "class": "fx-msg", role: "alert" }), btn = h("button", { type: "submit", "class": "cta-button", text: C.go });
-    var form = h("form", { novalidate: "novalidate" }, [h("div", { "class": "fx-hp", "aria-hidden": "true" }, [hp]), plan.el, team.el, needs, priv.el, name.el, email.el, org.el, phone.el, h("p", {}, [consentLabel]), h("div", { style: "text-align:center;margin-top:1.2rem" }, [btn]), msg]);
+    var flowBox = h("div", {}, [flow(liveCap === null ? capNow() : liveCap, 0)]);
+    onCap = function () { flowBox.replaceChildren(flow(liveCap, 0)); };
+    var form = h("form", { novalidate: "novalidate" }, [flowBox, h("div", { "class": "fx-hp", "aria-hidden": "true" }, [hp]), plan.el, team.el, needs, priv.el, name.el, email.el, org.el, phone.el, h("p", {}, [consentLabel]), h("div", { style: "text-align:center;margin-top:1.2rem" }, [btn]), msg]);
     form.addEventListener("input", function (e) { if (e.target.classList) e.target.classList.remove("fx-invalid"); needs.classList.remove("fx-invalid"); consentLabel.classList.remove("fx-invalid"); msg.textContent = ""; });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -207,11 +230,14 @@
     var again = h("button", { type: "button", "class": "fx-again", text: C.again });
     again.addEventListener("click", function () { body.replaceChildren(buildForm()); try { mount.scrollIntoView({ block: "start", behavior: "smooth" }); } catch (e) {} });
     var out = h("div", { role: "status", "aria-live": "polite" }, [h("h3", { text: C.rTitle }), h("p", { text: tool ? C.rFor + planName : C.rAny })].concat(list).concat([
-      h("p", { "class": "fx-note", text: C.note + fmtDate(caps.verified) + C.note2 }), next, again]));
+      h("p", { "class": "fx-note", text: C.note + fmtDate(caps.verified) + C.note2 }), next, flow(state.on, 1), again]));
+    onCap = null;
     body.replaceChildren(out);
     try { mount.scrollIntoView({ block: "start", behavior: "smooth" }); } catch (e) {}
   }
 
+  var liveCap = null, onCap = null;
+  rpc("site_capacity", { p_site: CONFIG.site }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) { if (j && typeof j.at_capacity === "boolean") { liveCap = j.at_capacity; if (onCap) onCap(); } }).catch(function () {});
   var body = h("div", { "class": "fx-body" });
   mount.appendChild(body);
   body.appendChild(buildForm());
