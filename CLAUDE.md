@@ -72,6 +72,8 @@ the 3-need limit live inside that file (T / CONFIG); only the heading and intro 
 Verdicts come from the capability table: public RPC `public_caps` (published from the toolkit), with the `SNAPSHOT` in the file as
 fallback. The result shows verdicts only, on purpose: no how-to, conditions, plan comparison or prices. Each check is saved with
 `submit_inquiry` (`extra.kind = "feasibility"`; same `team_size`, `tool_*`, `need_*`, `personal_info` names as the contact form) and
-becomes a lead in the toolkit by itself; at capacity it also calls `join_waitlist`. The old contact form sits below it in a
-`<details class="other-form">` for speaking and other questions. Short links: `/feasibility/`, `/feasability/`, `/faisabilite/`
+becomes a lead in the toolkit by itself; at capacity it also calls `join_waitlist`. It is the ONLY form on the site (2026-11-12): the old
+contact form, its "Help me prepare" block and the at-capacity waitlist form were removed, `js/form.js` is now two no-op functions,
+and other questions go by email (`contact-other` line, Speaking button = mailto). The two contact-form sections above describe
+the removed form and are kept only as history for the field names. Short links: `/feasibility/`, `/feasability/`, `/faisabilite/`
 (noindex redirects, also on aiwithrobert.com). Table/function: `migration/feasibility_public.sql` in the toolkit repo.

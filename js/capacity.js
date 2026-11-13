@@ -17,12 +17,12 @@
     phone: "514-250-8491", scrub: ".faq-qa, aside",
     en: {
       title: "I'm fully booked right now",
-      body: "Thank you for your interest in AI with Robert for Business. I'm at full capacity and am not taking new projects or calls at the moment. The free feasibility check still works and adds you to the waitlist. For anything else, leave your details below and I'll contact you personally as soon as I have availability.",
+      body: "Thank you for your interest in AI with Robert for Business. I'm at full capacity and am not taking new projects or calls at the moment. The free feasibility check still works: you get your result right away and are added to the waitlist, and I'll contact you personally as soon as I have availability.",
       services: ["AI Opportunity Assessment", "AI Workflow Setup", "Team Training Session", "Talk for my group or event", "Monthly support", "AI agents", "Not sure yet"]
     },
     fr: {
       title: "Mon horaire est complet pour le moment",
-      body: "Merci de votre intérêt pour AI with Robert pour entreprises. Je suis à pleine capacité et je ne prends pas de nouveaux projets ni d'appels pour le moment. La vérification de faisabilité gratuite fonctionne toujours et vous ajoute à la liste d'attente. Pour toute autre demande, laissez vos coordonnées ci-dessous et je vous contacterai personnellement dès que j'aurai de la disponibilité.",
+      body: "Merci de votre intérêt pour AI with Robert pour entreprises. Je suis à pleine capacité et je ne prends pas de nouveaux projets ni d'appels pour le moment. La vérification de faisabilité gratuite fonctionne toujours : vous obtenez votre résultat tout de suite et vous êtes ajouté à la liste d'attente, et je vous contacterai personnellement dès que j'aurai de la disponibilité.",
       services: ["Évaluation des occasions d'IA", "Mise en place de flux de travail IA", "Séance de formation d'équipe", "Conférence pour mon groupe ou événement", "Soutien mensuel", "Agents IA", "Je ne suis pas certain"]
     }
   };
@@ -125,7 +125,7 @@
     var m = doc.querySelector(CONFIG.mount);
     if (m) {
       var hdr = m.querySelector(".section-header");
-      var box = mark(buildNotice(reopen, true)); box.id = "capacity-notice";
+      var box = mark(buildNotice(reopen, false)); box.id = "capacity-notice"; /* notice only: the feasibility check is the one form and adds people to the waitlist */
       var fx = m.querySelector("#feas-check");
       if (fx && fx.nextSibling) m.insertBefore(box, fx.nextSibling); else if (hdr && hdr.nextSibling) m.insertBefore(box, hdr.nextSibling); else m.appendChild(box);
     }

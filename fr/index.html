@@ -632,7 +632,7 @@
             <div class="service-card" style="max-width:900px;margin:0 auto;text-align:center;">
                 <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/></svg></span>
                 <p data-i18n="speaking-p1">Vos membres veulent utiliser l’IA dans leur entreprise dès demain matin, pas assister à une autre conférence pleine de battage. J’offre des présentations courtes et interactives, avec démonstrations en direct, adaptées à votre groupe, en français ou en anglais, en personne dans le Grand Montréal ou en ligne.</p>
-                <a href="#contact" class="cta-button" data-cap="hide" data-i18n="speaking-cta">Demander une conférence</a>
+                <a href="mailto:biz@aiwithrobert.com?subject=Speaking%20request" class="cta-button" data-i18n="speaking-cta">Demander une conférence</a>
             </div>
             <div class="testimonials-container" style="margin-top:2rem;">
                 <figure class="testimonial-card">
@@ -689,114 +689,7 @@
                 <p data-i18n="feas-intro">Cela prend environ deux minutes. Dites-moi quel forfait d’IA vous payez et jusqu’à trois choses que vous aimeriez qu’il fasse. Vous obtenez à l’écran un Oui, En partie ou Non préliminaire pour chacune, gratuitement et sans obligation.</p>
                 <noscript><p data-i18n="feas-noscript">La vérification de faisabilité nécessite JavaScript. Vous pouvez aussi écrire à biz@aiwithrobert.com.</p></noscript>
             </div>
-            <div class="contact-info" data-cap="hide">
-                <h3 data-i18n="contact-heading">Autre chose en tête?</h3>
-                <p style="margin-top:1.5rem;"><a href="mailto:biz@aiwithrobert.com" style="color:#1b4469;font-weight:600;font-size:1.1rem;"><svg class="icon icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>biz@aiwithrobert.com</a></p>
-                <p style="margin-top:0.75rem;font-size:0.9rem;color:#6b7280;"><a href="tel:514-250-8491" style="color:inherit;text-decoration:none;">514-250-8491</a></p>
-            </div>
-            <div class="contact-form" data-cap="hide">
-                <details class="other-form"><summary data-i18n="other-summary" style="cursor:pointer;font-weight:600;font-size:1.1rem;color:#11304c;padding:.4rem 0;">Une conférence pour un groupe ou une autre question? Envoyez un message</summary>
-                <form action="https://formsubmit.co/forms@aiwithrobert.com" method="POST">
-                    <input type="text" name="_honey" style="display:none">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" id="form-next" value="https://biz.aiwithrobert.com/?submitted=true#contact">
-                    <input type="hidden" name="_subject" id="form-subject" value="[Business · EN] New Business Inquiry - AI with Robert for Business">
-                    <input type="hidden" name="brand" value="AI with Robert for Business">
-                    <input type="hidden" name="language" id="form-language" value="English">
-                    <input type="hidden" name="_template" value="box">
-                    <div class="form-group">
-                        <label for="name"><span data-i18n="form-name">Votre nom</span> *</label>
-                        <input type="text" id="name" name="name" required placeholder="Jane Tremblay" autocomplete="name">
-                        <div class="error-message" id="name-error" data-i18n="form-error-name">Veuillez entrer votre nom</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email"><span data-i18n="form-email">Adresse courriel</span> *</label>
-                        <input type="email" id="email" name="email" required placeholder="jane@company.com" autocomplete="email">
-                        <div class="error-message" id="email-error" data-i18n="form-error-email">Veuillez entrer une adresse courriel valide</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone"><span data-i18n="form-phone">Numéro de téléphone</span> *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="514-555-1234" pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$" autocomplete="tel" title="Format: XXX-XXX-XXXX">
-                        <div class="error-message" id="phone-error" data-i18n="form-error-phone">Veuillez entrer un numéro de téléphone valide (XXX-XXX-XXXX)</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="company"><span data-i18n="form-company">Entreprise (facultatif)</span></label>
-                        <input type="text" id="company" name="company" autocomplete="organization">
-                    </div>
-                    <div class="form-group">
-                        <label for="session-type"><span data-i18n="form-interest">Je suis intéressé par</span> *</label>
-                        <select id="session-type" name="interest" required>
-                            <option value="" data-i18n="form-option-choose">Choisissez une option...</option>
-                            <option value="opportunity-assessment" data-i18n="form-option-audit">Évaluation des occasions d’IA</option>
-                            <option value="workflow-automation" data-i18n="form-option-automation">Automatisation des flux de travail par l’IA</option>
-                            <option value="agents-advanced-automation" data-i18n="form-option-agents">Agents IA et automatisation avancée</option>
-                            <option value="training" data-i18n="form-option-workshop">Formation pratique en IA</option>
-                            <option value="speaking" data-i18n="form-option-speaking">Conférence pour un groupe</option>
-                            <option value="not-sure" data-i18n="form-option-unsure">Pas encore certain — aidez-moi à le découvrir</option>
-                        </select>
-                        <div class="error-message" id="session-type-error" data-i18n="form-error-choice">Veuillez choisir une option</div>
-                    </div>
-                    <details class="prep">
-                        <summary data-i18n="form-prep-summary">Aidez-moi à préparer notre appel (facultatif, environ 1 minute)</summary>
-                        <p class="prep-note" data-i18n="form-prep-note">Rien ici n’est obligatoire. Ces réponses me permettent de me préparer pour que notre appel soit plus utile et de vous dire d’emblée ce qui est réaliste.</p>
-                        <div class="form-group">
-                            <label for="team-size" data-i18n="form-team">Combien de personnes utiliseraient l’IA?</label>
-                            <select id="team-size" name="team_size">
-                                <option value="" data-i18n="form-option-choose">Choisissez une option...</option>
-                                <option value="1" data-i18n="form-team-1">Moi seulement</option>
-                                <option value="2-5" data-i18n="form-team-2">2 à 5 personnes</option>
-                                <option value="6-20" data-i18n="form-team-3">6 à 20 personnes</option>
-                                <option value="21+" data-i18n="form-team-4">Plus de 20 personnes</option>
-                            </select>
-                        </div>
-                        <fieldset class="form-group check-group">
-                            <legend data-i18n="form-tools-label">Outils d’IA que vous payez déjà</legend>
-                            <label class="check"><input type="checkbox" name="tool_chatgpt" value="Yes"> <span>ChatGPT</span></label>
-                            <label class="check"><input type="checkbox" name="tool_claude" value="Yes"> <span>Claude</span></label>
-                            <label class="check"><input type="checkbox" name="tool_gemini" value="Yes"> <span>Gemini</span></label>
-                            <label class="check"><input type="checkbox" name="tool_copilot" value="Yes"> <span>Microsoft Copilot</span></label>
-                            <label class="check"><input type="checkbox" name="tool_none" value="Yes"> <span data-i18n="form-tool-none">Aucun pour l’instant</span></label>
-                            <label class="check"><input type="checkbox" name="tool_unsure" value="Yes"> <span data-i18n="form-tool-unsure">Je ne suis pas certain</span></label>
-                        </fieldset>
-                        <fieldset class="form-group check-group">
-                            <legend data-i18n="form-needs-label">Pour quoi voulez-vous de l’aide de l’IA? (cochez tout ce qui s’applique)</legend>
-                            <label class="check"><input type="checkbox" name="need_writing" value="Yes"> <span data-i18n="form-need-writing">Rédaction : courriels, soumissions, rapports</span></label>
-                            <label class="check"><input type="checkbox" name="need_documents" value="Yes"> <span data-i18n="form-need-documents">Résumer des documents, des PDF ou des chiffriers</span></label>
-                            <label class="check"><input type="checkbox" name="need_reuse" value="Yes"> <span data-i18n="form-need-reuse">Des invites enregistrées que toute mon équipe peut réutiliser</span></label>
-                            <label class="check"><input type="checkbox" name="need_own_data" value="Yes"> <span data-i18n="form-need-own-data">Travailler avec mes propres courriels, mon calendrier ou mes fichiers</span></label>
-                            <label class="check"><input type="checkbox" name="need_schedule" value="Yes"> <span data-i18n="form-need-schedule">Une tâche qui s’exécute selon un horaire</span></label>
-                            <label class="check"><input type="checkbox" name="need_automatic" value="Yes"> <span data-i18n="form-need-automatic">Quelque chose qui s’exécute seul à l’arrivée d’un courriel, d’un formulaire ou d’une facture</span></label>
-                            <label class="check"><input type="checkbox" name="need_images" value="Yes"> <span data-i18n="form-need-images">Créer des images ou des visuels de marketing</span></label>
-                            <label class="check"><input type="checkbox" name="need_office_files" value="Yes"> <span data-i18n="form-need-office-files">Des fichiers Word, Excel ou PowerPoint prêts à utiliser</span></label>
-                            <label class="check"><input type="checkbox" name="need_research" value="Yes"> <span data-i18n="form-need-research">Faire de la recherche sur des concurrents, des fournisseurs ou des marchés</span></label>
-                        </fieldset>
-                        <div class="form-group">
-                            <label for="privacy" data-i18n="form-privacy-label">Est-ce que cela touchera des renseignements personnels de vos clients?</label>
-                            <select id="privacy" name="personal_info">
-                                <option value="" data-i18n="form-option-choose">Choisissez une option...</option>
-                                <option value="yes" data-i18n="form-privacy-yes">Oui</option>
-                                <option value="no" data-i18n="form-privacy-no">Non</option>
-                                <option value="not-sure" data-i18n="form-privacy-unsure">Je ne suis pas certain</option>
-                            </select>
-                        </div>
-                    </details>
-                    <div class="form-group">
-                        <label for="message"><span data-i18n="form-goals">Qu’est-ce qui vous prend le plus de temps? (facultatif)</span></label>
-                        <textarea id="message" name="message" data-i18n-placeholder="form-goals-placeholder" placeholder="Quels outils d’IA utilisez-vous aujourd’hui, et quelles tâches mangent votre semaine?"></textarea>
-                    </div>
-                    <div style="text-align:center;margin-top:2rem;">
-                        <button type="submit" class="cta-button" id="submit-btn" disabled data-i18n="form-submit">Envoyer le message</button>
-                        <p id="form-hint" role="alert" aria-live="polite"></p>
-                        <p class="form-notice" data-i18n="form-notice" style="font-size:0.85rem;opacity:0.8;max-width:34rem;margin:1rem auto 0;">J’utilise ce que vous m’envoyez uniquement pour vous répondre et préparer notre appel. Je ne le vends ni ne le partage. Ce formulaire est traité par formsubmit.co, qui me le transmet par courriel, et une copie est conservée dans ma liste de contacts privée. Pour demander l’accès ou la suppression de vos renseignements, écrivez à biz@aiwithrobert.com.</p>
-                    </div>
-                </form>
-                </details>
-            </div>
-            <div id="success-message" style="display:none;text-align:center;margin-top:3rem;padding:3rem;background:linear-gradient(135deg,#fdf9ec 0%,#f3e7bd 100%);border-radius:16px;border:2px solid #c9a227;">
-                <div style="margin-bottom:1rem;color:#8a6d0b;"><svg class="icon icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg></div>
-                <h3 style="color:#11304c;font-size:2rem;margin-bottom:1rem;" data-i18n="success-title">Merci!</h3>
-                <p style="color:#11304c;font-size:1.2rem;line-height:1.7;" data-i18n="success-text">Votre demande a bien été reçue et enregistrée.<br>Je vous contacterai dès que je serai disponible.</p>
-            </div>
+            <p class="contact-other" style="text-align:center;font-size:1.05rem;color:#4b5563;max-width:720px;margin:0 auto;" data-i18n="contact-other">Une conférence pour un groupe ou une autre question? Écrivez à <a href="mailto:biz@aiwithrobert.com" style="color:#1b4469;font-weight:600;">biz@aiwithrobert.com</a>.</p>
         </div>
     </section>
 
@@ -844,8 +737,8 @@
             <a itemprop="url" href="https://biz.aiwithrobert.com">biz.aiwithrobert.com</a>
         </div>
     </footer>
-    <script defer src="/js/bundle.js?v=20261112h"></script>
-    <script defer src="/js/capacity.js?v=20261112g"></script>
+    <script defer src="/js/bundle.js?v=20261112i"></script>
+    <script defer src="/js/capacity.js?v=20261112h"></script>
     <script defer src="/js/feascheck.js?v=20261112b"></script>
 </body>
 </html>
