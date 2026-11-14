@@ -245,4 +245,29 @@
   var body = h("div", { "class": "fx-body" });
   mount.appendChild(body);
   body.appendChild(buildForm());
+
+  /* Landing from a link to #feas-check (the imetrobert.com blog CTA): keep the form in view while the page settles.
+     The browser jumps before the scripts run, then fonts, the French text, the form itself and the at-capacity switch
+     (hidden phone/booking blocks, notices) change the height above it, which left the visitor too far down.
+     So re-align whenever the page height changes, for a few seconds, and stop as soon as the visitor scrolls or taps. */
+  (function keepInView() {
+    if (location.hash !== "#feas-check") return;
+    var stopped = false, nav = doc.querySelector("nav");
+    function align() {
+      if (stopped) return;
+      var y = mount.getBoundingClientRect().top + window.pageYOffset - ((nav ? nav.offsetHeight : 0) + 16);
+      if (Math.abs(y - window.pageYOffset) < 2) return;
+      var html = doc.documentElement, prev = html.style.scrollBehavior;
+      html.style.scrollBehavior = "auto"; window.scrollTo(0, Math.max(y, 0)); html.style.scrollBehavior = prev;
+    }
+    function stop() { stopped = true; if (ro) ro.disconnect(); }
+    var ro = null;
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (e) { window.addEventListener(e, stop, { passive: true, once: true }); });
+    align(); setTimeout(align, 300);
+    window.addEventListener("load", align);
+    if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(align);
+    if (window.ResizeObserver) { ro = new ResizeObserver(align); ro.observe(doc.body); }
+    else [600, 1200, 2500, 4000].forEach(function (ms) { setTimeout(align, ms); });
+    setTimeout(stop, 6000);
+  })();
 })();
