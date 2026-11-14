@@ -14,7 +14,7 @@ const translations = {
   en: {
     'brand-tagline': 'for Business',
     'nav-home': 'Home',
-    'nav-examples': 'Examples',
+    'nav-examples': 'Before &amp; After',
     'nav-services': 'Services',
     'nav-process': 'How It Works',
     'nav-speaking': 'Speaking',
@@ -282,7 +282,7 @@ const translations = {
   fr: {
     'brand-tagline': 'pour entreprises',
     'nav-home': 'Accueil',
-    'nav-examples': 'Exemples',
+    'nav-examples': 'Avant et après',
     'nav-services': 'Services',
     'nav-process': 'Démarche',
     'nav-speaking': 'Conférences',
