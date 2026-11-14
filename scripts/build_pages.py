@@ -116,7 +116,7 @@ def render(lang, p):
 <p><a href="{u['home']}">{u['back']}</a></p>
 </main>
 <footer><p>{u['indep']}</p><p data-cap="hide"><a href="mailto:{EMAIL}">{EMAIL}</a></p></footer>
-<script defer src="/js/capacity.js?v=20261112h"></script>
+<script defer src="/js/capacity.js?v=c11c001a"></script>
 </body>
 </html>
 """
@@ -153,6 +153,7 @@ def sitemap():
 def llms():
     f = ROOT / "llms.txt"; s = f.read_text(encoding="utf-8")
     s = re.sub(r"\n## More pages\n.*?<!-- PAGES:END -->\n", "\n", s, flags=re.S)
+    s = re.sub(r"\n{3,}", "\n\n", s)  # keep reruns idempotent (no blank-line creep)
     lines = ["\n## More pages", "Dedicated pages for each service and common question, each in English and in French:"]
     for p in PAGES:
         lines.append(f"- {p['en']['h1']}: {url('en', p)} (French: {url('fr', p)})")

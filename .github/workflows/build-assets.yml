@@ -12,6 +12,9 @@ on:
       # fr/index.html is generated from index.html + js/i18n.js, so an
       # English-only content edit still has to rebuild the French page.
       - 'index.html'
+      # service pages and guides are generated from these two
+      - 'scripts/pages_data.py'
+      - 'scripts/build_pages.py'
   workflow_dispatch:
 
 jobs:
@@ -51,6 +54,12 @@ jobs:
             css/responsive.css \
             > css/styles.css
 
+      # ── Cache-busting versions ─────────────────────────────────────────────
+      # ?v= on styles/bundle/capacity/feascheck becomes a hash of the file's
+      # content, so nobody has to bump versions by hand.
+      - name: Stamp asset versions
+        run: python3 scripts/stamp_assets.py
+
       # ── Verify English/French text agree before building anything ─────────
       # Runs first so a missing or mismatched translation fails the build
       # loudly instead of silently shipping a half-English French page.
@@ -64,11 +73,18 @@ jobs:
       - name: Generate fr/index.html
         run: python3 scripts/build_fr_page.py
 
+      # ── Generate service pages and guides (EN + FR) from scripts/pages_data.py
+      - name: Generate service pages and guides
+        run: python3 scripts/build_pages.py
+
       # ── Commit built files back to repo ───────────────────────────────────
+      - name: Site checks (bundle, versions, JSON-LD, anchors, phone/email/prices)
+        run: python3 scripts/check_site.py
+
       - name: Commit and push generated files
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add js/bundle.js css/styles.css fr/index.html
-          git diff --staged --quiet || git commit -m "chore: rebuild bundle.js, styles.css and fr/index.html [skip ci]"
+          git add -A index.html js/bundle.js css/styles.css fr services articles sitemap.xml llms.txt scripts/build_pages.py
+          git diff --staged --quiet || git commit -m "chore: rebuild bundle, styles, versions, French page and generated pages [skip ci]"
           git push

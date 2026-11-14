@@ -5,6 +5,12 @@ Static site, same architecture as seniors.aiwithrobert.com (repo imetrobert/aiwi
 `fr/index.html`, `js/bundle.js`, `css/styles.css` (CI rebuilds them on push to `main`;
 locally: `python3 scripts/build_fr_page.py`).
 
+**After ANY edit run `python3 scripts/check_site.py` and `python3 scripts/check_content_sync.py`** (both print OK or the exact problem).
+Push to `main` and CI does the rest on its own: rebuilds `js/bundle.js` and `css/styles.css`, stamps the `?v=` cache versions
+(`scripts/stamp_assets.py`, content hash, never bump by hand), regenerates `fr/index.html` and all service/guide pages, runs both
+checks, and commits the result. Step-by-step recipes for the likely edits (change a price, add an example card, new FAQ, reword a
+headline, new service page) are in `docs/common-edits.md`: read that instead of exploring.
+
 **Golden rule:** any element with `data-i18n="key"` must have the same English text in `index.html`
 and in `js/i18n.js` (`en`), plus a `fr` entry. Check with `python3 scripts/check_content_sync.py`.
 
@@ -16,6 +22,7 @@ Facts repeated for SEO (update all): phone 514-250-8491, email biz@aiwithrobert.
 strings, must match `<head>` and `scripts/build_fr_page.py`), `llms.txt`.
 
 Prices: the home-page Pricing section (`pricing-*`, `price1-4-*` keys) is the one place with prices; also in `llms.txt`. Change a price in index.html + js/i18n.js (en+fr) + llms.txt together. The toolkit's Proposal builder has its own copy (FX_PRICE in imetrobert/aiwithrobert-toolkit index.html): keep them equal. The before/after examples section (`#examples`, `ba-*` keys) quotes the Workflow Setup starting price ($2,000) in `ba-math-text`: update it with any price change. Its examples are labelled illustrations, never client results; keep each one to things a low-cost plan can do (no "runs by itself" claims). Discovery-call model otherwise. Brand: navy #11304c, gold #c9a227, gold text #8a6d0b.
+Version strings: never edit the `?v=` values; `scripts/stamp_assets.py` sets them from file contents (CI runs it).
 Logo: `logo.svg` is the source; `logo.PNG` a 512×512 transparent export; icons from `scripts/build_favicons.py`
 (note: its 16px bulb-only step was written for the blue/teal seniors bubble — re-check the 16px icon if you re-run it
 with the gold logo).
@@ -30,15 +37,12 @@ The script also refreshes the `PAGES:START/END` block in `sitemap.xml` and the `
 the IndexNow workflow submits every sitemap URL. The footer link row is `footer-pages` (i18n, EN/FR). Keep the same rules
 as the home page: no prices beyond the home-page starting prices, no invented clients or results, independence note naming Bell Canada.
 
-## Contact form: optional "Help me prepare" fields
+## Contact form: removed (history)
 
-The `<details class="prep">` block in the contact form (all optional, never in `reqFields` in `js/form.js`) collects what
-the toolkit's Feasibility check needs, so Robert can enter an inquiry there before the call. Field names arrive in the
-formsubmit.co email as: `team_size` (1 / 2-5 / 6-20 / 21+), `tool_chatgpt|claude|gemini|copilot|none|unsure`,
-`personal_info` (yes / no / not-sure), and `need_*` checkboxes that map to Feasibility needs:
-`need_writing`=write, `need_documents`=files, `need_reuse`=reuse, `need_own_data`=own, `need_schedule`=sched,
-`need_automatic`=auto, `need_images`=img, `need_office_files`=office, `need_research`=web.
-(Privacy `personal_info` = priv; team_size = team and the number of users.) Keep these names stable; the labels are i18n keys `form-need-*`, `form-tool-*`, `form-team-*`, `form-privacy-*`.
+The old contact form and its "Help me prepare" block no longer exist (2026-11-12); `js/form.js` is two no-op functions. The only form is
+the free feasibility check (below). Its saved fields keep the old names the toolkit reads: `team_size`, `tool_chatgpt|claude|gemini|copilot|none|unsure`,
+`personal_info` (yes/no/not-sure), and `need_writing|documents|reuse|own_data|schedule|automatic|images|office_files|research`
+(= write, files, reuse, own, sched, auto, img, office, web). Keep those names stable.
 
 ## JSON-LD wording changes
 
@@ -54,15 +58,6 @@ call-to-action boxes become a short notice, and the contact section shows the no
 rows read in the toolkit's Waitlist screen). Notice wording EN/FR lives inside `capacity.js` (CONFIG/COMMON). New inbound CTA
 or phone link on the page? Add the right `data-cap` attribute. The phone stays in JSON-LD/NAP on purpose. Tables and
 functions: `migration/site_capacity.sql` in the toolkit repo.
-
-## Contact form: saved copy (Inquiries)
-
-`saveInquiryCopy()` in `js/form.js` sends every contact-form submission to the Supabase RPC `submit_inquiry` as a
-fire-and-forget copy (formsubmit.co still emails it and stays the primary path; a Supabase failure never affects the form).
-Core fields (name, email, phone, company, message) become columns; every other named form field lands in `extra`.
-Renaming or adding form fields? Names flow through automatically, but the toolkit's Inquiries screen reads `interest`,
-`session-type`, `referral`, `team_size`, `tool_*`, `need_*`, `personal_info` by name. Table/function: `migration/site_inquiries.sql`
-in the toolkit repo.
 
 ## Free feasibility check (main call to action)
 

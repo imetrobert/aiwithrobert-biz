@@ -31,19 +31,6 @@ First step for new clients: a free feasibility check on the home page (about two
 Capabilities vary by plan, tool and integration; extra services or paid APIs are explained up front.
 Pricing (CAD, before GST and QST; final scope and price confirmed in writing): AI Opportunity Assessment from $900 (up to 5 people; $1,800 for 6 to 20); AI Workflow Setup from $2,000 per workflow; Team Training Session $1,500 for up to 10 people (+$100 per extra person); Starter Bundle $3,950. Talks from $500; monthly support $300; extra help $150/hour. The client buys their own AI subscription directly from the vendor.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## More pages
 Dedicated pages for each service and common question, each in English and in French:
 - AI consulting for small businesses in Montréal: https://biz.aiwithrobert.com/services/ai-consulting-small-business-montreal/ (French: https://biz.aiwithrobert.com/fr/services/conseil-ia-petite-entreprise-montreal/)

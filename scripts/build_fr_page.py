@@ -296,7 +296,9 @@ def rewrite_head(doc: str) -> str:
 def rewrite_paths(doc: str) -> str:
     """The French page lives one directory down, so document-relative asset
     references would resolve to /fr/... and 404. Make them root-absolute."""
-    assets = ["css/styles.css?v=20261113b", "js/bundle.js?v=20261113b", "logo.PNG", "hero-business.jpg", "hero-business.webp", "hero-business-800.jpg", "hero-business-800.webp", "profile.jpg", "profile.webp", "favicon.ico",
+    # The ?v= on styles/bundle is stamped by scripts/stamp_assets.py: read it from the page.
+    versioned = re.findall(r'(?:href|src)="((?:css/styles\.css|js/bundle\.js)\?v=[A-Za-z0-9]+)"', doc)
+    assets = versioned + ["logo.PNG", "hero-business.jpg", "hero-business.webp", "hero-business-800.jpg", "hero-business-800.webp", "profile.jpg", "profile.webp", "favicon.ico",
               "favicon-32x32.png", "favicon-16x16.png", "apple-touch-icon.png",
               "icon-192.png", "icon-512.png", "manifest.json"]
     for a in assets:
