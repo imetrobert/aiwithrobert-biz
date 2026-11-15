@@ -2,7 +2,7 @@
 """
 stamp_assets.py — cache-busting versions without anyone remembering to bump them.
 
-Sets the `?v=` on css/styles.css, js/bundle.js, js/capacity.js and js/feascheck.js
+Sets the `?v=` on css/styles.css, js/bundle.js, js/capacity.js, js/feascheck.js and js/hits.js
 to a short hash of each file's CONTENT, in index.html and in scripts/build_pages.py
 (which writes the capacity.js link into every service page and guide). A file that
 did not change keeps the same version; a changed file gets a new one, so visitors
@@ -16,7 +16,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ASSETS = ["css/styles.css", "js/bundle.js", "js/capacity.js", "js/feascheck.js"]
+ASSETS = ["css/styles.css", "js/bundle.js", "js/capacity.js", "js/feascheck.js", "js/hits.js"]
 TARGETS = ["index.html", "scripts/build_pages.py"]
 
 
