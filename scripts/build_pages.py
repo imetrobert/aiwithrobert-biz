@@ -76,6 +76,8 @@ def render(lang, p):
     return f"""<!DOCTYPE html>
 <html lang="{u['lang']}">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DM4EY880K2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-DM4EY880K2',{{site:'business'}});</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#11304c">
