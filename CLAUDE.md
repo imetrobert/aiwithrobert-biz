@@ -72,3 +72,11 @@ contact form, its "Help me prepare" block and the at-capacity waitlist form were
 and other questions go by email (`contact-other` line, Speaking button = mailto). The two contact-form sections above describe
 the removed form and are kept only as history for the field names. Short links: `/feasibility/`, `/feasability/`, `/faisabilite/`
 (noindex redirects, also on aiwithrobert.com). Table/function: `migration/feasibility_public.sql` in the toolkit repo.
+
+## Traffic from the blog and QR (utm tags; do not break)
+
+Visits tagged `utm_source` / `utm_campaign` are saved on the lead by `js/feascheck.js` as `extra.source` ("source/campaign") and shown in the toolkit's "Where leads come from".
+Tags in use: `linkedin/issue-YYYY-MM[-d1|-d2|-d3|-fr]` (LinkedIn posts), `imetrobert-blog/issue-YYYY-MM[-related]` (links inside blog issues), `imetrobert-blog/plans-page`, `qr/talk`.
+The blog's `scripts/promo_kit.py` (repo imetrobert.github.io, table `TARGETS`) links LinkedIn follow-up posts to the service/article pages by slug, and
+`utils.RELATED_PAGES` there links three pages from each issue. **If you rename, remove or add a page in `scripts/pages_data.py`, update those two lists in the blog repo too**
+(the blog's test only checks they point at biz.aiwithrobert.com, not that the page exists). Keep the `#feas-check` anchor on the home page.
