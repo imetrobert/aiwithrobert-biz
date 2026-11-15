@@ -11,7 +11,7 @@
   "use strict";
   /* Google Analytics events (no personal data is ever sent): feasibility_submit, phone_click, email_click, booking_click.
      Mark feasibility_submit as a key event in GA4 (Admin > Events). */
-  function track(name, params) { try { if (window.gtag) window.gtag("event", name, params || {}); } catch (e) {} }
+  function track(name, params) { try { if (window.gtag) { params = params || {}; params.transport_type = "beacon"; window.gtag("event", name, params); } } catch (e) {} } /* beacon: still delivered when the Mail app opens and Safari is paused */
   document.addEventListener("click", function (e) {
     var a = e.target && e.target.closest ? e.target.closest("a[href]") : null; if (!a) return;
     var href = a.getAttribute("href") || "";
