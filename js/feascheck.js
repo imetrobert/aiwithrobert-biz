@@ -9,6 +9,16 @@
    Wording EN/FR lives in T below. Booking link and reply time: CONFIG. */
 (function () {
   "use strict";
+  /* Google Analytics events (no personal data is ever sent): feasibility_submit, phone_click, email_click, booking_click.
+     Mark feasibility_submit as a key event in GA4 (Admin > Events). */
+  function track(name, params) { try { if (window.gtag) window.gtag("event", name, params || {}); } catch (e) {} }
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest ? e.target.closest("a[href]") : null; if (!a) return;
+    var href = a.getAttribute("href") || "";
+    if (href.indexOf("tel:") === 0) track("phone_click", { link_url: href });
+    else if (href.indexOf("mailto:") === 0) track("email_click", { link_url: href });
+    else if (href.indexOf("calendar.app.google") !== -1) track("booking_click", { link_url: "calendar" });
+  }, true);
   var CONFIG = {
     site: "business",
     url: "https://ipnajvgwtjrlecbqfwrh.supabase.co",
@@ -204,6 +214,7 @@
     try { var q = new URLSearchParams(location.search), src = [q.get("utm_source"), q.get("utm_campaign")].filter(Boolean).join("/").replace(/[^A-Za-z0-9_\/-]/g, "").slice(0, 80); if (src) extra.source = src; } catch (e) {}
     a.picked.forEach(function (p) { extra[p.field] = "Yes"; });
     var summary = rows.map(function (r) { return T.en.need[r.id] + ": " + T.en.v[r.v]; }).join("; ");
+    track("feasibility_submit", { language: L, team_size: a.team, plan: a.plan, at_capacity: state.on ? "yes" : "no", source: extra.source || "direct" });
     try {
       rpc("submit_inquiry", { p_site: CONFIG.site, p_name: a.name, p_organization: a.org, p_email: a.email, p_phone: a.phone, p_message: ("Website feasibility check. " + summary).slice(0, 3900), p_extra: extra, p_language: L }).catch(function () {});
       if (state.on) rpc("join_waitlist", { p_site: CONFIG.site, p_name: a.name, p_organization: a.org, p_email: a.email, p_phone: a.phone, p_services: ["Feasibility check"], p_language: L, p_consent: true }).catch(function () {});
