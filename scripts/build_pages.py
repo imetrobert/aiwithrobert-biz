@@ -119,7 +119,7 @@ def render(lang, p):
 </main>
 <footer><p>{u['indep']}</p><p data-cap="hide"><a href="mailto:{EMAIL}">{EMAIL}</a></p></footer>
 <script defer src="/js/capacity.js?v=c11c001a"></script>
-<script defer src="/js/hits.js?v=25c5ebef"></script>
+<script defer src="/js/hits.js?v=f5526bc8"></script>
 </body>
 </html>
 """
