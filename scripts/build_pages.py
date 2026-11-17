@@ -76,6 +76,7 @@ def render(lang, p):
     return f"""<!DOCTYPE html>
 <html lang="{u['lang']}">
 <head>
+<script>try{{var q=location.search;if(/[?&]countme=1/.test(q)||(!/[?&]countme=0/.test(q)&&localStorage.getItem("hits-off")==="1"))window["ga-disable-G-DM4EY880K2"]=true}}catch(e){{}}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DM4EY880K2"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-DM4EY880K2',{{site:'business'}});</script>
 <meta charset="UTF-8">
