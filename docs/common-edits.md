@@ -63,3 +63,7 @@ Only consented, approved wording is ever returned (checked by the database). To 
 ### Testimonials are no longer hand-written here (2026-11-17)
 The hand-written testimonial cards and their i18n keys were removed. The section starts hidden (`display:none` in index.html) and `js/testimonials.js` reveals it when at least one testimonial is published in the toolkit's Testimonials screen. Do not add testimonial text to index.html or i18n.js; add it in the toolkit.
 Still hand-written on purpose (AI-facing copies): the Review JSON-LD and the quote in llms.txt on the Seniors site; update them if the wording of a published testimonial changes.
+
+### Testimonials are baked into the page every morning (2026-11-17)
+`scripts/sync_testimonials.py` (workflow "Sync testimonials", daily 09:27 UTC and on demand) reads the public RPC `public_testimonials` and writes the cards between `<!-- TESTIMONIALS:START/END -->` in index.html (inside the Speaking section), showing or hiding the container; `fr/index.html` is rebuilt from it. No Review JSON-LD or llms.txt quote here (no Google profile for Business).
+Right after publishing or unpublishing in the toolkit: Actions > Sync testimonials > Run workflow. Until then `js/testimonials.js` adds new ones live and skips quotes already in the page. Never edit the baked cards by hand. Offline test: `TESTIMONIALS_JSON=rows.json python3 scripts/sync_testimonials.py`.
