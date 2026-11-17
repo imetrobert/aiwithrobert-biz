@@ -55,3 +55,7 @@ Brand navy #11304c, gold #c9a227, gold text #8a6d0b. `logo.svg` is the source, `
 
 ## After any content change
 Bump `<lastmod>` for `/` and `/fr/` in `sitemap.xml`. The IndexNow workflow pings search engines on push.
+
+### Published testimonials (added from the toolkit)
+`js/testimonials.js` (separate file, NOT in bundle.js, home page only) calls the public Supabase RPC `public_testimonials(site)` and appends the testimonials Robert published in the toolkit's "Testimonials" screen as extra cards in the existing testimonials container (same classes, so styling is inherited).
+Only consented, approved wording is ever returned (checked by the database). To remove one, unpublish it in the toolkit, not here. The hand-written testimonial cards in index.html and i18n.js are unchanged. The `?v=` stamp is automatic (scripts/stamp_assets.py).
