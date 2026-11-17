@@ -5,7 +5,7 @@
    Loaded as a separate file on the home page (NOT part of js/bundle.js). Fails silently: if it cannot load, the page shows as before. */
 (function () {
   "use strict";
-  var CONFIG = { site: "business", url: "https://ipnajvgwtjrlecbqfwrh.supabase.co", key: "sb_publishable_oPa7fZdSTeXKuCwpOF338Q_PcXS57go", reveal: "#speaking .testimonials-container", mount: "#speaking .testimonials-container" };
+  var CONFIG = { site: "business", url: "https://ipnajvgwtjrlecbqfwrh.supabase.co", key: "sb_publishable_oPa7fZdSTeXKuCwpOF338Q_PcXS57go", reveal: "#testimonials", mount: "#testimonials .testimonials-container" };
   function add(box, name, cls, text) {
     if (!text) return null;
     var s = document.createElement("span"); s.className = cls; s.textContent = text; box.appendChild(s); return s;

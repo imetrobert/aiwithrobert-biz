@@ -2,7 +2,7 @@
 """Bake the testimonials published in the toolkit into the static pages, so search engines and AI crawlers that do not run
 JavaScript can read them. Reads the public Supabase RPC public_testimonials (only consented, approved wording is ever returned).
 Updates the testimonial cards in index.html between markers (fr/index.html is rebuilt from it by scripts/build_fr_page.py) and shows
-or hides the container (hidden when nothing is published). Business has no Review JSON-LD or llms.txt quote.
+or hides the #testimonials section (hidden when nothing is published). Business has no Review JSON-LD or llms.txt quote.
 Run by .github/workflows/sync-testimonials.yml (daily and on demand). Offline test: TESTIMONIALS_JSON=rows.json python3 scripts/sync_testimonials.py
 js/testimonials.js still adds newly published ones live between runs (it skips any quote already in the page).
 Exit code 1 if the data could not be fetched (nothing is changed then)."""
@@ -19,8 +19,8 @@ CONFIG = {
     "site": "business",
     "url": "https://ipnajvgwtjrlecbqfwrh.supabase.co",
     "key": "sb_publishable_oPa7fZdSTeXKuCwpOF338Q_PcXS57go",
-    "hidden": '<div class="testimonials-container" style="margin-top:2rem;display:none">',
-    "shown": '<div class="testimonials-container" style="margin-top:2rem;">',
+    "hidden": '<section id="testimonials" style="display:none">',
+    "shown": '<section id="testimonials">',
     "review_links": False, "jsonld": False, "llms": False,   # no Google profile for the Business brand
 }
 START, END = "<!-- TESTIMONIALS:START -->", "<!-- TESTIMONIALS:END -->"
