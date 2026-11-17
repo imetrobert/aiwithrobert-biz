@@ -38,7 +38,7 @@ if cat(css_src) != read("css/styles.css"):
     bad.append("css/styles.css is out of date: cat the six css/*.css files in order (CI does this on push)")
 
 # 2. cache-busting stamps current
-for a in ["css/styles.css", "js/bundle.js", "js/capacity.js", "js/feascheck.js", "js/hits.js"]:
+for a in ["css/styles.css", "js/bundle.js", "js/capacity.js", "js/feascheck.js", "js/hits.js", "js/testimonials.js"]:
     h = hashlib.sha1((ROOT / a).read_bytes()).hexdigest()[:8]
     if a + "?v=" + h not in read("index.html"):
         bad.append(f"index.html: {a} version is not current ({h}); run python3 scripts/stamp_assets.py")
