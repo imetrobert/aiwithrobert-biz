@@ -37,6 +37,11 @@ The script also refreshes the `PAGES:START/END` block in `sitemap.xml` and the `
 the IndexNow workflow submits every sitemap URL. The footer link row is `footer-pages` (i18n, EN/FR). Keep the same rules
 as the home page: no prices beyond the home-page starting prices, no invented clients or results, independence note naming Bell Canada.
 
+## The Briefing section (blog link)
+
+`#insights` + nav item link to the Business-branded blog (www.imetrobert.com/blog/). The latest-issue line is baked by `scripts/sync_insights.py`
+(daily workflow `sync-insights.yml`); keys `nav-insights`, `insights-*`. See `docs/common-edits.md`.
+
 ## Contact form: removed (history)
 
 The old contact form and its "Help me prepare" block no longer exist (2026-11-12); `js/form.js` is two no-op functions. The only form is

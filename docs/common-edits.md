@@ -53,6 +53,14 @@ Inside `js/capacity.js` (CONFIG/COMMON, EN + FR). On/off and schedule are in the
 Brand navy #11304c, gold #c9a227, gold text #8a6d0b. `logo.svg` is the source, `logo.PNG` the 512x512 export, icons from `scripts/build_favicons.py`
 (re-check the 16px icon after re-running it).
 
+## The Briefing (Insights) section
+
+`#insights` (nav item "The Briefing") links to the blog at www.imetrobert.com/blog/, which is branded as this site's newsletter since 2026-11-17.
+Wording: `nav-insights`, `insights-*` keys (EN + FR, same rule as everything else). The latest issue title, date and link between
+`<!-- INSIGHTS:START/END -->` are baked daily from the blog's RSS feed by `scripts/sync_insights.py` (workflow `sync-insights.yml`,
+09:41 UTC, or Actions > Sync insights > Run workflow right after an issue is approved). Never edit that block by hand. The blog is English only, so the
+FR page shows the English title (its label and note are French). If the blog moves or is renamed: change `FEED` / links in the script and the `utm_source=biz-site` links.
+
 ## After any content change
 Bump `<lastmod>` for `/` and `/fr/` in `sitemap.xml`. The IndexNow workflow pings search engines on push.
 
