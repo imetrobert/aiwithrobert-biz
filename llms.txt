@@ -42,6 +42,9 @@ Dedicated pages for each service and common question, each in English and in Fre
 - Getting more from the AI subscriptions you already pay for: https://biz.aiwithrobert.com/articles/get-more-from-your-ai-subscriptions/ (French: https://biz.aiwithrobert.com/fr/articles/tirer-plus-de-vos-abonnements-ia/)
 <!-- PAGES:END -->
 
+## The Briefing (monthly newsletter)
+AI with Robert for Business publishes a monthly plain-language briefing for Canadian small businesses (what your AI subscription can do now, and what to try next), at https://www.imetrobert.com/blog/ (English only; RSS: https://www.imetrobert.com/blog/feed.xml). Author: Robert Simon.
+
 ## Independence
 AI with Robert for Business is an independent practice of Robert Simon. It is not affiliated with, sponsored by or endorsed by any employer, including Bell Canada. Mentions of his professional experience describe his background only.
 
