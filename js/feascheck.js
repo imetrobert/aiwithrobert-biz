@@ -37,13 +37,15 @@
       plan: "Which paid AI plan do you use most?", none: "None yet", unsure: "Not sure", choose: "Choose an option...",
       team: "How many people would use AI?", team1: "Just me", team2: "2 to 5 people", team3: "6 to 20 people", team4: "More than 20 people",
       needs: "What would you like AI to do? (choose up to 3)",
-      need: { write: "Writing: emails, quotes, reports", files: "Summarizing documents, PDFs or spreadsheets", reuse: "Saved prompts my whole team can reuse", own: "Working with my own email, calendar or files", sched: "A task that runs on a schedule", auto: "Something that runs by itself when an email, form or invoice arrives", img: "Creating images or marketing visuals", office: "Ready-made Word, Excel or PowerPoint files", web: "Researching competitors, suppliers or markets", team: "Several people sharing one setup", priv: "Handling customers’ personal information" },
+      need: { other: "Something else (describe it below)", write: "Writing: emails, quotes, reports", files: "Summarizing documents, PDFs or spreadsheets", reuse: "Saved prompts my whole team can reuse", own: "Working with my own email, calendar or files", sched: "A task that runs on a schedule", auto: "Something that runs by itself when an email, form or invoice arrives", img: "Creating images or marketing visuals", office: "Ready-made Word, Excel or PowerPoint files", web: "Researching competitors, suppliers or markets", team: "Several people sharing one setup", priv: "Handling customers’ personal information" },
       priv: "Will this involve your customers’ or clients’ personal information?", yes: "Yes", no: "No",
       name: "Your name", email: "Email address", org: "Company (optional)", phone: "Phone number (optional)",
       consent: "I agree that these details may be used to contact me about my result and about availability. They are not sold or shared.",
       go: "Show my result", working: "Checking...",
       ePlan: "Please choose your plan (or None yet).", eTeam: "Please choose how many people would use AI.", eNeeds: "Please choose at least one thing you would like AI to do.", ePriv: "Please answer the personal information question.", eName: "Please enter your name.", eEmail: "Please enter a valid email address.", eConsent: "Please tick the box to agree before seeing your result.",
       max: "You can choose up to 3. Untick one to pick another.",
+      otherPh: "In a few words. Please do not include names or personal details.", eOther: "Please describe the other item in a few words.", otherChip: "Noted",
+      sOtherOpen: "I will review this one personally and reply within 1 to 2 business days.", sOtherCap: "I read every one of these personally. I cannot promise a reply while I am fully booked.",
       rTitle: "Your preliminary result", rFor: "For your plan: ", rAny: "You do not have a paid plan yet, so this shows what the common paid plans can do.",
       v: { yes: "Yes", partial: "Partly", no: "No", unknown: "Needs a closer look" },
       s: { yes: "Your plan can do this today.", partial: "Possible, with conditions or some setup. The specifics are part of a call or the AI Opportunity Assessment.", no: "Not offered by this plan today. There is usually another way to get there, and we can look at it together.", unknown: "I need a closer look before I can confirm this one." },
@@ -60,13 +62,15 @@
       plan: "Quel forfait d’IA payant utilisez-vous le plus?", none: "Aucun pour l’instant", unsure: "Je ne suis pas certain", choose: "Choisissez une option...",
       team: "Combien de personnes utiliseraient l’IA?", team1: "Moi seulement", team2: "2 à 5 personnes", team3: "6 à 20 personnes", team4: "Plus de 20 personnes",
       needs: "Que voulez-vous que l’IA fasse? (choisissez jusqu’à 3)",
-      need: { write: "Rédaction : courriels, soumissions, rapports", files: "Résumer des documents, des PDF ou des chiffriers", reuse: "Des invites enregistrées que toute mon équipe peut réutiliser", own: "Travailler avec mes propres courriels, mon calendrier ou mes fichiers", sched: "Une tâche qui s’exécute selon un horaire", auto: "Quelque chose qui s’exécute seul à l’arrivée d’un courriel, d’un formulaire ou d’une facture", img: "Créer des images ou des visuels de marketing", office: "Des fichiers Word, Excel ou PowerPoint prêts à utiliser", web: "Faire de la recherche sur des concurrents, des fournisseurs ou des marchés", team: "Plusieurs personnes qui partagent une même configuration", priv: "Traiter des renseignements personnels de clients" },
+      need: { other: "Autre chose (décrivez-le ci-dessous)", write: "Rédaction : courriels, soumissions, rapports", files: "Résumer des documents, des PDF ou des chiffriers", reuse: "Des invites enregistrées que toute mon équipe peut réutiliser", own: "Travailler avec mes propres courriels, mon calendrier ou mes fichiers", sched: "Une tâche qui s’exécute selon un horaire", auto: "Quelque chose qui s’exécute seul à l’arrivée d’un courriel, d’un formulaire ou d’une facture", img: "Créer des images ou des visuels de marketing", office: "Des fichiers Word, Excel ou PowerPoint prêts à utiliser", web: "Faire de la recherche sur des concurrents, des fournisseurs ou des marchés", team: "Plusieurs personnes qui partagent une même configuration", priv: "Traiter des renseignements personnels de clients" },
       priv: "Est-ce que cela touchera des renseignements personnels de vos clients?", yes: "Oui", no: "Non",
       name: "Votre nom", email: "Adresse courriel", org: "Entreprise (facultatif)", phone: "Numéro de téléphone (facultatif)",
       consent: "J’accepte que ces renseignements servent à me contacter au sujet de mon résultat et des disponibilités. Ils ne sont ni vendus ni partagés.",
       go: "Voir mon résultat", working: "Vérification...",
       ePlan: "Veuillez choisir votre forfait (ou Aucun pour l’instant).", eTeam: "Veuillez indiquer combien de personnes utiliseraient l’IA.", eNeeds: "Veuillez choisir au moins une chose que vous aimeriez que l’IA fasse.", ePriv: "Veuillez répondre à la question sur les renseignements personnels.", eName: "Veuillez entrer votre nom.", eEmail: "Veuillez entrer une adresse courriel valide.", eConsent: "Veuillez cocher la case pour accepter avant de voir votre résultat.",
       max: "Vous pouvez en choisir jusqu’à 3. Décochez-en un pour en choisir un autre.",
+      otherPh: "En quelques mots. Veuillez ne pas inclure de noms ni de renseignements personnels.", eOther: "Veuillez décrire l’autre élément en quelques mots.", otherChip: "Noté",
+      sOtherOpen: "Je vais l’examiner personnellement et vous répondre d’ici 1 à 2 jours ouvrables.", sOtherCap: "Je lis chacune de ces demandes personnellement. Je ne peux pas promettre de réponse tant que mon agenda est complet.",
       rTitle: "Votre résultat préliminaire", rFor: "Pour votre forfait : ", rAny: "Vous n’avez pas encore de forfait payant; voici donc ce que les forfaits payants courants peuvent faire.",
       v: { yes: "Oui", partial: "En partie", no: "Non", unknown: "À vérifier" },
       s: { yes: "Votre forfait peut le faire dès aujourd’hui.", partial: "Possible, avec des conditions ou un peu de configuration. Les détails font partie d’un appel ou de l’Évaluation des occasions d’IA.", no: "Ce forfait ne l’offre pas pour l’instant. Il existe habituellement une autre façon d’y arriver, et nous pouvons la regarder ensemble.", unknown: "Je dois regarder de plus près avant de confirmer ce point." },
@@ -88,6 +92,7 @@
   st.textContent = ".feas-box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1.6rem 1.4rem;max-width:720px;margin:0 auto 2.5rem;text-align:left;color:#11304c;scroll-margin-top:150px}" +
     ".feas-box h3{margin:0 0 .5rem;font-size:1.5rem;color:#11304c}.feas-box>p{margin:.3rem 0 1rem;color:#4b5563}.feas-box fieldset{border:0;padding:0;margin:0 0 1.2rem}.feas-box legend{font-weight:600;margin-bottom:.45rem;padding:0}" +
     ".feas-box label.fx-check{display:flex;gap:.6rem;align-items:flex-start;margin:.45rem 0;font-weight:400;cursor:pointer}.feas-box label.fx-check span{flex:1}.feas-box input[type=checkbox]{width:1.3rem;height:1.3rem;min-width:1.3rem;padding:0;margin:.15rem 0 0;flex:none}" +
+    ".feas-box fieldset input[type=text]{width:100%;margin:.3rem 0 .4rem;padding:.7rem .8rem;border:1px solid #cbd5e1;border-radius:10px;font:inherit;box-sizing:border-box}" +
     ".feas-box label.fx-off{opacity:.45}.feas-box .fx-hp{position:absolute;left:-9999px;height:0;overflow:hidden}.feas-box .fx-msg{margin:.8rem 0 0;font-weight:600;color:#b42318}.feas-box .fx-invalid{outline:2px solid #b42318;outline-offset:2px;border-radius:6px}" +
     ".feas-box .fx-hint{font-size:.9rem;color:#6b7280;margin:.2rem 0 0}.feas-box .fx-row{display:flex;gap:.9rem;align-items:flex-start;padding:.9rem 0;border-top:1px solid #e2e8f0}.feas-box .fx-row:first-of-type{border-top:0}" +
     ".feas-box .fx-chip{flex:none;min-width:5.2rem;text-align:center;font-weight:700;font-size:.9rem;border-radius:999px;padding:.3rem .7rem;margin-top:.1rem}" +
@@ -152,11 +157,15 @@
     var plan = select("fx-plan", C.plan, TOOLS.concat([["none", C.none], ["unsure", C.unsure]]));
     var team = select("fx-team", C.team, [["1", C.team1], ["2-5", C.team2], ["6-20", C.team3], ["21+", C.team4]]);
     var hint = h("p", { "class": "fx-hint", role: "status" });
-    var boxes = NEEDS.map(function (n) {
+    var boxes = NEEDS.concat([["need_other", "other"]]).map(function (n) {
       var cb = h("input", { type: "checkbox", name: n[0], value: n[1] });
       return { cb: cb, label: h("label", { "class": "fx-check" }, [cb, h("span", { text: C.need[n[1]] })]) };
     });
-    var needs = h("fieldset", {}, [h("legend", { text: C.needs + " *" })].concat(boxes.map(function (b) { return b.label; })).concat([hint]));
+    /* "Something else": free text. It never gets a verdict; the result says it will be read (and, when open, answered). */
+    var otherBox = boxes[boxes.length - 1], otherText = h("input", { type: "text", id: "fx-other", name: "need_other_text", maxlength: "200", placeholder: C.otherPh, "aria-label": C.need.other });
+    otherText.style.display = "none";
+    otherBox.cb.addEventListener("change", function () { otherText.style.display = otherBox.cb.checked ? "" : "none"; if (otherBox.cb.checked) { try { otherText.focus({ preventScroll: true }); } catch (x) {} } });
+    var needs = h("fieldset", {}, [h("legend", { text: C.needs + " *" })].concat(boxes.map(function (b) { return b.label; })).concat([otherText, hint]));
     function cap() {
       var n = boxes.filter(function (b) { return b.cb.checked; }).length;
       boxes.forEach(function (b) { var off = n >= CONFIG.maxNeeds && !b.cb.checked; b.cb.disabled = off; b.label.classList.toggle("fx-off", off); });
@@ -179,11 +188,13 @@
       if (!plan.input.value) return bad(plan.input, C.ePlan);
       if (!team.input.value) return bad(team.input, C.eTeam);
       if (!picked.length) return bad(needs, C.eNeeds);
+      var otherVal = otherBox.cb.checked ? otherText.value.trim().slice(0, 200) : "";
+      if (otherBox.cb.checked && otherVal.length < 3) return bad(otherText, C.eOther);
       if (!priv.input.value) return bad(priv.input, C.ePriv);
       if (!name.input.value.trim()) return bad(name.input, C.eName);
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.input.value.trim())) return bad(email.input, C.eEmail);
       if (!consent.checked) return bad(consentLabel, C.eConsent);
-      var a = { plan: plan.input.value, team: team.input.value, priv: priv.input.value, picked: picked.slice(0, CONFIG.maxNeeds), name: name.input.value.trim(), email: email.input.value.trim(), org: org.input.value.trim(), phone: phone.input.value.trim(), bot: !!hp.value };
+      var a = { plan: plan.input.value, team: team.input.value, priv: priv.input.value, picked: picked.slice(0, CONFIG.maxNeeds), other: otherVal, name: name.input.value.trim(), email: email.input.value.trim(), org: org.input.value.trim(), phone: phone.input.value.trim(), bot: !!hp.value };
       btn.disabled = true; btn.textContent = C.working;
       run(a);
     });
@@ -192,7 +203,7 @@
 
   function run(a) {
     var tool = TOOLS.some(function (t) { return t[0] === a.plan; }) ? a.plan : "";
-    var ids = a.picked.map(function (p) { return p.id; });
+    var ids = a.picked.map(function (p) { return p.id; }).filter(function (id) { return id !== "other"; });
     if (a.team !== "1") ids.push("team");
     if (a.priv !== "no") ids.push("priv");
     var rows = ids.map(function (id) { return { id: id, v: verdict(id, tool) }; });
@@ -213,7 +224,8 @@
     /* Where the visitor came from (for example a blog issue link with utm_campaign=issue-2026-12), so the lead can be traced to it. */
     try { var q = new URLSearchParams(location.search), src = [q.get("utm_source"), q.get("utm_campaign")].filter(Boolean).join("/").replace(/[^A-Za-z0-9_\/-]/g, "").slice(0, 80); if (src) extra.source = src; } catch (e) {}
     a.picked.forEach(function (p) { extra[p.field] = "Yes"; });
-    var summary = rows.map(function (r) { return T.en.need[r.id] + ": " + T.en.v[r.v]; }).join("; ");
+    if (a.other) extra.need_other_text = a.other;
+    var summary = rows.map(function (r) { return T.en.need[r.id] + ": " + T.en.v[r.v]; }).concat(a.other ? ["Something else: " + a.other] : []).join("; ");
     track("feasibility_submit", { language: L, team_size: a.team, plan: a.plan, at_capacity: state.on ? "yes" : "no", source: extra.source || "direct" });
     try {
       rpc("submit_inquiry", { p_site: CONFIG.site, p_name: a.name, p_organization: a.org, p_email: a.email, p_phone: a.phone, p_message: ("Website feasibility check. " + summary).slice(0, 3900), p_extra: extra, p_language: L }).catch(function () {});
@@ -222,7 +234,7 @@
       fd.append("_subject", "[Business · " + L.toUpperCase() + "] Feasibility check" + (state.on ? " (at capacity, waitlisted)" : "") + " - " + a.name);
       fd.append("_template", "box"); fd.append("_captcha", "false");
       fd.append("name", a.name); fd.append("email", a.email); fd.append("company", a.org); fd.append("phone", a.phone);
-      fd.append("plan", a.plan); fd.append("team_size", a.team); fd.append("personal_info", a.priv); fd.append("result", summary);
+      fd.append("plan", a.plan); fd.append("team_size", a.team); fd.append("personal_info", a.priv); fd.append("result", summary); if (a.other) fd.append("something_else", a.other);
       fd.append("note", "Automatic. No reply needed: the result was shown on screen and the lead is in the toolkit.");
       fetch(CONFIG.notify, { method: "POST", headers: { Accept: "application/json" }, body: fd }).catch(function () {});
     } catch (e) {}
@@ -233,6 +245,7 @@
     var list = rows.map(function (r) {
       return h("div", { "class": "fx-row" }, [h("span", { "class": "fx-chip fx-" + r.v, text: C.v[r.v] }), h("div", {}, [h("strong", { text: C.need[r.id] }), h("span", { "class": "fx-s", text: S[r.v] })])]);
     });
+    if (a.other) list.push(h("div", { "class": "fx-row" }, [h("span", { "class": "fx-chip fx-unknown", text: C.otherChip }), h("div", {}, [h("strong", { text: a.other }), h("span", { "class": "fx-s", text: state.on ? C.sOtherCap : C.sOtherOpen })])]));
     var next;
     if (state.on) {
       var re = null;
