@@ -35,6 +35,7 @@
   var T = {
     en: {
       plan: "Which paid AI plan do you use most?", none: "None yet", unsure: "Not sure", choose: "Choose an option...",
+      planOther: "Other (tell me which)", planOtherPh: "Name of the AI tool or plan", ePlanOther: "Please name the AI plan or tool you use.", rOther: "Your plan is not in my table yet, so this shows what the common paid plans can do.",
       team: "How many people would use AI?", team1: "Just me", team2: "2 to 5 people", team3: "6 to 20 people", team4: "More than 20 people",
       needs: "What would you like AI to do? (choose up to 3)",
       need: { other: "Something else (describe it below)", write: "Writing: emails, quotes, reports", files: "Summarizing documents, PDFs or spreadsheets", reuse: "Saved prompts my whole team can reuse", own: "Working with my own email, calendar or files", sched: "A task that runs on a schedule", auto: "Something that runs by itself when an email, form or invoice arrives", img: "Creating images or marketing visuals", office: "Ready-made Word, Excel or PowerPoint files", web: "Researching competitors, suppliers or markets", team: "Several people sharing one setup", priv: "Handling customers’ personal information" },
@@ -60,6 +61,7 @@
     },
     fr: {
       plan: "Quel forfait d’IA payant utilisez-vous le plus?", none: "Aucun pour l’instant", unsure: "Je ne suis pas certain", choose: "Choisissez une option...",
+      planOther: "Autre (précisez)", planOtherPh: "Nom de l’outil ou du forfait d’IA", ePlanOther: "Veuillez indiquer le forfait ou l’outil d’IA que vous utilisez.", rOther: "Votre forfait n’est pas encore dans mon tableau; voici donc ce que les forfaits payants courants peuvent faire.",
       team: "Combien de personnes utiliseraient l’IA?", team1: "Moi seulement", team2: "2 à 5 personnes", team3: "6 à 20 personnes", team4: "Plus de 20 personnes",
       needs: "Que voulez-vous que l’IA fasse? (choisissez jusqu’à 3)",
       need: { other: "Autre chose (décrivez-le ci-dessous)", write: "Rédaction : courriels, soumissions, rapports", files: "Résumer des documents, des PDF ou des chiffriers", reuse: "Des invites enregistrées que toute mon équipe peut réutiliser", own: "Travailler avec mes propres courriels, mon calendrier ou mes fichiers", sched: "Une tâche qui s’exécute selon un horaire", auto: "Quelque chose qui s’exécute seul à l’arrivée d’un courriel, d’un formulaire ou d’une facture", img: "Créer des images ou des visuels de marketing", office: "Des fichiers Word, Excel ou PowerPoint prêts à utiliser", web: "Faire de la recherche sur des concurrents, des fournisseurs ou des marchés", team: "Plusieurs personnes qui partagent une même configuration", priv: "Traiter des renseignements personnels de clients" },
@@ -154,7 +156,10 @@
   }
   function capNow() { try { var c = JSON.parse(localStorage.getItem("awr_cap_" + CONFIG.site) || "null"); return !!(c && c.on); } catch (e) { return false; } }
   function buildForm() {
-    var plan = select("fx-plan", C.plan, TOOLS.concat([["none", C.none], ["unsure", C.unsure]]));
+    var plan = select("fx-plan", C.plan, TOOLS.concat([["other", C.planOther], ["none", C.none], ["unsure", C.unsure]]));
+    var planText = h("input", { type: "text", id: "fx-plan-other", name: "plan_other_text", maxlength: "80", placeholder: C.planOtherPh, "aria-label": C.planOther });
+    planText.style.display = "none"; plan.el.appendChild(planText);
+    plan.input.addEventListener("change", function () { var o = plan.input.value === "other"; planText.style.display = o ? "" : "none"; if (o) { try { planText.focus({ preventScroll: true }); } catch (x) {} } });
     var team = select("fx-team", C.team, [["1", C.team1], ["2-5", C.team2], ["6-20", C.team3], ["21+", C.team4]]);
     var hint = h("p", { "class": "fx-hint", role: "status" });
     var boxes = NEEDS.concat([["need_other", "other"]]).map(function (n) {
@@ -186,6 +191,8 @@
       function bad(el, text) { el.classList.add("fx-invalid"); msg.textContent = text; if (el.focus && el.tagName !== "FIELDSET" && el.tagName !== "LABEL") el.focus(); try { el.scrollIntoView({ block: "center", behavior: "smooth" }); } catch (x) {} }
       var picked = boxes.filter(function (b) { return b.cb.checked; }).map(function (b) { return { field: b.cb.name, id: b.cb.value }; });
       if (!plan.input.value) return bad(plan.input, C.ePlan);
+      var planOtherVal = plan.input.value === "other" ? planText.value.trim().slice(0, 80) : "";
+      if (plan.input.value === "other" && planOtherVal.length < 2) return bad(planText, C.ePlanOther);
       if (!team.input.value) return bad(team.input, C.eTeam);
       if (!picked.length) return bad(needs, C.eNeeds);
       var otherVal = otherBox.cb.checked ? otherText.value.trim().slice(0, 200) : "";
@@ -194,7 +201,7 @@
       if (!name.input.value.trim()) return bad(name.input, C.eName);
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.input.value.trim())) return bad(email.input, C.eEmail);
       if (!consent.checked) return bad(consentLabel, C.eConsent);
-      var a = { plan: plan.input.value, team: team.input.value, priv: priv.input.value, picked: picked.slice(0, CONFIG.maxNeeds), other: otherVal, name: name.input.value.trim(), email: email.input.value.trim(), org: org.input.value.trim(), phone: phone.input.value.trim(), bot: !!hp.value };
+      var a = { plan: plan.input.value, team: team.input.value, priv: priv.input.value, picked: picked.slice(0, CONFIG.maxNeeds), other: otherVal, planOther: planOtherVal, name: name.input.value.trim(), email: email.input.value.trim(), org: org.input.value.trim(), phone: phone.input.value.trim(), bot: !!hp.value };
       btn.disabled = true; btn.textContent = C.working;
       run(a);
     });
@@ -224,8 +231,9 @@
     /* Where the visitor came from (for example a blog issue link with utm_campaign=issue-2026-12), so the lead can be traced to it. */
     try { var q = new URLSearchParams(location.search), src = [q.get("utm_source"), q.get("utm_campaign")].filter(Boolean).join("/").replace(/[^A-Za-z0-9_\/-]/g, "").slice(0, 80); if (src) extra.source = src; } catch (e) {}
     a.picked.forEach(function (p) { extra[p.field] = "Yes"; });
+    if (a.planOther) extra.plan_other_text = a.planOther;
     if (a.other) extra.need_other_text = a.other;
-    var summary = rows.map(function (r) { return T.en.need[r.id] + ": " + T.en.v[r.v]; }).concat(a.other ? ["Something else: " + a.other] : []).join("; ");
+    var summary = (a.planOther ? ["Plan: other (" + a.planOther + ")"] : []).concat(rows.map(function (r) { return T.en.need[r.id] + ": " + T.en.v[r.v]; }), a.other ? ["Something else: " + a.other] : []).join("; ");
     track("feasibility_submit", { language: L, team_size: a.team, plan: a.plan, at_capacity: state.on ? "yes" : "no", source: extra.source || "direct" });
     try {
       rpc("submit_inquiry", { p_site: CONFIG.site, p_name: a.name, p_organization: a.org, p_email: a.email, p_phone: a.phone, p_message: ("Website feasibility check. " + summary).slice(0, 3900), p_extra: extra, p_language: L }).catch(function () {});
@@ -234,7 +242,7 @@
       fd.append("_subject", "[Business · " + L.toUpperCase() + "] Feasibility check" + (state.on ? " (at capacity, waitlisted)" : "") + " - " + a.name);
       fd.append("_template", "box"); fd.append("_captcha", "false");
       fd.append("name", a.name); fd.append("email", a.email); fd.append("company", a.org); fd.append("phone", a.phone);
-      fd.append("plan", a.plan); fd.append("team_size", a.team); fd.append("personal_info", a.priv); fd.append("result", summary); if (a.other) fd.append("something_else", a.other);
+      fd.append("plan", a.plan); if (a.planOther) fd.append("plan_other_text", a.planOther); fd.append("team_size", a.team); fd.append("personal_info", a.priv); fd.append("result", summary); if (a.other) fd.append("something_else", a.other);
       fd.append("note", "Automatic. No reply needed: the result was shown on screen and the lead is in the toolkit.");
       fetch(CONFIG.notify, { method: "POST", headers: { Accept: "application/json" }, body: fd }).catch(function () {});
     } catch (e) {}
@@ -256,7 +264,7 @@
     }
     var again = h("button", { type: "button", "class": "fx-again", text: C.again });
     again.addEventListener("click", function () { mount.classList.remove("fx-result"); body.replaceChildren(buildForm()); try { mount.scrollIntoView({ block: "start", behavior: "smooth" }); } catch (e) {} });
-    var out = h("div", { role: "status", "aria-live": "polite" }, [h("h3", { text: C.rTitle }), h("p", { text: tool ? C.rFor + planName : C.rAny })].concat(list).concat([
+    var out = h("div", { role: "status", "aria-live": "polite" }, [h("h3", { text: C.rTitle }), h("p", { text: tool ? C.rFor + planName : a.plan === "other" ? C.rOther : C.rAny })].concat(list).concat([
       h("p", { "class": "fx-note", text: C.note + fmtDate(caps.verified) + C.note2 }), next, flow(state.on, 1), again]));
     onCap = null;
     mount.classList.add("fx-result"); /* hides the "Free Feasibility Check" heading and intro while the result is shown */
