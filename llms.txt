@@ -31,6 +31,9 @@ First step for new clients: a free feasibility check on the home page (about two
 Capabilities vary by plan, tool and integration; extra services or paid APIs are explained up front.
 Pricing (CAD, before GST and QST; final scope and price confirmed in writing): AI Opportunity Assessment from $900 (up to 5 people; $1,800 for 6 to 20); AI Workflow Setup from $2,000 per workflow; Team Training Session $1,500 for up to 10 people (+$100 per extra person); Starter Bundle $3,950. Talks from $500; monthly support $300; extra help $150/hour. The client buys their own AI subscription directly from the vendor.
 
+## The Briefing (monthly newsletter)
+AI with Robert for Business publishes a monthly plain-language briefing for Canadian small businesses (what your AI subscription can do now, and what to try next), at https://www.imetrobert.com/blog/ (English only; RSS: https://www.imetrobert.com/blog/feed.xml). Author: Robert Simon.
+
 ## More pages
 Dedicated pages for each service and common question, each in English and in French:
 - AI consulting for small businesses in Montréal: https://biz.aiwithrobert.com/services/ai-consulting-small-business-montreal/ (French: https://biz.aiwithrobert.com/fr/services/conseil-ia-petite-entreprise-montreal/)
@@ -41,9 +44,6 @@ Dedicated pages for each service and common question, each in English and in Fre
 - ChatGPT vs Gemini vs Copilot for a small business: https://biz.aiwithrobert.com/articles/chatgpt-vs-gemini-vs-copilot-small-business/ (French: https://biz.aiwithrobert.com/fr/articles/chatgpt-gemini-copilot-petite-entreprise/)
 - Getting more from the AI subscriptions you already pay for: https://biz.aiwithrobert.com/articles/get-more-from-your-ai-subscriptions/ (French: https://biz.aiwithrobert.com/fr/articles/tirer-plus-de-vos-abonnements-ia/)
 <!-- PAGES:END -->
-
-## The Briefing (monthly newsletter)
-AI with Robert for Business publishes a monthly plain-language briefing for Canadian small businesses (what your AI subscription can do now, and what to try next), at https://www.imetrobert.com/blog/ (English only; RSS: https://www.imetrobert.com/blog/feed.xml). Author: Robert Simon.
 
 ## Independence
 AI with Robert for Business is an independent practice of Robert Simon. It is not affiliated with, sponsored by or endorsed by any employer, including Bell Canada. Mentions of his professional experience describe his background only.
