@@ -42,7 +42,7 @@ as the home page: no prices beyond the home-page starting prices, no invented cl
 The old contact form and its "Help me prepare" block no longer exist (2026-11-12); `js/form.js` is two no-op functions. The only form is
 the free feasibility check (below). Its saved fields keep the old names the toolkit reads: `team_size`, `tool_chatgpt|claude|gemini|copilot|none|unsure`,
 `personal_info` (yes/no/not-sure), and `need_writing|documents|reuse|own_data|schedule|automatic|images|office_files|research`
-(= write, files, reuse, own, sched, auto, img, office, web). Keep those names stable. The check also has a tenth choice "Something else" (`need_other` = Yes plus the typed text in `need_other_text`, max 200 characters, counts toward the 3-need limit, never gets a verdict): the result says it will be read and, only when the site is open, that he replies within 1 to 2 business days; at capacity it promises no reply. Wording `otherPh`, `eOther`, `otherChip`, `sOtherOpen`, `sOtherCap` in feascheck.js.
+(= write, files, reuse, own, sched, auto, img, office, web). Keep those names stable. The check also has a tenth choice "Something else" (`need_other` = Yes plus the typed text in `need_other_text`, max 200 characters, counts toward the 3-need limit, never gets a verdict): the result says it will be read and, only when the site is open, that he replies within 1 to 2 business days; at capacity it promises no reply. The plan question also has an "Other" choice (`plan` = other, `plan_other_text`; wording `planOther`, `rOther`). Wording `otherPh`, `eOther`, `otherChip`, `sOtherOpen`, `sOtherCap` in feascheck.js.
 
 ## JSON-LD wording changes
 
