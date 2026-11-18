@@ -81,7 +81,7 @@ the removed form and are kept only as history for the field names. Short links: 
 ## Traffic from the blog and QR (utm tags; do not break)
 
 Visits tagged `utm_source` / `utm_campaign` are saved on the lead by `js/feascheck.js` as `extra.source` ("source/campaign") and shown in the toolkit's "Where leads come from".
-Tags in use: `linkedin/issue-YYYY-MM[-d1|-d2|-d3|-fr]` (LinkedIn posts), `imetrobert-blog/issue-YYYY-MM[-related]` (links inside blog issues), `imetrobert-blog/plans-page`, `qr/talk`.
+Tags in use: `linkedin/issue-YYYY-MM[-d1|-d2|-d3|-fr]` (LinkedIn posts), `imetrobert-blog/issue-YYYY-MM[-related]` (links inside blog issues), `imetrobert-blog/plans-page`, `imetrobert-blog/blog-home` and `imetrobert-blog/adoption-page` (buttons on the blog home and adoption-data page), `qr/talk`.
 The blog's `scripts/promo_kit.py` (repo imetrobert.github.io, table `TARGETS`) links LinkedIn follow-up posts to the service/article pages by slug, and
 `utils.RELATED_PAGES` there links three pages from each issue. **If you rename, remove or add a page in `scripts/pages_data.py`, update those two lists in the blog repo too**
 (the blog's test only checks they point at biz.aiwithrobert.com, not that the page exists). Keep the `#feas-check` anchor on the home page.
