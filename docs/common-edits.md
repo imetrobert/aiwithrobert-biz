@@ -70,3 +70,6 @@ Right after publishing or unpublishing in the toolkit: Actions > Sync testimonia
 
 ### Testimonial language (2026-11-17)
 Each testimonial says which language it was written in (`lang`) and may carry an approved translation (`text_alt`, `context_alt`), both set in the toolkit's Testimonials screen. The English page shows English wording and /fr/ shows French. With no translation the original is shown with a small label ("Testimonial in its original language (French)" / "Témoignage dans sa langue d’origine (anglais)", CSS `.testimonial-original`). Same rule in `js/testimonials.js` (`wording()`) and `scripts/sync_testimonials.py` (`pick()`); the sync stores the French cards in a comment after `TESTIMONIALS:END` and `scripts/build_fr_page.py` (`swap_testimonials`) moves them into /fr/. Never edit those by hand; change the label wording in both files.
+
+### Feasibility check: "Something else" (2026-11-17)
+Tenth choice with a free-text box (`need_other` + `need_other_text`). No verdict; the result row says it will be read, with the 1 to 2 business days reply promise only when the site is open (`sOtherOpen`) and no promise at capacity (`sOtherCap`). Reword in the `T` table of `js/feascheck.js` (EN and FR). The typed text is saved on the lead (`extra.need_other_text`) and shown in the toolkit lead note.
