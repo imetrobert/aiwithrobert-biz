@@ -29,6 +29,8 @@ with the gold logo).
 
 **Indexing (live since launch):** pages are indexable (no `noindex`), `sitemap.xml` lists `/` and `/fr/` with hreflang (bump `lastmod` on content changes), `robots.txt` advertises it, and `.github/workflows/indexnow.yml` pings IndexNow on every content push (key file `<key>.txt` at the repo root must stay published).
 
+If something breaks (red check, wrong result, no access): `docs/if-something-breaks.md` (open it first).
+
 ## Service pages and articles — generated, edit the data file
 
 Pages at `services/<slug>/` and `articles/<slug>/` (EN) and `fr/services/…`, `fr/articles/…` (FR) are **generated** by
