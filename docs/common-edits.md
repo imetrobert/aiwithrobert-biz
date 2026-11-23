@@ -81,3 +81,6 @@ Each testimonial says which language it was written in (`lang`) and may carry an
 
 ### Feasibility check: "Something else" (2026-11-17)
 Tenth choice with a free-text box (`need_other` + `need_other_text`). The plan question also has "Other (tell me which)" (`plan` = other, name in `plan_other_text`, result says the plan is not in the table yet and shows the common plans). No verdict; the result row says it will be read, with the 1 to 2 business days reply promise only when the site is open (`sOtherOpen`) and no promise at capacity (`sOtherCap`). Reword in the `T` table of `js/feascheck.js` (EN and FR). The typed text is saved on the lead (`extra.need_other_text`) and shown in the toolkit lead note.
+
+## Place names: Montréal leads, Côte Saint-Luc is the home base
+Visible area lines (`hero-area-note`, `footer-serving`, `about-summary`) lead with Montréal / le Grand Montréal and mention Côte Saint-Luc only as where Robert is based (the address in the JSON-LD stays Côte Saint-Luc to match the Google Business Profile). Keep that order in new copy, in both languages, and update `llms.txt` and the sitemap `lastmod` when it changes.
