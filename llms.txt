@@ -48,6 +48,8 @@ Dedicated pages for each service and common question, each in English and in Fre
 - Practical AI staff training: https://biz.aiwithrobert.com/services/practical-ai-staff-training/ (French: https://biz.aiwithrobert.com/fr/services/formation-pratique-ia-employes/)
 - ChatGPT vs Gemini vs Copilot for a small business: https://biz.aiwithrobert.com/articles/chatgpt-vs-gemini-vs-copilot-small-business/ (French: https://biz.aiwithrobert.com/fr/articles/chatgpt-gemini-copilot-petite-entreprise/)
 - Getting more from the AI subscriptions you already pay for: https://biz.aiwithrobert.com/articles/get-more-from-your-ai-subscriptions/ (French: https://biz.aiwithrobert.com/fr/articles/tirer-plus-de-vos-abonnements-ia/)
+- Free AI feasibility check for a small business: https://biz.aiwithrobert.com/articles/free-ai-feasibility-check-small-business/ (French: https://biz.aiwithrobert.com/fr/articles/verification-faisabilite-ia-gratuite-petite-entreprise/)
+- A monthly AI briefing for small Canadian businesses: https://biz.aiwithrobert.com/articles/monthly-ai-briefing-small-canadian-businesses/ (French: https://biz.aiwithrobert.com/fr/articles/breve-mensuelle-ia-petites-entreprises-canadiennes/)
 <!-- PAGES:END -->
 
 ## Independence

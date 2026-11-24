@@ -375,4 +375,107 @@ PAGES = [
          ("Devrions-nous acheter un autre outil d’IA?", "Pas avant d’avoir vérifié ce que votre abonnement actuel fait réellement pour vous. Beaucoup d’équipes n’en utilisent qu’une petite partie.")],
   ),
  },
+
+ {
+  "id": "feasibility", "kind": "article", "related": ["consulting", "subs"],
+  "en": dict(
+    slug="free-ai-feasibility-check-small-business",
+    title="Free AI Feasibility Check for a Small Business in Canada",
+    desc="Not sure whether your AI plan can do the job you have in mind? A free feasibility check tells you, task by task, before you spend on another tool.",
+    h1="Free AI feasibility check for a small business",
+    intro="Before buying another AI tool or booking any work, it helps to know whether the plan you already pay for can do the job. A feasibility check answers that question for each task you name, quickly and at no cost.",
+    body="""
+<h2>What a feasibility check is</h2>
+<p>It is a short check, not a sales call. You say which AI tools your team already uses, how large the team is, whether personal information is involved, and up to three jobs you would like AI to do. You get a verdict for each job.</p>
+<h2>What it looks at</h2>
+<ul>
+<li>The plan you actually have: what an assistant can do depends on the plan, connectors, API access and third-party services</li>
+<li>The kind of job: writing, working with files, reusing the same instructions, using your own documents, scheduling, research and similar tasks</li>
+<li>Whether personal or client information is involved, because that changes what is sensible</li>
+</ul>
+<h2>What it does not do</h2>
+<p>It gives verdicts only. It does not promise savings, compare vendors or quote a price. If a job needs something your plan does not include, the verdict says so, and you decide whether to go further.</p>
+<h2>Why check first</h2>
+<p>Many small teams pay for a capable assistant and use a fraction of it, or buy a second tool for something the first one already does. Checking first avoids both.</p>
+<h2>After the check</h2>
+<p>If you would like a second opinion or help putting a job into practice, you can book a free discovery call. Robert Simon is independent and does not sell any of the platforms.</p>
+""",
+    faq=[("What is an AI feasibility check?", "A short check of whether the AI plan you already have can do the jobs you want help with. You name up to three tasks and get a verdict for each."),
+         ("Does the feasibility check cost anything?", "No. It is free, and it gives verdicts only: no quote, no vendor comparison and no promised savings.")],
+  ),
+  "fr": dict(
+    slug="verification-faisabilite-ia-gratuite-petite-entreprise",
+    title="Vérification de faisabilité IA gratuite pour une petite entreprise",
+    desc="Votre forfait d’IA peut-il faire le travail que vous avez en tête? Une vérification de faisabilité gratuite vous le dit, tâche par tâche, avant d’acheter un autre outil.",
+    h1="Vérification de faisabilité IA gratuite pour une petite entreprise",
+    intro="Avant d’acheter un autre outil d’IA ou de réserver du travail, il est utile de savoir si le forfait que vous payez déjà peut faire le travail. Une vérification de faisabilité répond à cette question pour chaque tâche que vous nommez, rapidement et sans frais.",
+    body="""
+<h2>En quoi consiste une vérification de faisabilité</h2>
+<p>C’est une courte vérification, et non un appel de vente. Vous indiquez quels outils d’IA votre équipe utilise déjà, la taille de l’équipe, si des renseignements personnels sont en jeu et jusqu’à trois tâches que l’IA pourrait faire. Vous obtenez un verdict pour chacune.</p>
+<h2>Ce qu’elle examine</h2>
+<ul>
+<li>Le forfait que vous avez réellement : ce qu’un assistant peut faire dépend du forfait, des connecteurs, de l’accès aux API et des services tiers</li>
+<li>Le type de tâche : rédaction, travail sur des fichiers, réutilisation des mêmes consignes, utilisation de vos propres documents, planification, recherche et tâches semblables</li>
+<li>La présence de renseignements personnels ou de clients, car cela change ce qui est judicieux</li>
+</ul>
+<h2>Ce qu’elle ne fait pas</h2>
+<p>Elle donne seulement des verdicts. Elle ne promet pas d’économies, ne compare pas les fournisseurs et ne donne pas de prix. Si une tâche exige quelque chose que votre forfait ne comprend pas, le verdict le dit, et vous décidez d’aller plus loin ou non.</p>
+<h2>Pourquoi vérifier d’abord</h2>
+<p>Beaucoup de petites équipes paient pour un assistant capable et n’en utilisent qu’une fraction, ou achètent un deuxième outil pour quelque chose que le premier fait déjà. Vérifier d’abord évite les deux.</p>
+<h2>Après la vérification</h2>
+<p>Si vous souhaitez un second avis ou de l’aide pour mettre une tâche en pratique, vous pouvez réserver un appel découverte gratuit. Robert Simon est indépendant et ne vend aucune de ces plateformes.</p>
+""",
+    faq=[("Qu’est-ce qu’une vérification de faisabilité de l’IA?", "Une courte vérification pour savoir si le forfait d’IA que vous avez déjà peut faire les tâches pour lesquelles vous voulez de l’aide. Vous nommez jusqu’à trois tâches et obtenez un verdict pour chacune."),
+         ("La vérification de faisabilité est-elle payante?", "Non. Elle est gratuite et ne donne que des verdicts : pas de soumission, pas de comparaison de fournisseurs et pas d’économies promises.")],
+  ),
+ },
+ {
+  "id": "briefing", "kind": "article", "related": ["subs", "compare"],
+  "en": dict(
+    slug="monthly-ai-briefing-small-canadian-businesses",
+    title="A Monthly AI Briefing for Small Canadian Businesses",
+    desc="What the low-cost AI plans can do, explained once a month for small Canadian businesses: The Briefing, with each issue ending in one practical next step.",
+    h1="A monthly AI briefing for small Canadian businesses",
+    intro="AI plans and features change every month, and most small business owners do not have time to follow them. The Briefing is a monthly issue written for owners and managers of small Canadian businesses, focused on what the low-cost AI plans can actually do.",
+    body="""
+<h2>What each issue covers</h2>
+<ul>
+<li>The month’s AI developments that matter to a small business, in plain language</li>
+<li>What the low-cost plans of the main assistants can and cannot do, so you know before you pay</li>
+<li>Canadian context: the news and the brands readers already know</li>
+</ul>
+<h2>Who it is for</h2>
+<p>Owners and managers of small Canadian businesses and professional practices of about 5 to 20 people, including those who have no AI subscription yet.</p>
+<h2>How it ends</h2>
+<p>Every issue closes with one practical step: a free feasibility check of whether your own plan can do a job you have in mind.</p>
+<h2>Where to read it</h2>
+<p>The issues are published on the blog at <a href="https://www.imetrobert.com/blog/">imetrobert.com/blog</a>. Robert Simon writes them as an independent consultant, not on behalf of any vendor or employer.</p>
+""",
+    faq=[("What is The Briefing?", "A monthly issue for small Canadian businesses on what the low-cost AI plans can do, ending in one practical next step."),
+         ("Who writes The Briefing?", "Robert Simon, an independent AI consultant in Montréal. It is independent and not sponsored by any vendor or employer.")],
+  ),
+  "fr": dict(
+    slug="breve-mensuelle-ia-petites-entreprises-canadiennes",
+    title="Une revue mensuelle de l’IA pour les petites entreprises canadiennes",
+    desc="Ce que les forfaits d’IA à faible coût peuvent faire, expliqué chaque mois aux petites entreprises canadiennes : The Briefing, qui se termine par une étape pratique.",
+    h1="Une revue mensuelle de l’IA pour les petites entreprises canadiennes",
+    intro="Les forfaits et les fonctions d’IA changent chaque mois, et la plupart des propriétaires de petites entreprises n’ont pas le temps de suivre. The Briefing est un numéro mensuel écrit pour les propriétaires et gestionnaires de petites entreprises canadiennes, centré sur ce que les forfaits d’IA à faible coût peuvent réellement faire.",
+    body="""
+<h2>Ce que couvre chaque numéro</h2>
+<ul>
+<li>Les nouveautés du mois en IA qui comptent pour une petite entreprise, en langage clair</li>
+<li>Ce que les forfaits à faible coût des principaux assistants peuvent et ne peuvent pas faire, pour que vous le sachiez avant de payer</li>
+<li>Le contexte canadien : les nouvelles et les marques que les lecteurs connaissent déjà</li>
+</ul>
+<h2>À qui il s’adresse</h2>
+<p>Aux propriétaires et gestionnaires de petites entreprises et pratiques professionnelles canadiennes d’environ 5 à 20 personnes, y compris ceux qui n’ont pas encore d’abonnement d’IA.</p>
+<h2>Comment il se termine</h2>
+<p>Chaque numéro se conclut par une étape pratique : une vérification de faisabilité gratuite pour savoir si votre propre forfait peut faire une tâche que vous avez en tête.</p>
+<h2>Où le lire</h2>
+<p>Les numéros sont publiés sur le blogue à l’adresse <a href="https://www.imetrobert.com/blog/">imetrobert.com/blog</a>. Robert Simon les rédige à titre de consultant indépendant, et non pour le compte d’un fournisseur ou d’un employeur.</p>
+""",
+    faq=[("Qu’est-ce que The Briefing?", "Un numéro mensuel pour les petites entreprises canadiennes sur ce que les forfaits d’IA à faible coût peuvent faire, qui se termine par une étape pratique."),
+         ("Qui rédige The Briefing?", "Robert Simon, consultant indépendant en IA à Montréal. Il est indépendant et n’est commandité par aucun fournisseur ni employeur.")],
+  ),
+ },
 ]
