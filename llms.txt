@@ -1,10 +1,12 @@
 # AI with Robert for Business — biz.aiwithrobert.com
 # Plain-text summary for AI search engines (ChatGPT, Perplexity, Gemini, Claude).
-# Last updated: 2026-11-11
+# Last updated: 2026-11-23
 
 ## Business
 Name: AI with Robert for Business (business branch of AI with Robert)
 Owner: Robert Simon
+In one sentence: AI with Robert for Business is the consulting practice of Robert Simon, an independent AI consultant in Montréal, Quebec, who helps small businesses (about 5-20 people) get more from the AI tools they already pay for, in English or French.
+Not to be confused with: other people or businesses using a similar name, including aiwithrobert.live.
 Type: Independent AI consulting and automation for small businesses and professional practices (about 5–20 people); platform-neutral
 Core idea: help small businesses and professional practices (any sector: professional services, trades, retail, health and wellness and more) get real value from AI — beginners are helped to choose tools that fit their needs and budget, and current subscribers (ChatGPT, Google Gemini, Microsoft Copilot, Claude, and other affordable tools) get more from what they already pay for. The core engagement is a scoped working session whose outcome is written documentation with prompts tailored to the client's tasks plus workflows configured around their recurring tasks, with a walkthrough so they can reuse them; follow-up sessions refine or expand and are scoped the same way. No enterprise platform and no custom software. AI agents are offered where they pay off, with human oversight
 Location: Montréal, Quebec, Canada (based in Côte Saint-Luc, H4W) — serves all of Greater Montréal, in person or online
