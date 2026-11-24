@@ -1,6 +1,6 @@
 # AI with Robert for Business — biz.aiwithrobert.com
 # Plain-text summary for AI search engines (ChatGPT, Perplexity, Gemini, Claude).
-# Last updated: 2026-11-23
+# Last updated: 2026-11-24
 
 ## Business
 Name: AI with Robert for Business (business branch of AI with Robert)
@@ -14,6 +14,7 @@ Languages: English and French
 Phone: 514-250-8491
 Email: biz@aiwithrobert.com
 Website: https://biz.aiwithrobert.com
+YouTube: https://www.youtube.com/@aiwithrobert-biz
 
 ## Pages
 English (canonical): https://biz.aiwithrobert.com/
