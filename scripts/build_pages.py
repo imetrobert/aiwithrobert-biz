@@ -17,7 +17,7 @@ BASE = "https://biz.aiwithrobert.com"
 PERSON = "https://www.imetrobert.com/#robert-simon"
 BIZ = BASE + "/#business"
 PUBLISHED = "2026-11-10"   # first publication; never changes
-DATE = "2026-11-17"
+DATE = "2026-11-11"
 EMAIL = "biz@aiwithrobert.com"
 E = html.escape
 
