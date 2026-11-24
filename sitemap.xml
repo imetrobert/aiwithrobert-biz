@@ -174,6 +174,46 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <url>
+    <loc>https://biz.aiwithrobert.com/articles/free-ai-feasibility-check-small-business/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://biz.aiwithrobert.com/articles/free-ai-feasibility-check-small-business/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://biz.aiwithrobert.com/fr/articles/verification-faisabilite-ia-gratuite-petite-entreprise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://biz.aiwithrobert.com/articles/free-ai-feasibility-check-small-business/"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://biz.aiwithrobert.com/fr/articles/verification-faisabilite-ia-gratuite-petite-entreprise/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://biz.aiwithrobert.com/articles/free-ai-feasibility-check-small-business/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://biz.aiwithrobert.com/fr/articles/verification-faisabilite-ia-gratuite-petite-entreprise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://biz.aiwithrobert.com/articles/free-ai-feasibility-check-small-business/"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://biz.aiwithrobert.com/articles/monthly-ai-briefing-small-canadian-businesses/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://biz.aiwithrobert.com/articles/monthly-ai-briefing-small-canadian-businesses/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://biz.aiwithrobert.com/fr/articles/breve-mensuelle-ia-petites-entreprises-canadiennes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://biz.aiwithrobert.com/articles/monthly-ai-briefing-small-canadian-businesses/"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://biz.aiwithrobert.com/fr/articles/breve-mensuelle-ia-petites-entreprises-canadiennes/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://biz.aiwithrobert.com/articles/monthly-ai-briefing-small-canadian-businesses/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://biz.aiwithrobert.com/fr/articles/breve-mensuelle-ia-petites-entreprises-canadiennes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://biz.aiwithrobert.com/articles/monthly-ai-briefing-small-canadian-businesses/"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- PAGES:END -->
 
 </urlset>
