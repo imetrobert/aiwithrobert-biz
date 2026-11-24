@@ -21,6 +21,8 @@ Facts repeated for SEO (update all): phone 514-250-8491, email biz@aiwithrobert.
 (meta, JSON-LD, aside blocks, contact, footer NAP), `js/i18n.js` (en + fr), `js/language.js` (title/description
 strings, must match `<head>` and `scripts/build_fr_page.py`), `llms.txt`.
 
+**Freshness dates are automatic:** `scripts/stamp_dates.py` (run by CI) sets the home-page `lastmod` in `sitemap.xml` and the guide/service pages' `lastmod` and `dateModified` from the date of the last real edit (git history, ignoring the bot's `chore:` commits). `PUBLISHED` in the page builder is the fixed first-publication date. Never edit these dates by hand.
+
 Prices: the home-page Pricing section (`pricing-*`, `price1-4-*` keys) is the one place with prices; also in `llms.txt`. Change a price in index.html + js/i18n.js (en+fr) + llms.txt together. The toolkit's Proposal builder has its own copy (FX_PRICE in imetrobert/aiwithrobert-toolkit index.html): keep them equal. The before/after examples section (`#examples`, `ba-*` keys) quotes the Workflow Setup starting price ($2,000) in `ba-math-text`: update it with any price change. Its examples are labelled illustrations, never client results; keep each one to things a low-cost plan can do (no "runs by itself" claims). Discovery-call model otherwise. Brand: navy #11304c, gold #c9a227, gold text #8a6d0b.
 Version strings: never edit the `?v=` values; `scripts/stamp_assets.py` sets them from file contents (CI runs it).
 Logo: `logo.svg` is the source; `logo.PNG` a 512×512 transparent export; icons from `scripts/build_favicons.py`

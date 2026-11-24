@@ -16,7 +16,8 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://biz.aiwithrobert.com"
 PERSON = "https://www.imetrobert.com/#robert-simon"
 BIZ = BASE + "/#business"
-DATE = "2026-11-10"
+PUBLISHED = "2026-11-10"   # first publication; never changes
+DATE = "2026-11-17"
 EMAIL = "biz@aiwithrobert.com"
 E = html.escape
 
@@ -64,7 +65,7 @@ def render(lang, p):
                 "audience": {"@type": "Audience", "audienceType": u["audience"]}, "inLanguage": "en-CA" if lang == "en" else "fr-CA"}
     else:
         main = {"@type": "Article", "@id": here + "#article", "headline": d["h1"], "description": d["desc"],
-                "inLanguage": "en-CA" if lang == "en" else "fr-CA", "datePublished": DATE, "dateModified": DATE,
+                "inLanguage": "en-CA" if lang == "en" else "fr-CA", "datePublished": PUBLISHED, "dateModified": DATE,
                 "mainEntityOfPage": here, "author": {"@id": PERSON}, "publisher": {"@id": BIZ}, "about": {"@id": BIZ}}
     graph = [main,
       {"@type": "BreadcrumbList", "itemListElement": [
