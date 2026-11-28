@@ -8,6 +8,9 @@ commits the result). Never hand-edit `fr/index.html`, `js/bundle.js`, `css/style
 Rule for any visible text with `data-i18n="key"`: change the SAME English text in `index.html` AND in `js/i18n.js` (en),
 and write the French in `js/i18n.js` (fr). Find a key fast: `grep -n "key-name" index.html js/i18n.js`.
 
+## Swap a photo (profile.jpg, hero-business.jpg)
+Two photos sit in the repo root: `profile.jpg` (your portrait, About section, 892x910) and `hero-business.jpg` (hero picture, 1600x900). Each has copies the page uses first: `profile.webp`, `hero-business.webp`, and for phones `hero-business-800.jpg` and `hero-business-800.webp`. On GitHub: open the file, Upload files, upload the new photo with the SAME name, same proportions, under about 300 KB. The "Make WebP and smaller copies" workflow rebuilds every other copy in about a minute; never upload those by hand. Alt text: English in `index.html` (`grep -n 'profile.jpg\|hero-business.jpg' index.html`); the French hero alt is set in `scripts/build_fr_page.py` (search `hero-business`), so a changed hero description needs both. The social share image is `og-share-1200x630.png` (separate file).
+
 ## Change a price
 Keys: `price1-amt` to `price4-amt` (Assessment, Workflow Setup, Team Training, Starter Bundle), `pricing-also` (talks, monthly
 support, extra help), `pricing-note`. Edit in `index.html` + `js/i18n.js` (en + fr), then ALSO:

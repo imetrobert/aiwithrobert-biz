@@ -1,0 +1,54 @@
+name: Make WebP and smaller copies of the photos
+
+# The page shows the .webp files first and the .jpg only as a fallback, and the hero
+# also has an 800-wide copy for phones. Upload a new profile.jpg or hero-business.jpg
+# (same file name) and this job rebuilds every copy, so an old picture can never keep
+# showing. Leave it enabled.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'profile.jpg'
+      - 'hero-business.jpg'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  copies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Rebuild the copies
+        run: |
+          pip install --quiet pillow
+          python3 - <<'PY'
+          from PIL import Image
+          p = Image.open("profile.jpg").convert("RGB")
+          p.save("profile.webp", "WEBP", quality=82, method=6)
+          h = Image.open("hero-business.jpg").convert("RGB")
+          h.save("hero-business.webp", "WEBP", quality=82, method=6)
+          s = h.resize((800, round(h.height * 800 / h.width)), Image.LANCZOS)
+          s.save("hero-business-800.jpg", "JPEG", quality=85, optimize=True)
+          s.save("hero-business-800.webp", "WEBP", quality=82, method=6)
+          print("profile", p.size, "hero", h.size, "small", s.size)
+          PY
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Photo Bot"
+          git add profile.webp hero-business.webp hero-business-800.jpg hero-business-800.webp
+          if git diff --staged --quiet; then
+            echo "Copies already match."
+            exit 0
+          fi
+          git commit -m "chore: rebuild WebP and small copies of the photos"
+          for i in 1 2 3; do
+            if git pull --rebase -q -X theirs && git push -q; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          echo "Push failed after 3 tries"
+          exit 1
