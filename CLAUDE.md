@@ -34,6 +34,7 @@ with the gold logo).
 If something breaks (red check, wrong result, no access): `docs/if-something-breaks.md` (open it first).
 
 ## Gotchas that break things (detail in the longer notes)
+- Photos: portrait `profile.jpg` and hero `hero-business.jpg` in the repo root. Upload the new photo with the SAME file name; the "Make WebP and smaller copies" workflow rebuilds `profile.webp`, `hero-business.webp` and the 800-wide copies. English alt text is in `index.html`; the French hero alt is `HERO_ALT_FR` in `scripts/build_fr_page.py`. Recipe: `docs/common-edits.md` "Swap a photo".
 - Hero: the headline is the `<h1>` with key `hero-title` (`index.html` line ~414, `js/i18n.js` en and fr), then `hero-tagline`, `hero-area-note`, `hero-cta`. Find any key with `grep -n 'hero-title' index.html js/i18n.js`. The headline text appears only in those places.
 - Reword a JSON-LD string: update the matching `FR_SUBS` entry in `scripts/build_fr_page.py` too, or the build fails.
 - Keep the `#feas-check` anchor, the feasibility form field names and the `utm_` tags; renaming a page in `scripts/pages_data.py` also needs the blog repo's `promo_kit.py` TARGETS and `utils.RELATED_PAGES` updated.
